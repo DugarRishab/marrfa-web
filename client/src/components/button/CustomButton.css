@@ -1,0 +1,19 @@
+.custom-btn {
+    font-size: 1rem;
+    color: #fff;
+    /* letter-spacing: 0.2em; */
+    padding: 10px 20px;
+    border-radius: 100px;
+    margin: 5px;
+
+    box-shadow: var(--shadow);
+    background: linear-gradient(to left, var(--blue),var(--cyan));
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.invert {
+    color: var(--blue);
+    background: white;
+}

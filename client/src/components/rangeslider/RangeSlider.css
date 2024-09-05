@@ -1,0 +1,117 @@
+.range {
+    box-shadow: var(--shadow);
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 80%;
+    background-color: #fff;
+}
+
+.range-slider {
+    height: 2px;
+    position: relative;
+    background-color: #e1e9f6;
+    border-radius: 2px;
+    width: 100%; /* Ensure it takes up all available space */
+}
+
+.range-selected {
+    height: 2px;
+    position: absolute;
+    border-radius: 50px;
+    background-color: var(--blue);
+}
+
+.range-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Stretch to fill the container */
+    width: 15rem;
+}
+
+.range-input input {
+    position: absolute;
+    width: 100%;
+    top: -7px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+.range-input input::-webkit-slider-thumb{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    cursor: pointer;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.range-input input::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    cursor: pointer;
+    pointer-events: auto;
+    -moz-appearance: none;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: var(--mix-background);
+    padding: 10px;
+}
+
+.control{
+    border-radius: 50px;
+    height: 1.5em;
+}
+
+.control button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    color: inherit;
+    cursor: pointer;
+}
+
+.control i {
+    font-size: 15px;
+    color: inherit;
+    background-color: transparent;
+}
+
+
+
+.control input {
+    width: 60px;
+    text-align: center;
+    height: 1rem;
+    color: inherit;
+    background-color: transparent;
+}
+
+.range .control input::-webkit-outer-spin-button,
+.range .control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; /* Hide default spin buttons in Chrome and Safari */
+}

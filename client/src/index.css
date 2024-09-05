@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    --text-color: hsl(218, 100%, 21%);
+    --navbar-height: 60px;
+    --page-width: 1280px;
+    --blue: #08254C;
+    --cyan: #46A29F;
+    --navbar-color: rgba(255, 255, 255, 0.15);
+
+    --mix-background: linear-gradient(90deg, #6083B4 0%, #46A29F 100%);
+    --blue-background: linear-gradient(90deg, #08254C 0%, #31517C 100%);
+
+    
+    --card-width: 18rem;
+    --shadow: 1px 4px 4px 0px #00000040;
+}
+
+.gradient-text {
+    background: var(--mix-background);
+    background-clip: text;
+    -webkit-background-clip: text !important;
+    color: transparent;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+

@@ -1,0 +1,44 @@
+.story {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45rem;
+    gap: 1rem;
+    color: #fff;
+}
+
+.story img {
+    width: 20rem;
+    height: 12rem;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.story .story-info {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 10rem;
+}
+
+.story .story-info .date {
+    font-size: 1rem;
+}
+
+.story .story-info .heading {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.story .story-info .desc {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em; /* Adjust based on your desired line height */
+    max-height: calc(1.2em * 4); /* Line height * number of lines */
+}

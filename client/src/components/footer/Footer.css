@@ -1,0 +1,123 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 1280px);
+    flex-direction: column;
+    background: var(--blue-background);
+    color: #fff
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    width: 100%;
+
+}
+
+.footer .about-col {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+}
+
+.footer .about-col .brandname {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    gap: 1rem;
+
+}
+
+.footer .about-col .brandname img {
+    width: 50px;
+}
+
+.footer .about-col .desc {
+    font-size: 0.8rem;
+    padding-top: 1rem;
+}
+
+.footer .about-col .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%
+}
+
+.footer .about-col .social img {
+    background: var(--mix-background);
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 35px;
+    cursor: pointer;
+}
+
+
+
+.footer .link-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.footer .link-col .quicklink {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.footer .link-col .quicklink .heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 1rem;
+}
+
+.footer .link-col .quicklink .link {
+    font-weight: 200;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.footer .link-col .quicklink .link i {
+    font-size: 20px
+}
+
+footer .extra-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5rem;
+    padding: 1rem 2px;
+    border-top: 1px solid #fff;
+}
+
+footer .extra-links a {
+    text-decoration: none;
+}
+
+footer .rights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 200;
+    padding: 0px 10px;
+    padding-bottom: 10px;
+}
+
+
