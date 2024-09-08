@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import RangeSlider from "../rangeslider/RangeSlider";
 
-const SearchBar = () => {
+const SearchBar = ({ filter, filterToggle }) => {
     return (
         <div className="searchbar">
             <div className="search-area">
@@ -10,7 +10,14 @@ const SearchBar = () => {
                 <input type="text" placeholder="City, Building type, Yield"></input>
             </div>
             <div className="button-group">
-                <button className="filters">
+                <button
+                    style={{
+                        backgroundColor: filter ? "var(--selected)" : "",
+                        color: filter ? "#000" : "",
+                    }}
+                    onClick={filterToggle}
+                    className="filters"
+                >
                     <i className="material-icons">tune</i>
                     Filters
                 </button>
@@ -38,32 +45,37 @@ const Dropdown = ({ label, options }) => {
                 {selectedOption}
                 <i className="material-icons">keyboard_arrow_down</i>
             </button>
-            {isOpen && (
-                <ul className="menu">
-                    {options.map((option, index) => (
-                        <li key={index} onClick={() => handleOptionClick(option)} className="item">
-                            {option}
-                        </li>
-                    ))}
-                    <li onClick={() => handleOptionClick(label)} className="item">
-                        --select--
+
+            <ul className={"menu"+(isOpen?" expand":"")}>
+                {options.map((option, index) => (
+                    <li key={index} onClick={() => handleOptionClick(option)} className="item">
+                        {option}
                     </li>
-                </ul>
-            )}
+                ))}
+                <li onClick={() => handleOptionClick(label)} className="item">
+                    --select--
+                </li>
+            </ul>
         </div>
     );
 };
 
 const Search = () => {
+    const [filter, setFilter] = useState(false);
+    const toggleFilter = () => {
+        setFilter((value) => !value);
+    };
     return (
         <div className="search-wrapper">
             <RangeSlider />
-            <SearchBar />
-            <div className="dropdown-list">
-                {Object.keys(DropMenu).map((key, idx) => (
-                    <Dropdown key={idx} label={key} options={DropMenu[key]} />
-                ))}
-            </div>
+            <SearchBar filter={filter} filterToggle={toggleFilter} />
+            {filter && (
+                <div className="dropdown-list">
+                    {Object.keys(DropMenu).map((key, idx) => (
+                        <Dropdown key={idx} label={key} options={DropMenu[key]} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

@@ -1,14 +1,14 @@
 import React from "react";
 import "./News.css";
-import Balloon from "/assets/success.png";
+import { formatDate } from "../../App";
 
-const News = ({ date, heading, text, img_src }) => {
+const News = ({ data }) => {
     return (
-        <div className="news">
-            <img src={img_src || Balloon} />
-            <label>{date}</label>
-            <div className="heading">{heading}</div>
-            <div className="article">{text}</div>
+        <div className="news-card">
+            <img src={data.images.heroImg} />
+            <label>{formatDate(data.metadata.datePosted)}</label>
+            <div className="heading">{data.name}</div>
+            <div className="article">{data.description.name}</div>
         </div>
     );
 };

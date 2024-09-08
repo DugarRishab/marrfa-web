@@ -5,16 +5,16 @@ footer {
     width: min(100%, 1280px);
     flex-direction: column;
     background: var(--blue-background);
-    color: #fff
+    color: #fff;
 }
 
 .footer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     padding: 1rem;
     width: 100%;
-
+    padding-top: 50px;
 }
 
 .footer .about-col {
@@ -47,25 +47,35 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%
+    width: 100%;
+    padding-top: 2rem;
 }
 
-.footer .about-col .social img {
+.footer .about-col .social .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--mix-background);
-    padding: 5px;
     border-radius: 50%;
-    margin-top: 10px;
-    width: 35px;
-    cursor: pointer;
+    padding: 5px;
+    transition: all ease 0.2s;
 }
 
+.footer .about-col .social .icon img {
+    width: 30px;
+}
+
+.footer .about-col .social .icon:hover {
+    transform :translateY(-5px);
+}
 
 
 .footer .link-col {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 5rem;
+    padding-top: 1rem;
 }
 
 .footer .link-col .quicklink {
@@ -116,8 +126,52 @@ footer .rights {
     align-items: center;
     justify-content: center;
     font-weight: 200;
-    padding: 0px 10px;
-    padding-bottom: 10px;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+footer .link{
+    transition: all ease 0.2s;
+    cursor: pointer;
+    position: relative;
+    line-height: 1em;
+    padding: 10px 0px
+}
+footer .link::before {
+    content: "";
+    position:absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 0.5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: #fff;
+    transition: all ease 0.2s;
+}
+
+footer .advertise {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 30vh;
+    background: var(--mix-background);
+    padding: 1rem 3rem;
+
+}
+
+footer .advertise .question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+footer .link:hover{
+    color: var(--cyan);
+}
+footer .link:hover::before {
+    transform: scaleX(1);
 }
 
 

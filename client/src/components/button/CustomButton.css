@@ -7,13 +7,21 @@
     margin: 5px;
 
     box-shadow: var(--shadow);
-    background: linear-gradient(to left, var(--blue),var(--cyan));
-    font-weight: 400;
+    background: var(--mix-background);
+    font-weight: 600;
 
+    transition: all ease 0.3s;
     cursor: pointer;
+}
+.custom-btn:hover {
+    transform: scale(1.05);
 }
 
 .invert {
     color: var(--blue);
     background: white;
+}
+
+.invert:hover {
+    background: var(--hover-grey)
 }

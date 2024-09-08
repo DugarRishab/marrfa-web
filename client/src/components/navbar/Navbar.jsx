@@ -3,7 +3,7 @@ import "./Navbar.css";
 import Logo from "/assets/Marrfa.png";
 import { Link } from "react-router-dom";
 
-const tabroutes = { Home: "home", Projects: "projects", Blogs: "blogs", "About us": "about" };
+const tabroutes = { Home: "", Projects: "projects", Blogs: "blogs", "About us": "about" };
 
 const Navbar = () => {
     const [selected, setSelected] = useState(0);

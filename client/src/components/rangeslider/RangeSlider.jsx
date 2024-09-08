@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./RangeSlider.css";
 
 const RangeSlider = () => {
     const [minValue, setMinValue] = useState(300);
     const [maxValue, setMaxValue] = useState(700);
+    const maxRef = useRef(null);
+    const minRef = useRef(null);
+
+    const getRange = ()=>{
+        console.log(maxRef.current?.value);
+        console.log(minRef.current?.value);
+    }
 
     const maxPlus = () => {
         setMaxValue((m) => Math.min(m + 1, 1000));
@@ -29,7 +36,7 @@ const RangeSlider = () => {
     };
 
     return (
-        <div className="range">
+        <div onClick={getRange} className="range">
             <div className="label">Price range</div>
             <div className="control">
                 <button onClick={minPlus}>
@@ -44,9 +51,10 @@ const RangeSlider = () => {
                 <div className="range-slider">
                     <div
                         className="range-selected"
+                        
                         style={{
-                            left: `${(minValue / 1000) * 100}%`,
-                            width: `${((maxValue - minValue) / 1000) * 100}%`,
+                            left: `${(Math.max(0, minValue) / 1000) * 100}%`,
+                            width: `${((Math.min(1000, maxValue) - Math.max(0, minValue)) / 1000) * 100}%`,
                         }}
                     ></div>
                 </div>
@@ -59,6 +67,8 @@ const RangeSlider = () => {
                         value={minValue}
                         step="1"
                         onChange={handleMinChange}
+                        ref={minRef}
+                        
                     />
                     <input
                         type="range"
@@ -68,6 +78,7 @@ const RangeSlider = () => {
                         value={maxValue}
                         step="1"
                         onChange={handleMaxChange}
+                        ref={maxRef}
                     />
                 </div>
             </div>

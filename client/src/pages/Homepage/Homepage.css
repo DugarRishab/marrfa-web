@@ -16,6 +16,8 @@
     background-position: center;
     background-repeat: no-repeat;
     flex-direction: column;
+    padding-top: var(--navbar-height);
+    gap: 3rem;
 }
 
 .homepage .banner .text {
@@ -33,11 +35,14 @@
     flex-direction: column;
     width: 100%;
     padding-top: 2rem;
+    min-height: 100vh;
 }
 
-.homepage .projects .heading {
-    font-size: 2.5rem;
+.homepage .projects > .heading {
+    font-size: 2rem;
     font-weight: 600;
+    align-self: start;
+    padding-left: 10rem
 }
 
 .homepage .project-deal {
@@ -53,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
 }
 
 .homepage .about-section .about {
@@ -63,7 +68,7 @@
     flex-direction: column;
     width: 30%;
 }
-.homepage .about-section .about .heading {
+.homepage .about-section .about > .heading {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--blue);
@@ -111,10 +116,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 80vh;
+    height: 90vh;
     background: var(--blue-background);
 }
-.homepage .story-wrapper .heading {
+.homepage .story-wrapper > .heading {
     font-size: 2.5rem;
     font-weight: 600;
     color: #fff;
@@ -136,27 +141,13 @@
     flex-direction: column;
     width: 100%;
     padding-top: 2rem;
-    color: var(--blue)
+    color: var(--blue);
+    height: 90vh;
 }
 
-.homepage .news-wrapper .heading {
+.homepage .news-wrapper > .heading {
     font-size: 2rem;
     font-weight: 600;
-}
-
-.homepage .advertise {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 30vh;
-    background: var(--mix-background);
-    padding: 1rem 3rem;
-
-}
-
-.homepage .advertise .question {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
+    align-self: flex-start;
+    padding-left: 10rem;
 }

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Carousel.css";
+import Arrow from "/assets/icons/arrow.png"
 
 const Carousel = ({ items, indicator = false }) => {
     const [cardWidth, setCardWidth] = useState(0);
@@ -13,7 +14,7 @@ const Carousel = ({ items, indicator = false }) => {
     const gap = 16;
     const delta = cardWidth + gap;
     const numCards = Math.round(containerWidth / cardWidth) - 1;
-    const width = delta * numCards + gap;
+    const width = delta * numCards + gap/4;
 
     const [index, setIndex] = useState(0);
 
@@ -42,7 +43,7 @@ const Carousel = ({ items, indicator = false }) => {
         <div className="indicator-wrapper">
             <div className="carousel-wrapper">
                 <button className="direction" onClick={goLeft}>
-                    <i className="material-icons gradient-text">arrow_back_ios</i>
+                    <img src = {Arrow} />
                 </button>
                 <div
                     style={{
@@ -64,7 +65,7 @@ const Carousel = ({ items, indicator = false }) => {
                     </div>
                 </div>
                 <button className="direction" onClick={goRight}>
-                    <i className="material-icons gradient-text">arrow_forward_ios</i>
+                <img src = {Arrow} style = {{transform: "rotate(180deg)"}} />
                 </button>
             </div>
             {indicator && <div className="indicators">

@@ -9,7 +9,7 @@
 }
 
 .project .image-section{
-    height: 10rem;
+    height: 12rem;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -54,6 +54,7 @@
     flex-direction: column;
     width: 100%;
     position: relative;
+    padding: 5px
 }
 
 .project .info-section .icon {
@@ -64,9 +65,25 @@
     background: var(--mix-background);
     color: #fff;
     border-radius: 50%;
-    padding: 7px;
     cursor: pointer;
     box-shadow: var(--shadow);
+    transition: all ease 0.2s;
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all ease 0.2s;
+}
+
+.project .info-section .icon img {
+    aspect-ratio: 1/1;
+    width: 20px;
+}
+
+.project .info-section .icon:hover {
+    transform: scale(1.05);
 }
 
 .project .info-section .icon:nth-child(1){
@@ -78,8 +95,10 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 5px;
+    padding: 2rem 5px;
     font-size: 1rem;
+    line-height: 1.5em;
+    height: 3em;
 }
 
 .project .info-section .heading .project-name {
@@ -92,17 +111,26 @@
 }
 
 .project .info-section .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
+    padding: 5px;
 }
 
-.project .info-section .stats .label {
+.stats .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px
+}
+
+.stats .label {
     font-weight: 600;
     font-size: 0.9rem;
-    padding-left: 10px;
 }
-.project .info-section .stats .value {
+.stats .value {
     font-size: 0.9rem
 }
 
@@ -137,8 +165,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: hsla(208, 23%, 71%, 0.717);
-    border-radius: 10px;
+    background: var(--light-mix-gradient);
+    border-radius: 5px;
     padding: 5px 10px;
     flex-grow: 1;
 }

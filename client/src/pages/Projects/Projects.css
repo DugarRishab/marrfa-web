@@ -1,0 +1,36 @@
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 1280px);
+    flex-direction: column;
+}
+
+.projects .banner {
+    background: url("/assets/banner/Projectbanner.png");
+    width: 100%;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.projects .choice-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 2rem;
+    min-height: 100vh;
+}
+
+.projects .choice-wrapper > .heading {
+    font-size: 2rem;
+    font-weight: 600;
+    align-self: start;
+    padding-left: 10rem;
+}
