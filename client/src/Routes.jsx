@@ -19,7 +19,7 @@ const PageRoutes = () => {
                 <Route path="" element={<ComingSoon />}></Route>
                 </Route> */}
             {/* <Route exact path="/test" element={<ProjectDesc projectName={"Manhattan Project"} highlights={["amazing", "destructive", "hard", "physics", "bomb"]} image={"/assets/projects/projectbanner.png"}/>}></Route> */}
-        <Route exact path="/test" element={<PropertyRequestForm />}></Route>
+        {/* <Route exact path="/test" element={<PropertyRequestForm />}></Route> */}
         </Routes>
     );
 };

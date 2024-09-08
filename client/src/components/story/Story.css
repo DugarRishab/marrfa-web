@@ -29,7 +29,7 @@
 
 .story .story-info .heading {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: var(--heading-textsize);
     padding-bottom: 0;
 }
 

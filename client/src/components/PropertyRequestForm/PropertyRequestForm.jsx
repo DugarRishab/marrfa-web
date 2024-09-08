@@ -2,6 +2,7 @@ import React from "react";
 import "./PropertyRequestForm.css";
 import banner from "/assets/banner/formbanner.png";
 import PhoneInput from "./PhoneInput";
+import CustomButton from "../button/CustomButton";
 
 
 const PropertyRequestForm = () => {
@@ -29,8 +30,9 @@ const PropertyRequestForm = () => {
 For example, I'm looking for an apartment in Downtown Dubai"
                     ></textarea>
 
-                    <input type="button" value="Submit Request" />
+                    <CustomButton rounded={false} text={"Submit Request"} />
                 </form>
+                <div className="consent">I confirm that I have read and accept the Privacy Policy and Personal Data Processing Guidelines.</div>
             </div>
             <div className="banner">
                 <img src={banner} alt="Jude Halpert" />

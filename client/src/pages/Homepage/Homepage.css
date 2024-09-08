@@ -39,14 +39,14 @@
 }
 
 .homepage .projects > .heading {
-    font-size: 2rem;
+    font-size: var(--heading-textsize);
     font-weight: 600;
     align-self: start;
     padding-left: 10rem
 }
 
 .homepage .project-deal {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: var(--blue-background);
     display: flex;
@@ -69,7 +69,7 @@
     width: 30%;
 }
 .homepage .about-section .about > .heading {
-    font-size: 1.5rem;
+    font-size: var(--heading-textsize);
     font-weight: 600;
     color: var(--blue);
 
@@ -120,7 +120,7 @@
     background: var(--blue-background);
 }
 .homepage .story-wrapper > .heading {
-    font-size: 2.5rem;
+    font-size: var(--heading-textsize);
     font-weight: 600;
     color: #fff;
     padding-bottom: 1rem
@@ -146,7 +146,7 @@
 }
 
 .homepage .news-wrapper > .heading {
-    font-size: 2rem;
+    font-size: var(--heading-textsize);
     font-weight: 600;
     align-self: flex-start;
     padding-left: 10rem;

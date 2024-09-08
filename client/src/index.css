@@ -20,6 +20,7 @@
     --navbar-height: 60px;
     --page-width: 1280px;
     --dealcard-width: 65rem;
+    --heading-textsize: 2rem;
     
     --text-color: hsl(218, 100%, 21%);
     --blue: #08254C;
@@ -37,6 +38,7 @@
     --selected: #6083B450;
     --grey-text: rgb(87, 87, 87);
     --hover-grey: rgb(222, 222, 222);
+
 }
 
 .gradient-text {

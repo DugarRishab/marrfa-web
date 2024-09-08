@@ -1,12 +1,14 @@
 import React from "react";
 import "./CustomButton.css";
 
-const CustomButton = ({ text, invert = false, fullWidth=false, ...props }) => {
+const CustomButton = ({ text, invert = false, fullWidth=false, rounded=true, startIcon=null, style,  ...props }) => {
     return (
-        <button style = {{
+        <button {...props} style = {{
           width: fullWidth?"100%":"max-content" ,
-        }} {...props} className={"custom-btn" + (invert ? " invert" : "")}>
-            {text}
+          borderRadius: rounded?"100px":"",
+          ...style
+        }} className={"custom-btn" + (invert ? " invert" : "")}>
+            {startIcon?startIcon:null}{text}
         </button>
     );
 };
