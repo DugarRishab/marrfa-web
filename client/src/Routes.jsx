@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
+import ProjectDesc from "./components/projectdesc/ProjectDesc";
+import PropertyRequestForm from "./components/PropertyRequestForm/PropertyRequestForm";
 
 const PageRoutes = () => {
     const location = useLocation();
@@ -15,7 +17,9 @@ const PageRoutes = () => {
             {/* <Route exact path="/chapters">
                 <Route path=":id" element={<Chapterpage></Chapterpage>}></Route>
                 <Route path="" element={<ComingSoon />}></Route>
-            </Route> */}
+                </Route> */}
+            {/* <Route exact path="/test" element={<ProjectDesc projectName={"Manhattan Project"} highlights={["amazing", "destructive", "hard", "physics", "bomb"]} image={"/assets/projects/projectbanner.png"}/>}></Route> */}
+        <Route exact path="/test" element={<PropertyRequestForm />}></Route>
         </Routes>
     );
 };

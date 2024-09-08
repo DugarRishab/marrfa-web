@@ -1,0 +1,109 @@
+.property-form {
+    margin: 10rem 1rem;
+    /* border: 1px solid green; */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.property-form .data-capture {
+    padding: 1.2rem;
+    width: min-content;
+}
+
+.property-form .data-capture input,
+.property-form .data-capture textarea {
+    border: 1px solid #E0E2E5;
+    background-color: #E0E2E57A;
+    padding: 0.7rem;
+    border-radius: 5px;
+}
+
+.property-form .data-capture textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.property-form .data-capture form .basic-dtls input::placeholder,
+.property-form .data-capture textarea::placeholder {
+    color: #96989B;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.property-form .data-capture form .basic-dtls input {
+    width: 200px
+}
+
+.property-form .data-capture .f-heading {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.15em;
+}
+
+.property-form .data-capture p {
+    margin-top: 1rem;
+}
+
+.property-form .data-capture form {
+    padding-top: 1rem;
+    /* border: 1px solid green; */
+}
+
+.property-form .data-capture form .basic-dtls {
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.property-form .data-capture form textarea {
+    margin-top: 0.5rem;
+    resize: none;
+}
+
+.property-form input[type="button"] {
+    background: var(--mix-background);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+}
+
+.property-form .banner {
+    width: 370px;
+    position: relative;
+    z-index: 0;
+}
+
+.property-form .banner img {
+    transform: scale(0.9);
+    position: absolute;
+    z-index: -2;
+    top: -18.35rem;
+    right: -1.15rem;    
+}
+
+.property-form .banner .nameplate {
+    position: absolute;
+    /* z-index: 3; */
+    background: var(--mix-background);
+    color: #fff;
+    padding: 0.5rem;
+    border: 1.5px solid #fff;
+    border-radius: 4px;
+    bottom: -10rem;
+    right: 1.5rem;
+}
+
+.property-form .banner .nameplate::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 4px;
+    border: 1.5px solid #fff;
+    background: #08254C;
+}
