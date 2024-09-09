@@ -29,6 +29,8 @@
 
     --mix-background: linear-gradient(90deg, #6083B4 0%, var(--cyan) 100%);
     --blue-background: linear-gradient(90deg, #08254C 0%, #31517C 100%);
+    --blue-conic-background: conic-gradient(from 228.6deg at 103.47% 0%, #31517C -17.82deg, #08254C 17.44deg, #0B0C10 52.54deg, #6083B4 327.03deg, #31517C 342.18deg, #08254C 377.44deg);
+
     --light-mix-gradient: linear-gradient(90deg, rgba(96, 131, 180, 0.15) 0%, rgba(70, 162, 159, 0.15) 100%);
 
 

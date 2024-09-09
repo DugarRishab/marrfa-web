@@ -17,10 +17,12 @@
 
 .story .story-info {
     display: flex;
-    align-items: start;
-    justify-content: space-around;
+    align-items: flex-start;
+    /* justify-content:; */
     flex-direction: column;
-    height: 10rem;
+    gap: 10px;
+    height: 8rem;
+    border: 1px solid black;
 }
 
 .story .story-info .date {
@@ -29,8 +31,8 @@
 
 .story .story-info .heading {
     font-weight: 600;
-    font-size: var(--heading-textsize);
-    padding-bottom: 0;
+    font-size: 1.2rem;
+    line-height: 1.1em;
 }
 
 .story .story-info .desc {

@@ -13,7 +13,7 @@ const Footer = () => {
         <footer>
             <div className="advertise">
                 <div className="question">Looking to advertise a property? We can help.</div>
-                <CustomButton style={{ padding: "1rem 4rem" }} invert text={"List your Property with us"} />
+                <CustomButton style={{ padding: "1rem 4rem", fontWeight: "600" }} invert text={"List your Property with us"} />
             </div>
             <div className="footer">
                 <div className="about-col">

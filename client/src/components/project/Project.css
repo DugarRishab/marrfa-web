@@ -6,6 +6,11 @@
     width: var(--card-width);
     box-shadow: var(--shadow);
     border-radius: 10px;
+    transition: all ease 0.4s;
+}
+
+.project:hover {
+    transform: scale(1.02)
 }
 
 .project .image-section{
