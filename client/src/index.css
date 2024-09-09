@@ -16,6 +16,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    --app-width: 1920px;
     
     --navbar-height: 60px;
     --page-width: 1280px;

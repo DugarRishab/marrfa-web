@@ -63,7 +63,7 @@ const Homepage = () => {
                         <div className="bullet-icon"><i className="material-icons">add</i></div>
                         <div className="point">Track real-time market pulse on Marrfa</div>
                     </div>
-                    <CustomButton fullWidth text={"Enquire about Project and Details"} />
+                    <CustomButton style = {{padding: "10px 30px"}} text={"Enquire about Project and Details"} />
                 </div>
                 <img src="/assets/marrfa-clipart.png" />
             </div>

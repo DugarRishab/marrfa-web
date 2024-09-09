@@ -1,5 +1,5 @@
 .homepage {
-    width: min(100%, 1280px);
+    width: min(100%, var(--app-width));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,6 +15,7 @@
     background: url("/assets/banner/HomeBanner.png");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     flex-direction: column;
     padding-top: var(--navbar-height);
     gap: 3rem;
@@ -66,7 +67,7 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
 }
 .homepage .about-section .about > .heading {
     font-size: var(--heading-textsize);

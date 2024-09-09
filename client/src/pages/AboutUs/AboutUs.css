@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: min(100%, 1280px);
+    width: min(100%, var(--app-width));
     background: var(--blue-conic-background);
     color: #fff;
 }

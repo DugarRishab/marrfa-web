@@ -22,7 +22,6 @@
     flex-direction: column;
     gap: 10px;
     height: 8rem;
-    border: 1px solid black;
 }
 
 .story .story-info .date {
