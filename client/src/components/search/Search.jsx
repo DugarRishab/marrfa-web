@@ -20,7 +20,7 @@ const SearchBar = () => {
     );
 };
 
-const Dropdown = ({ label, options }) => {
+export const Dropdown = ({ label, options }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(label);
 

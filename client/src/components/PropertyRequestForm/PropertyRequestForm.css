@@ -12,13 +12,13 @@
     width: min-content;
 }
 
-.property-form .data-capture input,
+/* .property-form .data-capture input,
 .property-form .data-capture textarea {
     border: 1px solid #E0E2E5;
     background-color: #E0E2E57A;
     padding: 0.7rem;
     border-radius: 5px;
-}
+} */
 
 .property-form .data-capture textarea {
     width: 100%;

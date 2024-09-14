@@ -2,6 +2,8 @@ import React from "react";
 import "./PropertyRequestForm.css";
 import banner from "/assets/banner/formbanner.png";
 import PhoneInput from "./PhoneInput";
+import { Input } from "antd";
+const {TextArea} = Input;
 
 
 const PropertyRequestForm = () => {
@@ -16,18 +18,19 @@ const PropertyRequestForm = () => {
 
                 <form action="#">
                     <div className="basic-dtls">
-                        <input name="Name" type="text" placeholder="Name" />
-                        {/* <input name="Phone" type="" placeholder="Phone" /> */}
+                        <Input placeholder="Name" size="large" />
                         <PhoneInput />
-                        <input name="Email" type="email" placeholder="Email" />
+                        <Input placeholder="Email" size="large" />
                     </div>
-                    <textarea
+                    {/* <textarea
                         rows={4}
                         name="LookingFor"
                         id="describe"
                         placeholder="What are you looking for?
 For example, I'm looking for an apartment in Downtown Dubai"
-                    ></textarea>
+                    ></textarea> */}
+                    <TextArea rows={4} placeholder="What are you looking for?
+For example, I'm looking for an apartment in Downtown Dubai"/> 
 
                     <input type="button" value="Submit Request" />
                 </form>
