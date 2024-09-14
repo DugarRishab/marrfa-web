@@ -1,5 +1,6 @@
 import React from "react";
 import "./Homepage.css";
+
 import CustomButton from "../../components/button/CustomButton";
 import Tag from "../../components/tag/Tag";
 import Project from "../../components/project/Project";
@@ -7,35 +8,27 @@ import Carousel from "../../components/carousel/Carousel";
 import Search from "../../components/search/Search";
 import News from "../../components/news/News";
 import ProjectDeal from "../../components/projectdeal/ProjectDeal";
-import Story from "../../components/story/STory";
+import Story from "../../components/story/Story";
 
+import projectData from "../../assets/data/projects.json"
 
-const lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis et fuga eum quam facilis temporibus minima rem earum natus eaque quo, ipsam voluptatibus voluptas aperiam architecto ex porro alias totam omnis soluta sed accusamus. Error eveniet dicta culpa nobis totam."
+export const ProjectList = [];
+export const StoryList = [];
+export const NewsList = [];
 
-const NewsList = [
-    <News date={"24th jan 2025"} heading="Hello" text={lorem} img_src={"/assets/marrfa-clipart.png"} />,
-    <News date={"24th jan 2025"} heading="Hello" text={lorem} />,
-    <News date={"24th jan 2025"} heading="Hello" text={lorem} />,
-    <News date={"24th jan 2025"} heading="Hello" text={lorem} />,
-    <News date={"24th jan 2025"} heading="Hello" text={lorem} />,
-    <News date={"24th jan 2025"} heading="Hello" text={lorem} />,
-];
-const ProjectList = [
-    <Project heading={"heading"} />,
-    <Project heading={"heading"} />,
-    <Project heading={"heading"} />,
-    <Project heading={"heading"} />,
-    <Project heading={"heading"} />,
-    <Project heading={"heading"} />,
-];
-
-const StoryList = [
-    <Story />,
-    <Story />,
-    <Story />,
-    <Story />,
-    <Story />,
-]
+for(let p of projectData){
+    ProjectList.push(
+        <Project 
+            data={p}
+        />
+    )
+    StoryList.push(
+        <Story data={p} />
+    )
+    NewsList.push(
+        <News data = {p} />
+    )
+}
 
 const Homepage = () => {
     return (
@@ -70,7 +63,7 @@ const Homepage = () => {
                         <div className="bullet-icon"><i className="material-icons">add</i></div>
                         <div className="point">Track real-time market pulse on Marrfa</div>
                     </div>
-                    <CustomButton fullWidth text={"Enquire about Project and Details"} />
+                    <CustomButton style = {{padding: "10px 30px"}} text={"Enquire about Project and Details"} />
                 </div>
                 <img src="/assets/marrfa-clipart.png" />
             </div>
@@ -81,10 +74,6 @@ const Homepage = () => {
             <div className="news-wrapper">
                 <div className="heading">News and Articles</div>
                 <Carousel items={NewsList} />
-            </div>
-            <div className="advertise">
-                <div className="question">Looking to advertise a property? We can help.</div>
-                <CustomButton invert text={"List your Property with us"} size={25} />
             </div>
         </div>
     );

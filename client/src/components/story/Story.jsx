@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Story.css";
-import Carousel from "../carousel/Carousel";
+import { formatDate } from "../../App";
 
-const Story = () => {
+
+const Story = ({ data }) => {
     return (
         <div className="story">
-            <img src="/assets/success.png" />
+            <img src={data.images.heroImg} />
             <div className="story-info">
-                <div className="date">12th May 2024</div>
-                <div className="heading">Big story coming soon</div>
-                <div className="desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quisquam perferendis. Reiciendis nisi
-                    atque doloremque quam repellat sint accusamus quod nam dolorum numquam. Rem ipsum vel molestias, sed
-                    dignissimos, exercitationem inventore hic animi, tenetur perspiciatis deleniti ducimus molestiae.
-                    Nemo, cupiditate.
-                </div>
+                <div className="date">{formatDate(data.metadata.dateUpdated)}</div>
+                <div className="heading">{data.name}</div>
+                <div className="desc">{data.description.name}</div>
             </div>
         </div>
     );

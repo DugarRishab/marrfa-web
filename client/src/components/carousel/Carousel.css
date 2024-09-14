@@ -9,14 +9,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 50%;
-    border: 3px solid var(--blue);
+    width: min-content;
+    /* border: 3px solid var(--blue); */
     cursor: pointer;
+    /* color: green; */
 }
 
-.carousel-wrapper .direction .material-icons {
-    font-size: 20px;
+.carousel-wrapper .direction img {
+    aspect-ratio: 1/1;
+    width: 30px;
 }
 
 .carousel-wrapper .carousel {
@@ -33,7 +36,7 @@
     align-items: center;
     justify-content: start;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     /* border: 1px solid black; */
     transition: all ease 0.3s;
 }

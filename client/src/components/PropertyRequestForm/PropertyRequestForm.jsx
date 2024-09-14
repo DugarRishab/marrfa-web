@@ -32,8 +32,9 @@ For example, I'm looking for an apartment in Downtown Dubai"
                     <TextArea rows={4} placeholder="What are you looking for?
 For example, I'm looking for an apartment in Downtown Dubai"/> 
 
-                    <input type="button" value="Submit Request" />
+                    <CustomButton rounded={false} text={"Submit Request"} />
                 </form>
+                <div className="consent">I confirm that I have read and accept the Privacy Policy and Personal Data Processing Guidelines.</div>
             </div>
             <div className="banner">
                 <img src={banner} alt="Jude Halpert" />

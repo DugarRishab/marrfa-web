@@ -1,4 +1,4 @@
-.news {
+.news-card {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,36 +6,47 @@
     width: var(--card-width);
     padding: 10px;
     box-shadow: var(--shadow);
+    color: #000;
+    transition: all ease 0.3s;
+}
+
+.news-card:hover{
+    transform: scale(1.02);
 }
 
 
-.news img {
+.news-card img {
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     object-fit: cover;
     object-position: top;
 }
 
-.news label {
+.news-card label {
     font-size: 10px;
     width: 100%;
     text-align: right;
     line-height: 1em;
     padding-top: 5px;
+    color: var(--grey-text);
 }
-.news .article {
+.news-card .article {
     font-size: 0.8rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.2em; /* Adjust based on your desired line height */
-    max-height: calc(1.2em * 3); /* Line height * number of lines */
+    height: calc(1.2em * 2); /* Line height * number of lines */
+    color: var(--grey-text);
 }
 
-.news .heading {
-    font-size: 1rem;
+.news-card .heading {
+    font-size: 1.2rem;
     font-weight: 500;
+    line-height: 1.2em;
+    align-self: start;
+    height: 2.4em;
 }

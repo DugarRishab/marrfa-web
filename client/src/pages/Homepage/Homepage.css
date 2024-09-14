@@ -1,5 +1,5 @@
 .homepage {
-    width: min(100%, 1280px);
+    width: min(100%, var(--app-width));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +15,10 @@
     background: url("/assets/banner/HomeBanner.png");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     flex-direction: column;
+    padding-top: var(--navbar-height);
+    gap: 3rem;
 }
 
 .homepage .banner .text {
@@ -33,15 +36,18 @@
     flex-direction: column;
     width: 100%;
     padding-top: 2rem;
+    min-height: 100vh;
 }
 
-.homepage .projects .heading {
-    font-size: 2.5rem;
+.homepage .projects > .heading {
+    font-size: var(--heading-textsize);
     font-weight: 600;
+    align-self: start;
+    padding-left: 10rem
 }
 
 .homepage .project-deal {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: var(--blue-background);
     display: flex;
@@ -53,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
 }
 
 .homepage .about-section .about {
@@ -61,10 +67,10 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
 }
-.homepage .about-section .about .heading {
-    font-size: 1.5rem;
+.homepage .about-section .about > .heading {
+    font-size: var(--heading-textsize);
     font-weight: 600;
     color: var(--blue);
 
@@ -111,11 +117,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 80vh;
+    height: 90vh;
     background: var(--blue-background);
 }
-.homepage .story-wrapper .heading {
-    font-size: 2.5rem;
+.homepage .story-wrapper > .heading {
+    font-size: var(--heading-textsize);
     font-weight: 600;
     color: #fff;
     padding-bottom: 1rem
@@ -136,27 +142,13 @@
     flex-direction: column;
     width: 100%;
     padding-top: 2rem;
-    color: var(--blue)
+    color: var(--blue);
+    height: 90vh;
 }
 
-.homepage .news-wrapper .heading {
-    font-size: 2rem;
+.homepage .news-wrapper > .heading {
+    font-size: var(--heading-textsize);
     font-weight: 600;
-}
-
-.homepage .advertise {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 30vh;
-    background: var(--mix-background);
-    padding: 1rem 3rem;
-
-}
-
-.homepage .advertise .question {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
+    align-self: flex-start;
+    padding-left: 10rem;
 }

@@ -1,12 +1,14 @@
 import React from "react";
 import "./Project.css";
 
+import Whatsapp from "/assets/icons/whatsapp.svg"
+
 export const Label = ({ label, value }) => {
     return (
-        <>
+        <div className="row">
             <div className="label">{label}:</div>
             <div className="value">{value.toLocaleString()}</div>
-        </>
+        </div>
     );
 };
 
@@ -36,13 +38,13 @@ export const BaseButton = ({start, complete, quarter}) => {
     );
 };
 
-const Project = ({heading}) => {
+const Project = ({data}) => {
     return (
         <div className="project">
             <div 
                 className="image-section"
                 style = {{
-                    background: `url("/assets/success.png")`,
+                    background: `url("${data.images.heroImg}")`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
@@ -53,18 +55,20 @@ const Project = ({heading}) => {
                 <i className="material-icons">location_on</i>
             </div>
             <div className="info-section">
-                <div className="icon material-icons">call</div>
-                <div className="icon material-icons">forum</div>
+                <button className="icon">
+                    <img src={Whatsapp} />
+                </button>
+                <button className="icon material-icons">forum</button>
                 <div className="heading">
-                    <div className="project-name">{heading}</div>
+                    <div className="project-name">{data.name}</div>
                     <div className="rating gradient-text">4.4</div>
                 </div>
                 <div className="stats">
-                    <Label label={"Area"} value={45200} />
+                    <Label label={"Area"} value={`${data.layout.size.value} ${data.layout.size.unit}`} />
                     <Label label={"Yield"} value={45200} />
-                    <Label label={"Property type"} value={45200} />
+                    <Label label={"Property type"} value={data.type} />
                 </div>
-                <Location text = {"Kolkata, India"} />
+                <Location text = {`${data.location.state}, ${data.location.country}`} />
             </div>
             <BaseButton start = {12300} complete={2024} quarter={3} />
         </div>

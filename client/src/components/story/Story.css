@@ -17,19 +17,21 @@
 
 .story .story-info {
     display: flex;
-    align-items: start;
-    justify-content: space-between;
+    align-items: flex-start;
+    /* justify-content:; */
     flex-direction: column;
-    height: 10rem;
+    gap: 10px;
+    height: 8rem;
 }
 
 .story .story-info .date {
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .story .story-info .heading {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.1em;
 }
 
 .story .story-info .desc {
@@ -37,6 +39,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
+    line-clamp: 4;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.2em; /* Adjust based on your desired line height */
