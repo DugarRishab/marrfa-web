@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import Projects from "./pages/Projects/Projects";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import PropertyRequestForm from "./components/PropertyRequestForm/PropertyRequestForm";
 
 const PageRoutes = () => {
     const location = useLocation();
@@ -21,6 +22,7 @@ const PageRoutes = () => {
                 <Route path="" element={<ComingSoon />}></Route>
                 </Route> */}
             {/* <Route exact path="/test" element={<ProjectDesc projectName={"Manhattan Project"} highlights={["amazing", "destructive", "hard", "physics", "bomb"]} image={"/assets/projects/projectbanner.png"}/>}></Route> */}
+            <Route exact path="/test" element={<PropertyRequestForm />} />
         </Routes>
     );
 };
