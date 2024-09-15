@@ -1,0 +1,23 @@
+.ant-table {
+    background: transparent !important;
+    color: #fff !important;
+    transition: none !important;
+}
+
+.ant-table-thead > tr > th {
+    background-color: transparent !important;
+    border-top: 1px solid #fff !important;
+    border-radius: 0px !important;
+}
+
+.ant-table-cell-row-hover {
+    background: transparent !important;
+}
+
+.ant-pagination .ant-table-pagination .ant-table-pagination-right .css-dev-only-do-not-override-qnu6hi > *:hover {
+    background-color: green
+}
+
+.css-dev-only-do-not-override-qnu6hi.ant-table-wrapper .ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before, .css-dev-only-do-not-override-qnu6hi.ant-table-wrapper .ant-table-thead >tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    background-color: transparent;
+}

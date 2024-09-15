@@ -1,0 +1,249 @@
+[
+    {
+        "name": {
+            "projectName": "Big project",
+            "highlights": ["Cool", "Fantastic", "Out of the box"],
+            "image": "/assets/balloon.jpeg"
+        },
+        "price": 1000000,
+        "yield": 6.0,
+        "area": 5599,
+        "return": 25,
+        "marrfex": 4.2,
+        "date": "Q3 2024"
+    },
+    {
+        "name": {
+            "projectName": "Skyline Heights",
+            "highlights": ["Luxury", "Top-notch", "Prime location"],
+            "image": "/assets/skyline.jpg"
+        },
+        "price": 1500000,
+        "yield": 5.5,
+        "area": 4890,
+        "return": 20,
+        "marrfex": 4.8,
+        "date": "Q1 2025"
+    },
+    {
+        "name": {
+            "projectName": "Ocean View",
+            "highlights": ["Breathtaking", "Serene", "Beachfront"],
+            "image": "/assets/ocean.jpg"
+        },
+        "price": 850000,
+        "yield": 6.8,
+        "area": 3000,
+        "return": 30,
+        "marrfex": 3.9,
+        "date": "Q2 2024"
+    },
+    {
+        "name": {
+            "projectName": "Urban Oasis",
+            "highlights": ["Green", "Sustainable", "Modern living"],
+            "image": "/assets/oasis.jpg"
+        },
+        "price": 950000,
+        "yield": 6.2,
+        "area": 4000,
+        "return": 22,
+        "marrfex": 4.1,
+        "date": "Q4 2024"
+    },
+    {
+        "name": {
+            "projectName": "Mountain Retreat",
+            "highlights": ["Secluded", "Peaceful", "Nature"],
+            "image": "/assets/mountain.jpg"
+        },
+        "price": 750000,
+        "yield": 7.0,
+        "area": 3500,
+        "return": 28,
+        "marrfex": 3.7,
+        "date": "Q1 2025"
+    },
+    {
+        "name": {
+            "projectName": "Downtown Loft",
+            "highlights": ["Central", "Stylish", "Vibrant"],
+            "image": "/assets/downtown.jpg"
+        },
+        "price": 1250000,
+        "yield": 5.3,
+        "area": 3200,
+        "return": 18,
+        "marrfex": 4.6,
+        "date": "Q3 2023"
+    },
+    {
+        "name": {
+            "projectName": "Lakeside Villa",
+            "highlights": ["Tranquil", "Lakeside", "Spacious"],
+            "image": "/assets/lakeside.jpg"
+        },
+        "price": 920000,
+        "yield": 6.1,
+        "area": 4100,
+        "return": 24,
+        "marrfex": 4.3,
+        "date": "Q2 2025"
+    },
+    {
+        "name": {
+            "projectName": "Country Estate",
+            "highlights": ["Expansive", "Private", "Rural"],
+            "image": "/assets/estate.jpg"
+        },
+        "price": 2000000,
+        "yield": 4.8,
+        "area": 10000,
+        "return": 15,
+        "marrfex": 4.9,
+        "date": "Q1 2024"
+    },
+    {
+        "name": {
+            "projectName": "Modern Apartment",
+            "highlights": ["Minimalist", "Functional", "Affordable"],
+            "image": "/assets/apartment.jpg"
+        },
+        "price": 600000,
+        "yield": 7.5,
+        "area": 2200,
+        "return": 35,
+        "marrfex": 3.8,
+        "date": "Q3 2023"
+    },
+    {
+        "name": {
+            "projectName": "Hillside Cottage",
+            "highlights": ["Cozy", "Charming", "Hillside"],
+            "image": "/assets/cottage.jpg"
+        },
+        "price": 780000,
+        "yield": 6.9,
+        "area": 2900,
+        "return": 26,
+        "marrfex": 4.0,
+        "date": "Q2 2024"
+    },
+    {
+        "name": {
+            "projectName": "Penthouse Suite",
+            "highlights": ["Exclusive", "Panoramic views", "High-end"],
+            "image": "/assets/penthouse.jpg"
+        },
+        "price": 3000000,
+        "yield": 4.5,
+        "area": 7000,
+        "return": 12,
+        "marrfex": 5.0,
+        "date": "Q4 2025"
+    },
+    {
+        "name": {
+            "projectName": "Suburban Home",
+            "highlights": ["Family-friendly", "Spacious", "Quiet neighborhood"],
+            "image": "/assets/suburban.jpg"
+        },
+        "price": 850000,
+        "yield": 6.3,
+        "area": 2800,
+        "return": 22,
+        "marrfex": 4.1,
+        "date": "Q1 2024"
+    },
+    {
+        "name": {
+            "projectName": "Riverside Property",
+            "highlights": ["Waterfront", "Relaxing", "Exclusive"],
+            "image": "/assets/riverside.jpg"
+        },
+        "price": 1250000,
+        "yield": 5.7,
+        "area": 5100,
+        "return": 20,
+        "marrfex": 4.5,
+        "date": "Q4 2024"
+    },
+    {
+        "name": {
+            "projectName": "Luxury Mansion",
+            "highlights": ["Grand", "Elegant", "Prime real estate"],
+            "image": "/assets/mansion.jpg"
+        },
+        "price": 5000000,
+        "yield": 3.5,
+        "area": 15000,
+        "return": 10,
+        "marrfex": 5.2,
+        "date": "Q2 2023"
+    },
+    {
+        "name": {
+            "projectName": "Eco-Friendly Complex",
+            "highlights": ["Sustainable", "Green", "Energy-efficient"],
+            "image": "/assets/eco.jpg"
+        },
+        "price": 980000,
+        "yield": 6.0,
+        "area": 4800,
+        "return": 25,
+        "marrfex": 4.2,
+        "date": "Q3 2025"
+    },
+    {
+        "name": {
+            "projectName": "Sky Tower",
+            "highlights": ["Tallest building", "City skyline", "Modern"],
+            "image": "/assets/tower.jpg"
+        },
+        "price": 3500000,
+        "yield": 4.0,
+        "area": 12000,
+        "return": 16,
+        "marrfex": 4.9,
+        "date": "Q1 2026"
+    },
+    {
+        "name": {
+            "projectName": "Seaside Bungalow",
+            "highlights": ["Private", "Beachfront", "Cozy"],
+            "image": "/assets/bungalow.jpg"
+        },
+        "price": 670000,
+        "yield": 7.2,
+        "area": 2100,
+        "return": 30,
+        "marrfex": 3.9,
+        "date": "Q2 2024"
+    },
+    {
+        "name": {
+            "projectName": "Highland Cabin",
+            "highlights": ["Rustic", "Nature retreat", "Remote"],
+            "image": "/assets/cabin.jpg"
+        },
+        "price": 540000,
+        "yield": 7.8,
+        "area": 1900,
+        "return": 32,
+        "marrfex": 3.6,
+        "date": "Q3 2023"
+    },
+    {
+        "name": {
+            "projectName": "Business Center",
+            "highlights": ["Corporate", "Central", "Prestigious"],
+            "image": "/assets/business.jpg"
+        },
+        "price": 4000000,
+        "yield": 4.2,
+        "area": 8500,
+        "return": 14,
+        "marrfex": 4.7,
+        "date": "Q1 2024"
+    }
+]
