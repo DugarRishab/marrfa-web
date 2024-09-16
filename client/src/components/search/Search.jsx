@@ -1,62 +1,71 @@
 import React, { useState } from "react";
 import "./Search.css";
 import RangeSlider from "../rangeslider/RangeSlider";
+import { Select, ConfigProvider, Button, Input } from "antd";
 
 const SearchBar = ({ filter, filterToggle }) => {
     return (
         <div className="searchbar">
             <div className="search-area">
                 <i className="material-icons">search</i>
-                <input type="text" placeholder="City, Building type, Yield"></input>
+                <Input 
+                placeholder="City, Building type, Yield"
+                style={{ width: "100%", lineHeight: "2.5em", border: "none" }}
+            />
             </div>
             <div className="button-group">
-                <button
-                    style={{
-                        backgroundColor: filter ? "var(--selected)" : "",
-                        color: filter ? "#000" : "",
+                <Button
+                    style = {{
+                        padding: "25px 20px",
+                        fontSize: "1rem",
+                        border: "none",
+                        borderLeft: "1px solid"
                     }}
                     onClick={filterToggle}
-                    className="filters"
                 >
                     <i className="material-icons">tune</i>
                     Filters
-                </button>
-                <button className="search-button">Search</button>
+                </Button>
+                <Button style = {{
+                    borderTopRightRadius: "100px",
+                    borderBottomRightRadius: "100px",
+                    padding: "25px 60px",
+                    fontSize: "1rem",
+                    background: "var(--mix-background)",
+                    color: "#fff",
+                    fontWeight: "600",
+                    border: "none"
+                }}>Search</Button>
             </div>
         </div>
     );
 };
 
 export const Dropdown = ({ label, options }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(label);
-
-    const toggleDropdown = () => setIsOpen(!isOpen);
-
-    const handleOptionClick = (option) => {
-        if (option !== "--select--") setSelectedOption(option);
-        else setSelectedOption(label);
-        setIsOpen(false);
-    };
-
     return (
-        <div className="dropdown">
-            <button onClick={toggleDropdown} className="toggle">
-                {selectedOption}
-                <i className="material-icons">keyboard_arrow_down</i>
-            </button>
-
-            <ul className={"menu"+(isOpen?" expand":"")}>
-                {options.map((option, index) => (
-                    <li key={index} onClick={() => handleOptionClick(option)} className="item">
-                        {option}
-                    </li>
-                ))}
-                <li onClick={() => handleOptionClick(label)} className="item">
-                    --select--
-                </li>
-            </ul>
-        </div>
+        <ConfigProvider theme={{
+            token: {
+              colorPrimary: '#bfbfbf', // Grey color for primary elements
+              colorBorder: '#bfbfbf',  // Grey color for borders
+              colorBgBase: '#fff',  // Grey color for backgrounds
+            },
+          }}>
+            <Select
+                // className="flaginp"
+                // showSearch
+                // optionFilterProp="value"
+                // defaultOpen
+                defaultValue={label}
+                popupMatchSelectWidth={false}
+                style={{
+                    width: 150,
+                    height: 30,
+                }}
+                size="small"
+                // onChange={handleChange}
+                options={options}
+            />
+        </ConfigProvider>
     );
 };
 
@@ -81,11 +90,36 @@ const Search = () => {
 };
 
 const DropMenu = {
-    "Completion Date": ["v1", "v2", "v3"],
-    Yield: ["v4", "v2", "v3"],
-    "Current value": ["v5", "v2", "v3"],
-    Area: ["v6", "v2", "v3"],
-    Marrfex: ["v7", "v2", "v3"],
+    "Completion Date": [
+        { value: "Price", label: "Price" },
+        { value: "Yield", label: "Yield" },
+        { value: "Area", label: "Area" },
+        { value: "Relevance", label: "Relevance" },
+    ],
+    Yield: [
+        { value: "Price", label: "Price" },
+        { value: "Yield", label: "Yield" },
+        { value: "Area", label: "Area" },
+        { value: "Relevance", label: "Relevance" },
+    ],
+    "Current value": [
+        { value: "Price", label: "Price" },
+        { value: "Yield", label: "Yield" },
+        { value: "Area", label: "Area" },
+        { value: "Relevance", label: "Relevance" },
+    ],
+    Area: [
+        { value: "Price", label: "Price" },
+        { value: "Yield", label: "Yield" },
+        { value: "Area", label: "Area" },
+        { value: "Relevance", label: "Relevance" },
+    ],
+    Marrfex: [
+        { value: "Price", label: "Price" },
+        { value: "Yield", label: "Yield" },
+        { value: "Area", label: "Area" },
+        { value: "Relevance", label: "Relevance" },
+    ],
 };
 
 export default Search;

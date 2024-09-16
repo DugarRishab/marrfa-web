@@ -6,12 +6,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    min-width: 80%;
+    gap: 1rem;
+    width: 100%;
     background-color: #fff;
 }
 
-.range-slider {
+.range .slider-wrapper .range-slider {
     height: 2px;
     position: relative;
     background-color: #e1e9f6;
@@ -19,14 +19,14 @@
     width: 100%; /* Ensure it takes up all available space */
 }
 
-.range-selected {
+.range .slider-wrapper .range-slider .range-selected {
     height: 2px;
     position: absolute;
     border-radius: 50px;
     background-color: var(--blue);
 }
 
-.range-input {
+.range .slider-wrapper .range-input {
     position: relative;
     display: flex;
     align-items: center;
@@ -68,7 +68,7 @@
     -moz-appearance: none;
 }
 
-.control {
+.range .control {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,12 +77,12 @@
     padding: 10px;
 }
 
-.control{
+.range .control{
     border-radius: 50px;
     height: 1.5em;
 }
 
-.control button {
+.range .control button {
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -92,7 +92,7 @@
     cursor: pointer;
 }
 
-.control i {
+.range .control i {
     font-size: 15px;
     color: inherit;
     background-color: transparent;
@@ -100,7 +100,7 @@
 
 
 
-.control input {
+.range .control input {
     width: 60px;
     text-align: center;
     height: 1rem;

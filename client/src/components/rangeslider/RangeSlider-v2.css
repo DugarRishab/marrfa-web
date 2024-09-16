@@ -1,0 +1,33 @@
+.range-slider {
+    box-shadow: var(--shadow);
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 80%;
+    background-color: #fff;
+}
+
+.range-slider .label {
+    width: 10ch
+}
+
+.range-slider .input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 70%;
+}
+
+.range-slider .input-box .slider {
+    width: 100%;
+}
+
+.range-slider .input-box .number {
+    width: 10rem;
+}
+

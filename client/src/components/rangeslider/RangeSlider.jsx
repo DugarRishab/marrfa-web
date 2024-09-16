@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./RangeSlider.css";
+// import "./RangeSlider-v2.css";
+
 
 const RangeSlider = () => {
     const [minValue, setMinValue] = useState(300);
@@ -51,7 +53,7 @@ const RangeSlider = () => {
                 <div className="range-slider">
                     <div
                         className="range-selected"
-                        
+
                         style={{
                             left: `${(Math.max(0, minValue) / 1000) * 100}%`,
                             width: `${((Math.min(1000, maxValue) - Math.max(0, minValue)) / 1000) * 100}%`,
@@ -68,7 +70,7 @@ const RangeSlider = () => {
                         step="1"
                         onChange={handleMinChange}
                         ref={minRef}
-                        
+
                     />
                     <input
                         type="range"
@@ -94,5 +96,35 @@ const RangeSlider = () => {
         </div>
     );
 };
+
+// import { Slider, InputNumber, Row, Col } from "antd";
+// const RangeSlider = () => {
+//     const [minValue, setMinValue] = useState(300);
+//     const [maxValue, setMaxValue] = useState(700);
+
+//     const handleMinChange = (value) => {
+//         setMinValue(value);
+//     };
+
+//     const handleMaxChange = (value) => {
+//         setMaxValue(value);
+//     };
+
+//     const onChange = (value) => {
+//         setMinValue(value[0]);
+//         setMaxValue(value[1]);
+//     };
+
+//     return (
+//         <div className="range-slider">
+//             <div className="label">Price range</div>
+//             <div className="input-box">
+//                 <InputNumber className="number" min={0} max={1000} value={minValue} onChange={handleMinChange} />
+//                 <Slider className="slider" range min={0} max={1000} value={[minValue, maxValue]} onChange={onChange} />
+//                 <InputNumber className="number" min={0} max={1000} value={maxValue} onChange={handleMaxChange} />
+//             </div>
+//         </div>
+//     );
+// };
 
 export default RangeSlider;
