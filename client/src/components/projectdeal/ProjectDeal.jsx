@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProjectDeal.css";
-import { Label, Location, BaseButton } from "../project/Project";
+import { Label, Location, BaseButton } from "../projectcard/ProjectCard";
 import Tag from "../tag/Tag";
 import CustomButton from "../button/CustomButton";
 
@@ -16,7 +16,8 @@ const ProjectDeal = () => {
                 <div className="stats">
                     <Label label={"Area"} value={45200} />
                     <Label label={"Yield"} value={45200} />
-                    <Label label={"Property type"} value={45200} />
+                    <Label label={"Start Date"} value={45200} />
+                    <Label label={"Completion date"} value={45200} />
                 </div>
                 <Location text={"Kolkata, India"} />
                 <div className="highlights">
@@ -31,7 +32,7 @@ const ProjectDeal = () => {
                         <Tag text={"tag 1"} />
                     </div>
                 </div>
-                <BaseButton start = {12300} complete={2024} quarter={3} />
+                {/* <BaseButton start = {12300} complete={2024} quarter={3} /> */}
                 <CustomButton fullWidth text={"Invest Now!"} />
             </div>
             <img src="/assets/projects/balloon.jpeg" />

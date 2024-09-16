@@ -73,16 +73,18 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    gap: 10px;
+    padding-left: 10px;
 }
 
-.deal-card .info-section .stats .label {
+/* .deal-card .info-section .stats .label {
     font-weight: 600;
     font-size: 0.9rem;
     padding-left: 10px;
 }
 .deal-card .info-section .stats .value {
     font-size: 0.9rem
-}
+} */
 
 .deal-card .info-section .location {
     display: flex;
