@@ -3,31 +3,25 @@ import "./Homepage.css";
 
 import CustomButton from "../../components/button/CustomButton";
 import Tag from "../../components/tag/Tag";
-import Project from "../../components/project/Project";
+import ProjectCard from "../../components/projectcard/ProjectCard";
 import Carousel from "../../components/carousel/Carousel";
 import Search from "../../components/search/Search";
 import News from "../../components/news/News";
 import ProjectDeal from "../../components/projectdeal/ProjectDeal";
 import Story from "../../components/story/Story";
+import {SearchOutlined, LineChartOutlined, CarryOutOutlined, TeamOutlined, BarChartOutlined} from "@ant-design/icons"
+// import { Carousel } from "antd";
 
-import projectData from "../../assets/data/projects.json"
-
+import projectData from "../../assets/data/projects.json";
+// import 'antd/dist/antd.css';
 export const ProjectList = [];
 export const StoryList = [];
 export const NewsList = [];
 
-for(let p of projectData){
-    ProjectList.push(
-        <Project 
-            data={p}
-        />
-    )
-    StoryList.push(
-        <Story data={p} />
-    )
-    NewsList.push(
-        <News data = {p} />
-    )
+for (let p of projectData) {
+    ProjectList.push(<ProjectCard data={p} />);
+    StoryList.push(<Story data={p} />);
+    NewsList.push(<News data={p} />);
 }
 
 const Homepage = () => {
@@ -52,18 +46,28 @@ const Homepage = () => {
                     </div>
                     <div className="bullets">
                         <div className="vertical-bar"></div>
-                        <div className="bullet-icon"><i className="material-icons">add</i></div>
+                        <div className="bullet-icon">
+                            <div className="bullet"><SearchOutlined /></div>
+                        </div>
                         <div className="point"> Real-time view of available investment opportunities</div>
-                        <div className="bullet-icon"><i className="material-icons">add</i></div>
+                        <div className="bullet-icon">
+                            <div className="bullet"><BarChartOutlined /></div>
+                        </div>
                         <div className="point"> Compare opportunities across metrics</div>
-                        <div className="bullet-icon"><i className="material-icons">add</i></div>
+                        <div className="bullet-icon">
+                            <div className="bullet"><TeamOutlined /></div>
+                        </div>
                         <div className="point"> Online Customer success manager</div>
-                        <div className="bullet-icon"><i className="material-icons">add</i></div>
+                        <div className="bullet-icon">
+                            <div className="bullet"><LineChartOutlined /></div>
+                        </div>
                         <div className="point">Track project and handover status in-app</div>
-                        <div className="bullet-icon"><i className="material-icons">add</i></div>
+                        <div className="bullet-icon">
+                            <div className="bullet"><CarryOutOutlined /></div>
+                        </div>
                         <div className="point">Track real-time market pulse on Marrfa</div>
                     </div>
-                    <CustomButton style = {{padding: "10px 30px"}} text={"Enquire about Project and Details"} />
+                    <CustomButton style={{ padding: "10px 30px" }} text={"Enquire about Project and Details"} />
                 </div>
                 <img src="/assets/marrfa-clipart.png" />
             </div>

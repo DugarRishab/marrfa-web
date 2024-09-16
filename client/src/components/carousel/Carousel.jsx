@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Carousel.css";
-import Arrow from "/assets/icons/arrow.png"
+import Arrow from "/assets/icons/arrow.png";
+import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
+import CustomButton from "../button/CustomButton";
 
 const Carousel = ({ items, indicator = false }) => {
     const [cardWidth, setCardWidth] = useState(0);
@@ -14,7 +16,7 @@ const Carousel = ({ items, indicator = false }) => {
     const gap = 16;
     const delta = cardWidth + gap;
     const numCards = Math.round(containerWidth / cardWidth) - 1;
-    const width = delta * numCards + gap/4;
+    const width = delta * numCards + gap / 4;
 
     const [index, setIndex] = useState(0);
 
@@ -32,19 +34,33 @@ const Carousel = ({ items, indicator = false }) => {
     };
 
     useEffect(() => {
-        if(childRef.current && childRef.current.children)setCardWidth(() => childRef.current.children[0].offsetWidth);
+        if (childRef.current && childRef.current.children) setCardWidth(() => childRef.current.children[0].offsetWidth);
     }, [childRef]);
 
-    useEffect(()=>{
-        if(containerRef.current)setContainerWidth(() => containerRef.current.offsetWidth);
+    useEffect(() => {
+        if (containerRef.current) setContainerWidth(() => containerRef.current.offsetWidth);
     }, [containerRef]);
 
     return (
         <div className="indicator-wrapper">
             <div className="carousel-wrapper">
-                <button className="direction" onClick={goLeft}>
-                    <img src = {Arrow} />
-                </button>
+            <CustomButton
+                    invert
+                    onClick={goLeft}
+                    style={{
+                        padding:0,
+                        background: "transparent",
+                        boxShadow: "none"
+                    }}
+                    startIcon={
+                        <LeftCircleOutlined
+                            style={{
+                                fontSize: 30,
+                                color: "var(--cyan)",
+                            }}
+                        />
+                    }
+                />
                 <div
                     style={{
                         width: `${width}px`,
@@ -64,15 +80,31 @@ const Carousel = ({ items, indicator = false }) => {
                         ))}
                     </div>
                 </div>
-                <button className="direction" onClick={goRight}>
-                <img src = {Arrow} style = {{transform: "rotate(180deg)"}} />
-                </button>
+                <CustomButton
+                    invert
+                    onClick={goRight}
+                    style={{
+                        padding:0,
+                        background: "transparent",
+                        boxShadow: "none"
+                    }}
+                    startIcon={
+                        <RightCircleOutlined
+                            style={{
+                                fontSize: 30,
+                                color: "var(--cyan)",
+                            }}
+                        />
+                    }
+                />
             </div>
-            {indicator && <div className="indicators">
-                {items.map((value, idx) => (
-                    <div key={idx} className={"dot"+(idx==index?" active":"")}></div>
-                ))}
-            </div>}
+            {indicator && (
+                <div className="indicators">
+                    {items.map((value, idx) => (
+                        <div key={idx} className={"dot" + (idx == index ? " active" : "")}></div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

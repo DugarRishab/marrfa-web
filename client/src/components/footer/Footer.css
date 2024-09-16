@@ -51,7 +51,7 @@ footer {
     padding-top: 2rem;
 }
 
-.footer .about-col .social .icon {
+/* .footer .about-col .social .icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,15 +59,15 @@ footer {
     border-radius: 50%;
     padding: 5px;
     transition: all ease 0.2s;
-}
+} */
 
-.footer .about-col .social .icon img {
+/* .footer .about-col .social .icon img {
     width: 30px;
 }
 
 .footer .about-col .social .icon:hover {
     transform :translateY(-5px);
-}
+} */
 
 
 .footer .link-col {

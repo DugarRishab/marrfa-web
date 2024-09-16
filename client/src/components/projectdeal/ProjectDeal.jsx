@@ -15,8 +15,8 @@ const ProjectDeal = () => {
                 </div>
                 <div className="stats">
                     <Label label={"Area"} value={45200} />
-                    <Label label={"Yield"} value={45200} />
-                    <Label label={"Start Date"} value={45200} />
+                    <Label label={"Project yield"} value={45200} />
+                    <Label label={"Start from"} value={45200} />
                     <Label label={"Completion date"} value={45200} />
                 </div>
                 <Location text={"Kolkata, India"} />

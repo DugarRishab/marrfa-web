@@ -85,26 +85,42 @@
     position: relative;
     font-weight: 500;
     padding-left: 10px;
+    column-gap: 10px;
 } 
 
 .homepage .about-section .about button {
     margin-top: 2rem;
 }
-.homepage .about-section .about .bullets i {
+.homepage .about-section .about .bullets .bullet-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homepage .about-section .about .bullets .bullet-icon .bullet{
     background: var(--mix-background);
     border-radius: 50%;
     font-size: 20px;
     color: #fff;
-    padding: 5px;
+    padding: 10px;
+    line-height: 1em;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
 }
 
 .homepage .about-section .about .bullets .vertical-bar {
     position: absolute;
     height: 100%;
-    left: 23px;
+    left: 30px;
     width: 2px;
     background-color: rgb(171, 171, 171);
     z-index: -1
+}
+
+.homepage .about-section .about .bullets .point {
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
 .homepage .about-section img {

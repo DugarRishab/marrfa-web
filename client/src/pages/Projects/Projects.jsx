@@ -11,6 +11,7 @@ import { Select, Table } from "antd";
 import ProjectDesc from "../../components/projectdesc/ProjectDesc";
 import SampleData from "../../assets/samples/ProdListing.json";
 import { formatPrice, formatNumber } from "../../App";
+import { BellOutlined } from "@ant-design/icons";
 
 const columns = [];
 const colnames = ["Project Name", "Price", "Yield", "Area", `Absolute Return`, "Marrfex", "Date"];
@@ -19,6 +20,7 @@ for (let name of colnames) {
         title: <div style={{ textAlign: "center", color: "#fff", maxWidth: "12ch" }}>{name}</div>,
         dataIndex: name.split(" ")[0].toLowerCase(),
         key: name.split(" ")[0].toLowerCase(),
+        align: "center"
     });
 }
 
@@ -62,7 +64,7 @@ const Projects = () => {
                     <div className="heading">
                         Properties for sale in Dubai
                         <CustomButton
-                            startIcon={<i className="material-icons">notifications</i>}
+                            startIcon={<BellOutlined />}
                             text={"Subscribe to notifications"}
                         />
                     </div>
@@ -72,7 +74,7 @@ const Projects = () => {
                         <div className="sort-label">
                             Sort by
                             <Select
-                                className="flaginp"
+                                // className="flaginp"
                                 // showSearch
                                 // optionFilterProp="value"
                                 // defaultOpen
@@ -85,7 +87,6 @@ const Projects = () => {
                                 size="small"
                                 // onChange={handleChange}
                                 options={sortFlags}
-                                // optionRender={(option) => option.data.show}
                             />
                         </div>
                     </div>
@@ -96,7 +97,9 @@ const Projects = () => {
                 <div className="heading">Marrfa's Choice</div>
                 <Carousel items={ProjectList} />
             </section>
-            <section className="request-wrapper">{/* <PropertyRequestForm /> */}</section>
+            <section className="request-wrapper">
+                <PropertyRequestForm />
+            </section>
         </div>
     );
 };

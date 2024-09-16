@@ -1,16 +1,23 @@
 import React from "react";
 import "./ProjectCard.css";
 
-import { WalletFilled, FormatPainterFilled, EnvironmentFilled, WhatsAppOutlined, PhoneOutlined } from "@ant-design/icons";
+import { WalletFilled, FormatPainterFilled, EnvironmentFilled, WhatsAppOutlined, PhoneOutlined, CalendarFilled, AreaChartOutlined,  } from "@ant-design/icons";
 
 import Whatsapp from "/assets/icons/whatsapp.svg";
 import CustomButton from "../button/CustomButton";
+
+const IconMap = {
+    "Start from": <WalletFilled style={{ color: "var(--cyan)", fontSize: "20px" }} />,
+    "Completion date": <CalendarFilled style={{ color: "var(--cyan)", fontSize: "20px" }} />,
+    "Project yield": <AreaChartOutlined style={{ color: "var(--cyan)", fontSize: "20px" }} />,
+    "Area": <FormatPainterFilled style={{ color: "var(--cyan)", fontSize: "20px" }} />
+}
 
 export const Label = ({ label, value }) => {
     return (
         <div className="row">
             <div className="brandicon">
-                <WalletFilled style={{ fontSize: "20px" }} />
+                {IconMap[label]}
             </div>
             <div className="data-part">
                 <div className="label">{label}:</div>
@@ -81,7 +88,7 @@ const Project = ({ data }) => {
                 <div className="stats">
                     <Label label={"Start from"} value={data.type} />
                     <Label label={"Completion date"} value={data.type} />
-                    <Label label={"Project Yield"} value={45200} />
+                    <Label label={"Project yield"} value={45200} />
                     <Label label={"Area"} value={`${data.layout.size.value} ${data.layout.size.unit}`} />
                 </div>
                 {/* <Location text = {`${data.location.state}, ${data.location.country}`} /> */}

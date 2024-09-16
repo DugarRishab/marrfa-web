@@ -83,7 +83,7 @@
     gap: 1rem;
 }
 
-.about-us .helping {
+.about-us .helping{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +91,7 @@
     padding-top: 3rem;
 }
 
-.about-us .helping .heading {
+.about-us .heading {
     font-size: var(--heading-textsize);
 }
 
@@ -100,7 +100,7 @@
     width: 75%;
     height: 2px;
     background: var(--cyan);
-    top: 58px;
+    top: 55px;
     z-index: 0;
 }
 
@@ -150,4 +150,43 @@
     font-size: 0.9rem;
     line-height: 1.2em;
     font-weight:100;
+}
+
+.about-us .history {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 3rem;
+    width: 80%;
+}
+
+.about-us .history .history-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    line-height: 1em;
+}
+
+.history-item .desc .title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1em;
+}
+
+.history-item .desc .para {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2em;
+    padding-top: 5px;
 }

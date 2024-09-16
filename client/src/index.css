@@ -23,6 +23,7 @@
     --page-width: 1280px;
     --dealcard-width: 65rem;
     --heading-textsize: 2rem;
+    --card-width: 20rem;
     
     --text-color: hsl(218, 100%, 21%);
     --blue: #08254C;
@@ -35,9 +36,6 @@
 
     --light-mix-gradient: linear-gradient(90deg, rgba(96, 131, 180, 0.15) 0%, rgba(70, 162, 159, 0.15) 100%);
 
-
-    
-    --card-width: 18rem;
     --shadow: 1px 4px 4px 0px #00000040;
     --selected: #6083B450;
     --grey-text: rgb(87, 87, 87);

@@ -1,9 +1,11 @@
 import React from "react";
 import Logo from "/assets/Marrfa.png";
-import LinkedIn from "/assets/icons/linkedin.svg";
-import YouTube from "/assets/icons/youtube.svg";
-import Instagram from "/assets/icons/instagram.svg";
-import Twitter from "/assets/icons/twitter.svg";
+// import LinkedIn from "/assets/icons/linkedin.svg";
+// import YouTube from "/assets/icons/youtube.svg";
+// import Instagram from "/assets/icons/instagram.svg";
+// import Twitter from "/assets/icons/twitter.svg";
+
+import { LinkedinOutlined, YoutubeOutlined, InstagramOutlined, XOutlined, EnvironmentFilled, MailFilled, PhoneFilled } from "@ant-design/icons"
 
 import CustomButton from "../button/CustomButton";
 import "./Footer.css";
@@ -13,7 +15,7 @@ const Footer = () => {
         <footer>
             <div className="advertise">
                 <div className="question">Looking to advertise a property? We can help.</div>
-                <CustomButton style={{ padding: "1rem 4rem", fontWeight: "600" }} invert text={"List your Property with us"} />
+                <CustomButton themecolor={"#000"} style={{ padding: "1rem 4rem", fontWeight: "600" }} invert text={"List your Property with us"} />
             </div>
             <div className="footer">
                 <div className="about-col">
@@ -27,18 +29,17 @@ const Footer = () => {
                         asperiores eligendi a nam illum ullam.
                     </div>
                     <div className="social">
-                        <button className="icon">
-                            <img src={LinkedIn} />
-                        </button>
-                        <button className="icon">
-                            <img src={YouTube} />
-                        </button>
-                        <button className="icon">
-                            <img src={Instagram} />
-                        </button>
-                        <button className="icon">
-                            <img src={Twitter} />
-                        </button>
+                        <CustomButton startIcon={<LinkedinOutlined style={{fontSize: 20}} />} circled>
+                            
+                        </CustomButton>
+                        <CustomButton startIcon={<YoutubeOutlined style={{fontSize: 20}} />} circled>
+                            
+                        </CustomButton>
+                        <CustomButton startIcon={<InstagramOutlined style={{fontSize: 20}} />} circled>
+                            
+                        </CustomButton>
+                        <CustomButton startIcon={<XOutlined style={{fontSize: 20}} />} circled>
+                        </CustomButton>
                     </div>
                 </div>
                 <div className="link-col">
@@ -51,14 +52,14 @@ const Footer = () => {
                     <div className="quicklink">
                         <div className="heading">Contact us</div>
                         <a className="link">
-                            <i className="material-icons">location_on</i>Citadel Tower Office No. 1003 and 1004 Business
+                            <EnvironmentFilled />Citadel Tower Office No. 1003 and 1004 Business
                             Bay, Dubai.
                         </a>
                         <a className="link">
-                            <i className="material-icons">mail</i>sales@marrfa.com
+                            <MailFilled />ales@marrfa.com
                         </a>
                         <a className="link">
-                            <i className="material-icons">phone</i>+971-563282700
+                            <PhoneFilled />+971-563282700
                         </a>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import RangeSlider from "../rangeslider/RangeSlider";
 import { Select, ConfigProvider, Button, Input } from "antd";
+import { FilterOutlined } from "@ant-design/icons";
 
 const SearchBar = ({ filter, filterToggle }) => {
     return (
@@ -16,14 +17,18 @@ const SearchBar = ({ filter, filterToggle }) => {
             <div className="button-group">
                 <Button
                     style = {{
-                        padding: "25px 20px",
+                        // padding: "25px 20px",
                         fontSize: "1rem",
                         border: "none",
-                        borderLeft: "1px solid"
+                        borderRadius: 0,
+                        borderLeft: "1px solid",
+                        display: "flex",
+                        gap: "1px",
+                        height: "3em"
                     }}
                     onClick={filterToggle}
                 >
-                    <i className="material-icons">tune</i>
+                    <FilterOutlined />
                     Filters
                 </Button>
                 <Button style = {{

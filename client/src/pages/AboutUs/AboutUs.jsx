@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AboutUs.css";
+import { BankOutlined, LineChartOutlined, PlusCircleFilled, PlusCircleOutlined, SearchOutlined, TranslationOutlined } from "@ant-design/icons";
 
 const Tabs = ["Company", "History", "Our values", "Our team", "Reviews", "Contact us"];
 
@@ -7,34 +8,56 @@ const helpInfo = [
     {
         heading: "Streamlined Discovery",
         detail: "Whether you are looking for properties in Europe or commercial investments in Asia, we provide a wide range of international real estate opportunities and an extensive inventory to suit your investment goals.",
-        icon: "search"
+        icon: "search",
     },
     {
         heading: "Data-Driven Insights",
         detail: "We equip investors with the latest market data, including historical price trends, rental yields, and capital appreciation forecasts. This information enables our clients to make well-informed decisions based on clear, factual insights.",
-        icon: "monitoring"
+        icon: "monitoring",
     },
     {
         heading: "Seamless Investment Process",
         detail: "Our platform simplifies the entire investment journey, from property discovery to transaction completion. With user-friendly tools and transparency, investors can navigate their investments without hassles and uncertainties.",
-        icon: "payments"
+        icon: "payments",
     },
     {
         heading: "Multilingual Support",
         detail: "To cater to a global clientele, Marrfa provides support in multiple languages, including English, Arabic, and Persian. This ensures that all users have a smooth and accessible experience, regardless of their location or language.",
-        icon: "translate"
+        icon: "translate",
     },
-]
+];
 
-const HelpCard = ({heading, icon, detail}) => {
+const IconMap = {
+    search: <SearchOutlined style={{fontSize: 25}} />,
+    monitoring: <LineChartOutlined style={{fontSize: 25}} />,
+    payments: <BankOutlined style={{fontSize: 25}} />,
+    translate: <TranslationOutlined style={{fontSize: 25}} />
+}
+
+const HelpCard = ({ heading, icon, detail }) => {
     return (
         <div className="helpcard">
             <div className="icon">
-                <i className="material-icons material-symbols-outlined">{icon}</i>
+                {IconMap[icon]}
             </div>
             <div className="topic">{heading}</div>
-            <div className="detail">
-                {detail}
+            <div className="detail">{detail}</div>
+        </div>
+    );
+};
+
+const HistoryItem = () => {
+    return (
+        <div className="history-item">
+            <div className="year">2024</div>
+            <PlusCircleOutlined />
+            <div className="desc">
+                <div className="title">Opening store</div>
+                <div className="para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repellat vel dolore quos incidunt
+                    sint voluptatibus magni exercitationem nobis repellendus, ea, fugit autem architecto fuga optio
+                    soluta sequi? Alias, ex.
+                </div>
             </div>
         </div>
     );
@@ -98,7 +121,7 @@ const AboutUs = () => {
                         In today's interconnected world, people have more freedom than ever to work remotely, travel,
                         and live in different parts of the globe. Yet, when it comes to investing in properties, many
                         still feel confined by outdated systems and processes. Real estate is not just about buying a
-                        property; it’s about investing in a future, choosing a community, and creating value. Marrfa
+                        property; it's about investing in a future, choosing a community, and creating value. Marrfa
                         exists to make this process straightforward, accessible, and fair for everyone.
                     </p>
                 </div>
@@ -106,13 +129,18 @@ const AboutUs = () => {
             <section className="helping">
                 <div className="heading">How Marrfa helps Clients</div>
                 <div className="card-container">
-                <div className="horizontal"></div>
-                {
-                    helpInfo.map((value, idx)=>(
+                    <div className="horizontal"></div>
+                    {helpInfo.map((value, idx) => (
                         <HelpCard detail={value.detail} heading={value.heading} icon={value.icon} key={idx} />
-                    ))
-                }
-                    
+                    ))}
+                </div>
+            </section>
+            <section className="history">
+                <div className="heading">History</div>
+                <div className="history-list">
+                    <HistoryItem />
+                    <HistoryItem />
+                    <HistoryItem />
                 </div>
             </section>
         </div>

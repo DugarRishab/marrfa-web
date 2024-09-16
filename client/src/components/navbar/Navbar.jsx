@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import Logo from "/assets/Marrfa.png";
 import { Link } from "react-router-dom";
+import CustomButton from "../button/CustomButton";
 
 const tabroutes = { Home: "", Projects: "projects", Blogs: "blogs", "About us": "about" };
 
@@ -31,8 +32,10 @@ const Navbar = () => {
                     ))}
                 </div>
                 <div className="action">
-                    <div className="item">Log in</div>
-                    <div className="item">Request Callback</div>
+                    {/* <div className="item">Log in</div>
+                    <div className="item">Request Callback</div> */}
+                    <CustomButton style={{background: "grey", color: "#fff", padding: "10px", height: "2em"}} invert rounded={false} text={"Log in"} />
+                    <CustomButton style={{background: "grey", color: "#fff", padding: "10px", height: "2em"}} invert rounded={false} text={"Request a callback"} />
                 </div>
             </div>
         </div>
