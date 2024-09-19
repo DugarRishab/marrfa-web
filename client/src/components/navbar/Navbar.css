@@ -17,6 +17,9 @@
     color: var(--text-color);
     width: min(100%, var(--page-width));
     background-color: transparent;
+    padding: 0px 2rem;
+    position:relative;
+    z-index: 2;
 }
 
 .navbar .tabs {
@@ -27,14 +30,16 @@
     font-weight: 400;
 }
 
-.navbar .tabs .item {
+.navbar .tabs .item,
+.ant-drawer-content-wrapper .item {
     position: relative;
     cursor: pointer;
     text-decoration: none;
     color: inherit
 }
 
-.navbar .tabs .item::before {
+.navbar .tabs .item::before,
+.ant-drawer-content-wrapper .item::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -46,37 +51,38 @@
     transition: all ease 0.2s
 }
 
-.navbar .tabs .item.active::before {
+.navbar .tabs .item.active::before,
+.ant-drawer-content-wrapper .item.active::before {
     transform: scaleX(1);
 }
 
-.navbar .action {
+.navbar .action,
+.ant-drawer-content-wrapper .action {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding-right: 2rem;
 }
 
-.navbar .brand {
+.brand {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-left: 2rem;
+    justify-content: start;
     gap: 0.5rem;
 }
 
-.navbar .brand img {
+.brand img{
     aspect-ratio: 1/1;
     width: 40px;
 }
 
-.navbar .brand .brand-name {
+.brand .brand-name{
     font-weight: 600;
-    font-size: 1.2rem
+    font-size: 1.2rem;
 } 
 
-.navbar .action .item {
+.navbar .action .item,
+.ant-drawer-content-wrapper .action .item {
     background-color: #a2a2a2;
     padding: 7px;
     font-size: 0.9rem;
@@ -86,7 +92,52 @@
     transition: all ease 0.2s;
     border: 1px solid transparent
 }
-.navbar .action .item:hover {
+.navbar .action .item:hover ,
+.ant-drawer-content-wrapper .action .item:hover {
     background-color: #d4d4d4;
     border-color: var(--text-color);
+}
+.brand-name {
+    font-size: 2rem
+}
+
+.css-dev-only-do-not-override-1i2g8ja.ant-drawer .ant-drawer-body {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+    padding-left: 2.5rem;
+}
+
+.custom-drawer .ant-drawer-close {
+    right: 0;
+}
+
+.css-dev-only-do-not-override-1i2g8ja.ant-drawer .ant-drawer-header-title {
+    flex-direction: row-reverse;
+}
+
+.navbar .floating-brand {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1
+}
+
+.floating-brand .brand {
+    gap: 0px;
+}
+
+.floating-brand .brand .brand-name {
+    font-size: 2rem
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar {
+        padding: 0px 10px;
+    }
 }
