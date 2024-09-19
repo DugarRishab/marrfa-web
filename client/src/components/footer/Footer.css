@@ -6,6 +6,7 @@ footer {
     flex-direction: column;
     background: var(--blue-background);
     color: #fff;
+    position:relative;
 }
 
 .footer {
@@ -39,8 +40,9 @@ footer {
 }
 
 .footer .about-col .desc {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-top: 1rem;
+    color: #c8c8c8
 }
 
 .footer .about-col .social {
@@ -78,12 +80,16 @@ footer {
     padding-top: 1rem;
 }
 
-.footer .link-col .quicklink {
+.footer .link-col .quicklink{
     display: flex;
     align-items: start;
     justify-content: center;
     flex-direction: column;
     width: 40%;
+}
+
+.footer .link-col .quicklink.extra {
+    display: none
 }
 
 .footer .link-col .quicklink .heading {
@@ -115,6 +121,7 @@ footer .extra-links {
     gap: 5rem;
     padding: 1rem 2px;
     border-top: 1px solid #fff;
+    margin-top: 1rem
 }
 
 footer .extra-links a {
@@ -128,6 +135,7 @@ footer .rights {
     font-weight: 200;
     padding: 1rem 0;
     font-size: 0.9rem;
+    width: 100%;
 }
 
 footer .link{
@@ -155,9 +163,8 @@ footer .advertise {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 30vh;
     background: var(--mix-background);
-    padding: 1rem 3rem;
+    padding: 4rem 3rem;
 
 }
 
@@ -174,4 +181,64 @@ footer .link:hover::before {
     transform: scaleX(1);
 }
 
+footer .floating-social {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+        width: 100%
+    }
+
+    footer .advertise {
+        flex-direction: column;
+        height: max-content;
+        gap: 1.5rem;
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    footer .extra-links {
+        display: none;
+    }
+
+    .footer .link-col {
+        flex-direction: column;
+        gap: 1rem;
+        width: 90%;
+    }
+    .footer .about-col {
+        width: 100%;
+    }
+
+    .footer .link-col .quicklink.extra {
+        display: flex;
+    }
+
+    .footer .link-col .quicklink {
+        width: 70%;
+    }
+
+    footer .floating-social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: 5rem;
+        gap: 2rem;
+        right: 2rem;
+    }
+
+    .footer .about-col .social {
+        display: none;
+    }
+
+    footer .rights {
+        border-top: 1px solid #fff;
+        margin-top: 1rem;
+    }
+}
 
