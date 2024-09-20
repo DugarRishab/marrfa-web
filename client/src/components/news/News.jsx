@@ -8,7 +8,7 @@ const News = ({ data }) => {
             <img src={data.images.heroImg} />
             <label>{formatDate(data.metadata.datePosted)}</label>
             <div className="heading">{data.name}</div>
-            <div className="article">{data.description.name}</div>
+            {/* <div className="article">{data.description.name}</div> */}
         </div>
     );
 };

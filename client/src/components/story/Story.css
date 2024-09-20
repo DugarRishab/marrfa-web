@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45rem;
+    width: var(--story-width);
     gap: 1rem;
     color: #fff;
 }
@@ -44,4 +44,22 @@
     text-overflow: ellipsis;
     line-height: 1.2em; /* Adjust based on your desired line height */
     max-height: calc(1.2em * 4); /* Line height * number of lines */
+}
+
+@media only screen and (max-width: 1000px) {
+    .story {
+        flex-direction: column;
+    }
+
+    * {
+        --story-width: 20rem;
+    }
+
+    .story .story-info .desc {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: calc(1.2em * 2);
+    }
 }

@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import "./Search.css";
 import RangeSlider from "../rangeslider/RangeSlider";
 import { Select, ConfigProvider, Button, Input } from "antd";
-import { FilterOutlined } from "@ant-design/icons";
+import { SearchOutlined } from "@ant-design/icons";
+
+const {Search} = Input;
 
 const SearchBar = ({ filter, filterToggle }) => {
     return (
         <div className="searchbar">
             <div className="search-area">
                 <i className="material-icons">search</i>
-                <Input 
-                placeholder="City, Building type, Yield"
-                style={{ width: "100%", lineHeight: "2.5em", border: "none" }}
-            />
+                <Input
+                    placeholder="City, Building type, Yield"
+                    style={{ width: "100%", lineHeight: "2.5em", border: "none" }}
+                />
             </div>
             <div className="button-group">
                 <Button
-                    style = {{
+                    style={{
                         // padding: "25px 20px",
                         fontSize: "1rem",
                         border: "none",
@@ -24,23 +26,27 @@ const SearchBar = ({ filter, filterToggle }) => {
                         borderLeft: "1px solid",
                         display: "flex",
                         gap: "1px",
-                        height: "3em"
+                        height: "3em",
                     }}
                     onClick={filterToggle}
                 >
                     <FilterOutlined />
                     Filters
                 </Button>
-                <Button style = {{
-                    borderTopRightRadius: "100px",
-                    borderBottomRightRadius: "100px",
-                    padding: "25px 60px",
-                    fontSize: "1rem",
-                    background: "var(--mix-background)",
-                    color: "#fff",
-                    fontWeight: "600",
-                    border: "none"
-                }}>Search</Button>
+                <Button
+                    style={{
+                        borderTopRightRadius: "100px",
+                        borderBottomRightRadius: "100px",
+                        padding: "25px 60px",
+                        fontSize: "1rem",
+                        background: "var(--mix-background)",
+                        color: "#fff",
+                        fontWeight: "600",
+                        border: "none",
+                    }}
+                >
+                    Search
+                </Button>
             </div>
         </div>
     );
@@ -48,13 +54,15 @@ const SearchBar = ({ filter, filterToggle }) => {
 
 export const Dropdown = ({ label, options }) => {
     return (
-        <ConfigProvider theme={{
-            token: {
-              colorPrimary: '#bfbfbf', // Grey color for primary elements
-              colorBorder: '#bfbfbf',  // Grey color for borders
-              colorBgBase: '#fff',  // Grey color for backgrounds
-            },
-          }}>
+        <ConfigProvider
+            theme={{
+                token: {
+                    colorPrimary: "#bfbfbf", // Grey color for primary elements
+                    colorBorder: "#bfbfbf", // Grey color for borders
+                    colorBgBase: "#fff", // Grey color for backgrounds
+                },
+            }}
+        >
             <Select
                 // className="flaginp"
                 // showSearch
@@ -74,7 +82,7 @@ export const Dropdown = ({ label, options }) => {
     );
 };
 
-const Search = () => {
+const SearchField = () => {
     const [filter, setFilter] = useState(false);
     const toggleFilter = () => {
         setFilter((value) => !value);
@@ -82,14 +90,25 @@ const Search = () => {
     return (
         <div className="search-wrapper">
             <RangeSlider />
-            <SearchBar filter={filter} filterToggle={toggleFilter} />
-            {filter && (
+            {/* <SearchBar filter={filter} filterToggle={toggleFilter} /> */}
+            <Search
+                placeholder="input search text"
+                allowClear
+                enterButton="Search"
+                size="large"
+                addonBefore={<SearchOutlined />}
+                style={{
+                    borderRadius: "100px"
+                }}
+                // onSearch={onSearch}
+            />
+            {/* {filter && (
                 <div className="dropdown-list">
                     {Object.keys(DropMenu).map((key, idx) => (
                         <Dropdown key={idx} label={key} options={DropMenu[key]} />
                     ))}
                 </div>
-            )}
+            )} */}
         </div>
     );
 };
@@ -127,4 +146,4 @@ const DropMenu = {
     ],
 };
 
-export default Search;
+export default SearchField;

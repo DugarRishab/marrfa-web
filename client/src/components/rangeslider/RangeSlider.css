@@ -115,3 +115,9 @@
     appearance: none;
     margin: 0; /* Hide default spin buttons in Chrome and Safari */
 }
+
+@media only screen and (max-width: 970px) {
+    .range {
+        display: none
+    }
+}
