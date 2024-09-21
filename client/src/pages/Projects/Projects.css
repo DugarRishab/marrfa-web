@@ -65,6 +65,10 @@
     padding-top: 5rem;
 }
 
+.projects .sale-wrapper .project-table {
+    width: 80%;
+}
+
 .projects .sale-wrapper .headline .heading {
     font-size: var(--heading-textsize);
     font-weight: 600;
@@ -91,4 +95,28 @@
     align-items: center;
     justify-content: center;
     gap: 10px
+}
+
+.ant-table-wrapper .css-dev-only-do-not-override-1i2g8ja {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1100px) {
+    .projects .sale-wrapper .project-table {
+        width: 95%;
+    }
+    .projects .sale-wrapper .headline {
+        width: 95%
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .projects .sale-wrapper {
+        display: none
+    }
+
+    .projects .choice-wrapper > .heading {
+        padding-left: 0px;
+        align-self: center;
+    }
 }

@@ -47,6 +47,10 @@
         display: none;
     }
     .project-desc .info {
-        width: 100%
+        width: 100%;
+    }
+
+    .project-desc {
+        width: max-content
     }
 }

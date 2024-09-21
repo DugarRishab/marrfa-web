@@ -25,9 +25,10 @@ const Footer = () => {
                 <div className="question">Looking to advertise a property? We can help.</div>
                 <CustomButton
                     themecolor={"#000"}
-                    style={{ padding: "1rem 4rem", fontWeight: "600" }}
+                    style={{ padding: "1rem 2rem", fontWeight: "600"}}
                     invert
                     text={"List your Property with us"}
+                    rounded={false}
                 />
             </div>
             <div className="footer">

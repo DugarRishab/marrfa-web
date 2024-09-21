@@ -245,3 +245,8 @@ footer .floating-social {
     }
 }
 
+@media only screen and (max-width: 450px) {
+    footer .advertise {
+        padding: 3rem 1rem;
+    }
+}

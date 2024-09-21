@@ -1,7 +1,6 @@
 import React from "react";
 import "./Projects.css";
 import Search from "../../components/search/Search";
-import Carousel from "../../components/carousel/Carousel";
 
 import { ProjectList } from "../Homepage/Homepage";
 import PropertyRequestForm from "../../components/PropertyRequestForm/PropertyRequestForm";
@@ -12,6 +11,8 @@ import ProjectDesc from "../../components/projectdesc/ProjectDesc";
 import SampleData from "../../assets/samples/ProdListing.json";
 import { formatPrice, formatNumber } from "../../App";
 import { BellOutlined } from "@ant-design/icons";
+import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+import CustomCarousel from "../../components/carousel/Carousel";
 
 const columns = [];
 const colnames = ["Project Name", "Price", "Yield", "Area", `Absolute Return`, "Marrfex", "Date"];
@@ -23,6 +24,9 @@ for (let name of colnames) {
         align: "center"
     });
 }
+
+// columns[0]['fixed'] = 'left';
+// columns[0]['width'] = 450
 
 const data = [];
 var key = 1;
@@ -54,6 +58,7 @@ const sortFlags = [
 ];
 
 const Projects = () => {
+    const {innerWidth} = window;
     return (
         <div className="projects">
             <section className="banner">
@@ -91,13 +96,17 @@ const Projects = () => {
                         </div>
                     </div>
                 </div>
-                <Table pagination={{ defaultPageSize: 5 }} columns={columns} dataSource={data} />
+                <Table scroll={{x: 1100}} className="project-table" pagination={{ defaultPageSize: 5 }} columns={columns} dataSource={data} />
             </section>
-            {/* <section className="choice-wrapper">
-                <div className="heading">Marrfa's Choice</div>
-                <Carousel items={ProjectList} />
+            <section className="choice-wrapper">
+            <div className="heading">Trending Projects</div>
+                {innerWidth > 630 ? (
+                    <CustomCarousel items={ProjectList} />
+                ) : (
+                    <Mobcarousel items={ProjectList} width={"--card-width"} />
+                )}
             </section>
-            <section className="request-wrapper">
+            {/* <section className="request-wrapper">
                 <PropertyRequestForm />
             </section> */}
         </div>
