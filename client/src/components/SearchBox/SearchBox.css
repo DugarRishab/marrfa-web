@@ -1,0 +1,16 @@
+.search-box{
+	width: 50%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	
+}
+
+@media only screen and (max-width: 720px){
+	.search-box{
+		width: 90%;
+		flex-flow: row wrap;
+	}
+}

@@ -14,6 +14,7 @@ import { Carousel } from "antd";
 
 import projectData from "../../assets/data/projects.json";
 import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+import SearchBox from "../../components/SearchBox/SearchBox";
 // import 'antd/dist/antd.css';
 export const ProjectList = [];
 export const StoryList = [];
@@ -38,6 +39,7 @@ const Homepage = () => {
             <div className="banner">
                 <div className="text">Unlock Global Real Estate Wealth with AI-Powered Insights</div>
                 {/* <Search /> */}
+                <SearchBox></SearchBox>
             </div>
             <div className="projects">
                 <div className="heading">Trending Projects</div>
