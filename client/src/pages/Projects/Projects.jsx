@@ -57,7 +57,7 @@ const Projects = () => {
     return (
         <div className="projects">
             <section className="banner">
-                <Search />
+                {/* <Search /> */}
             </section>
             <section className="sale-wrapper">
                 <div className="headline">
@@ -93,13 +93,13 @@ const Projects = () => {
                 </div>
                 <Table pagination={{ defaultPageSize: 5 }} columns={columns} dataSource={data} />
             </section>
-            <section className="choice-wrapper">
+            {/* <section className="choice-wrapper">
                 <div className="heading">Marrfa's Choice</div>
                 <Carousel items={ProjectList} />
             </section>
             <section className="request-wrapper">
                 <PropertyRequestForm />
-            </section>
+            </section> */}
         </div>
     );
 };

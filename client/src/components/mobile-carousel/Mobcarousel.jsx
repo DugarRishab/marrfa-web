@@ -1,12 +1,12 @@
 import React from "react";
 import { Carousel } from "antd";
-import "./Mobcarousel.css"
+import "./Mobcarousel.css";
 
-const Mobcarousel = ({items, width}) => {
+const Mobcarousel = ({ items, width}) => {
     return (
-        <Carousel style={{ width: `calc(32px + var(${width}))`}} infinite={false}>
-            {items.map((v) => v)}
-        </Carousel>
+            <Carousel style={{ width: `calc(15px + var(${width}))` }} infinite={false}>
+                {items.map((v) => v)}
+            </Carousel>
     );
 };
 

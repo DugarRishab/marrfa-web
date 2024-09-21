@@ -56,7 +56,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 3rem
+    gap: 3rem;
+    padding-bottom: 1rem;
 
 }
 
@@ -149,6 +150,7 @@
     flex-direction: column;
     height: 90vh;
     background: var(--blue-background);
+    --slickdot: var(--cyan) !important;
 }
 .homepage .story-wrapper > .heading {
     font-size: var(--heading-textsize);

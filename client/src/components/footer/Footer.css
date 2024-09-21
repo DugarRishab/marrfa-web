@@ -12,8 +12,8 @@ footer {
 .footer {
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
-    padding: 1rem;
+    justify-content: space-between;
+    padding: 1rem 3rem;
     width: 100%;
     padding-top: 50px;
 }
@@ -197,7 +197,6 @@ footer .floating-social {
         gap: 1.5rem;
         text-align: center;
         padding-top: 2rem;
-        padding-bottom: 2rem;
     }
 
     footer .extra-links {
@@ -230,6 +229,10 @@ footer .floating-social {
         bottom: 5rem;
         gap: 2rem;
         right: 2rem;
+    }
+
+    .footer {
+        padding: 1rem 1.5rem;
     }
 
     .footer .about-col .social {

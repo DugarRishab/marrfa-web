@@ -37,12 +37,6 @@
     display: none;
 }
 
-.css-dev-only-do-not-override-1i2g8ja.ant-carousel .slick-prev, .css-dev-only-do-not-override-1i2g8ja.ant-carousel .slick-next {
-    /* background: red; */
-    color: var(--blue) !important;
-    opacity: 1 !important
-}
-
 .css-dev-only-do-not-override-1i2g8ja.ant-carousel .slick-list .slick-slide.slick-active {
     display: flex !important;
     align-items: center !important;
@@ -50,5 +44,5 @@
 }
 
 .slick-dots li button{
-    background-color: var(--blue) !important
+    background-color: var(--slickdot) !important;
 }
