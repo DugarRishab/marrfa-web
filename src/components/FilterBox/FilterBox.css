@@ -5,6 +5,7 @@
 	justify-content: space-between;
 	width: 100%;
 	gap: 10px;
+	/* background-color: white; */
 }
 .filter-box .price-range .slider{
 	flex-grow: 1;
