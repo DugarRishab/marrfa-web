@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: min(100%, var(--app-width));
-    background: var(--blue-conic-background);
+    /* background: var(--blue-conic-background); */
     color: #fff;
 }
 
@@ -112,6 +112,7 @@
 
 .about-us .heading {
     font-size: var(--heading-textsize);
+    font-weight: 700;
 }
 
 .about-us .helping .card-container .horizontal {
@@ -187,7 +188,7 @@
 
 .about-us .history .history-list {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-direction: column;
     gap: 3rem;
@@ -248,7 +249,7 @@
     display: flex;
     align-items: start;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 1rem;
     width: min(30rem, 100%);
 }
@@ -277,11 +278,16 @@
 
 .valuepoint .icon-area .icon-wrap .bullet-icon {
     transform: rotate(-45deg);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+}
+
+.valuepoint .desc {
+    font-size: 0.9rem;
 }
 
 .valuepoint .desc h2{
     font-weight: 600;
+    padding-bottom: 5px;
 }
 
 .about-us .values {
@@ -428,10 +434,10 @@
     justify-content: center;
     width: 85%;
     flex-direction: column;
-    padding-top: 4rem;
     margin-top: 5rem;
     border-top: 1px solid #fff;
-    padding-bottom: 3rem
+    padding: 3rem 1rem;
+
 }
 
 .about-us .contactus .body {
@@ -439,6 +445,7 @@
     align-items: start;
     justify-content: center;
     gap: 5rem;
+    width: 100%;
     /* width: 80%; */
 }
 
@@ -461,6 +468,10 @@
     transition: all ease 0.2s;
 }
 
+.about-us .contactus .body .right {
+    width: 100%;
+}
+
 .about-us .contactus .body .left .link:hover {
     text-decoration: underline;
 }
@@ -473,7 +484,7 @@
     display: none;
 }
 
-.about-us .reviews .reviw-container .rev-car {
+.about-us .reviews .ant-carousel{
     display: none;
 }
 
@@ -629,13 +640,23 @@
 
     .reviewcard {
         background: var(--blue);
-        padding: 1rem 0rem
+        padding: 1rem;
+        border: 1px solid var(--cyan);
+        border-radius: 10px;
     }
 
-    .about-us .reviews .review-container>.reviewcard{
+    .about-us .reviews .review-container .ant-carousel {
+        display: flex;
+    }
+    .about-us .reviews .review-container > .reviewcard{
         display: none;
     }
-    .about-us .reviews .review-container .revcar {
-        display: flex;
+
+    .about-us .contactus .body{
+        flex-direction: column;
+    }
+
+    .about-us .contactus {
+        border: none;
     }
 }

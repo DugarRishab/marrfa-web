@@ -1,0 +1,4 @@
+.gmap {
+    height: 10rem;
+    width: min(30rem, 100%);
+}

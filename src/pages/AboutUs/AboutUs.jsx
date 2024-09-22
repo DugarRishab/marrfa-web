@@ -9,6 +9,10 @@ import {
     EnvironmentFilled,
     MailFilled,
     PhoneFilled,
+    EyeFilled,
+    RocketFilled,
+    CheckSquareFilled,
+    LockFilled,
 } from "@ant-design/icons";
 import GoogleMap from "../../components/GoogleMap/GoogleMap";
 
@@ -19,25 +23,38 @@ const Tabs = ["Company", "History", "Our values", "Our team", "Reviews", "Contac
 const helpInfo = [
     {
         heading: "Streamlined Discovery",
-        detail: "Whether you are looking for properties in Europe or commercial investments in Asia, we provide a wide range of international real estate opportunities and an extensive inventory to suit your investment goals.",
+        detail: "We offer diverse international real estate options, tailored to meet your unique investment goals.",
         icon: "search",
     },
     {
         heading: "Data-Driven Insights",
-        detail: "We equip investors with the latest market data, including historical price trends, rental yields, and capital appreciation forecasts. This information enables our clients to make well-informed decisions based on clear, factual insights.",
+        detail: "We empower investors with comprehensive market data to make data-driven investment decisions.",
         icon: "monitoring",
     },
     {
         heading: "Seamless Investment Process",
-        detail: "Our platform simplifies the entire investment journey, from property discovery to transaction completion. With user-friendly tools and transparency, investors can navigate their investments without hassles and uncertainties.",
+        detail: "Our platform streamlines property investment with user-friendly tools, offering a hassle-free experience from discovery to completion.",
         icon: "payments",
     },
     {
         heading: "Multilingual Support",
-        detail: "To cater to a global clientele, Marrfa provides support in multiple languages, including English, Arabic, and Persian. This ensures that all users have a smooth and accessible experience, regardless of their location or language.",
+        detail: "Marrfa offers multilingual support in English, Arabic, and Persian, ensuring a smooth and accessible experience for global users.",
         icon: "translate",
     },
 ];
+
+const HistoryInfo = [
+    ["2024", "Partnerships and Growth", "Marrfa formed strategic partnerships with key real estate developers and expanded its offerings to include exclusive investment opportunities and enhanced market insights."],
+    ["2023", "Platform Launch", "Marrfa launched its online platform, offering a data-driven approach to discovering and comparing international real estate properties."],
+    ["2022", "Foundation stone", "Marrfa was established to address the challenges in cross-border real estate investments, focusing on creating a more transparent and streamlined process for investors worldwide."],
+]
+
+const ValueInfo = [
+    ["Transparency", "We provide clear, data-driven insights to help investors make informed decisions with full visibility into their investments.", <EyeFilled className="bullet-icon" />],
+    ["Innovation", "We continuously enhance our platform with the latest technology and tools to offer the best user experience and investment options.", <RocketFilled className="bullet-icon" />],
+    ["Customer Success", "We prioritize our clients' success by offering personalized support and guidance throughout their investment journey.", <CheckSquareFilled className="bullet-icon" />],
+    ["Integrity", "We operate with honesty and fairness, ensuring that all information and transactions are straightforward and trustworthy.", <LockFilled className="bullet-icon" />]
+]
 
 const IconMap = {
     search: <SearchOutlined style={{ fontSize: 25 }} />,
@@ -56,35 +73,34 @@ const HelpCard = ({ heading, icon, detail }) => {
     );
 };
 
-const HistoryItem = () => {
+
+
+const HistoryItem = ({year, heading, desc}) => {
     return (
         <div className="history-item">
-            <div className="year">2024</div>
+            <div className="year">{year}</div>
             <div className="big-dot"></div>
             <div className="desc">
-                <div className="title">Opening store</div>
+                <div className="title">{heading}</div>
                 <div className="para">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repellat vel dolore quos incidunt
-                    sint voluptatibus magni exercitationem nobis repellendus, ea, fugit autem architecto fuga optio
-                    soluta sequi? Alias, ex.
+                    {desc}
                 </div>
             </div>
         </div>
     );
 };
 
-const ValuePoint = () => {
+const ValuePoint = ({heading, desc, icon}) => {
     return (
         <div className="valuepoint">
             <div className="icon-area">
                 <div className="icon-wrap">
-                    <LineChartOutlined className="bullet-icon" />
+                    {icon}
                 </div>
             </div>
             <div className="desc">
-                <h2>Important</h2>
-                We provide clear, data-driven insights to help investors make informed decisions with full visibility
-                into their investments.
+                <h2>{heading}</h2>
+                {desc}
             </div>
         </div>
     );
@@ -163,11 +179,13 @@ const AboutUs = () => {
             </div>
             <section className="intro">
                 <div className="heading">About us</div>
-                <h3>Marrfa is real king!</h3>
+                <h3>Invest in Global Real Estate with Confidence and Ease</h3>
                 <div className="intro-desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eum odio veritatis perferendis,
-                    veniam assumenda beatae nihil et. Adipisci perferendis aliquid cumque blanditiis obcaecati ea, alias
-                    autem sequi excepturi voluptatibus.
+                    Marrfa simplifies global real estate investments by breaking down barriers like complex processes
+                    and lack of transparency. <br />
+                    <br />
+                    Our platform empowers you to invest confidently in properties worldwide, eliminating the hassle of
+                    traditional methods.
                 </div>
                 <img src="/assets/company-section.png" />
             </section>
@@ -220,9 +238,10 @@ const AboutUs = () => {
             <section className="helping">
                 <div className="heading">How Marrfa helps Clients</div>
                 <div className="how-help">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati dolores natus vero ea deleniti.
-                    Excepturi quisquam, dolore, consectetur consequuntur perferendis itaque ea eius doloremque fugiat ex
-                    quod. Culpa, numquam voluptatibus.
+                    At Marrfa, we believe that everyone should have access to clear, transparent information when it
+                    comes to investing in real estate. Real estate is not just about buying a property; it's about
+                    investing in a future, choosing a community, and creating value. Marrfa exists to make this process
+                    straightforward, accessible, and fair for everyone.
                 </div>
                 <div className="card-container">
                     <div className="horizontal"></div>
@@ -238,18 +257,17 @@ const AboutUs = () => {
                         <div className="leftline"></div>
                         <div className="rightline"></div>
                     </div>
-                    <HistoryItem />
-                    <HistoryItem />
-                    <HistoryItem />
+                    {HistoryInfo.map((value, idx)=>(
+                        <HistoryItem year={value[0]} heading={value[1]} desc={value[2]} key={idx} />
+                    ))}
                 </div>
             </section>
             <section ref={refList["Our values"]} id="Our values" className="values">
                 <div className="heading">Our values</div>
                 <div className="value-box">
-                    <ValuePoint />
-                    <ValuePoint />
-                    <ValuePoint />
-                    <ValuePoint />
+                    {ValueInfo.map((value, idx)=>(
+                        <ValuePoint heading={value[0]} desc={value[1]} key={idx} icon={value[2]} />
+                    ))}
                 </div>
             </section>
             <div className="value-section">
@@ -274,10 +292,10 @@ const AboutUs = () => {
                     <ReviewCard />
                     <ReviewCard />
                     <ReviewCard />
-                <Mobcarousel className={"rev-car"} items={[<ReviewCard />, <ReviewCard />, <ReviewCard />]} width="--review-width" />
+                    <Mobcarousel items={[<ReviewCard />, <ReviewCard />, <ReviewCard />]} width="--review-width" />
                 </div>
             </section>
-            {/* <section ref={refList["Contact us"]} id="Contact us" className="contactus">
+            <section ref={refList["Contact us"]} id="Contact us" className="contactus">
                 <div className="heading">Contact us</div>
                 <div className="body">
                     <div className="left">
@@ -298,7 +316,7 @@ const AboutUs = () => {
                         <GoogleMap />
                     </div>
                 </div>
-            </section> */}
+            </section>
         </div>
     );
 };
