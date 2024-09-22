@@ -36,6 +36,9 @@ export const Dropdown = ({ label, options }) => {
 const FilterBox = ({ open, onSave, onCancel }) => {
 	
 	const [priceRange, setPriceRange] = useState([0, 100]);
+	const [valuationRange, setValuationRange] = useState([0, 100]);
+	const [yieldRange, setYieldRange] = useState([0, 100]);
+
 	const handlePriceRangeChange = (newVal) => {
 		setPriceRange(newVal);
 	}
@@ -45,6 +48,27 @@ const FilterBox = ({ open, onSave, onCancel }) => {
 	const setMaxPrice = (newVal) => {
 		setPriceRange([priceRange[0], newVal]);
 	};
+
+	const handleValuationRangeChange = (newVal) => {
+		setValuationRange(newVal);
+	};
+	const setMinValuation = (newVal) => {
+		setValuationRange([newVal, valuationRange[1]]);
+	};
+	const setMaxValuation = (newVal) => {
+		setValuationRange([valuationRange[0], newVal]);
+	};
+
+	const handleYieldRangeChange = (newVal) => {
+		setYieldRange(newVal);
+	};
+	const setMinYield = (newVal) => {
+		setYieldRange([newVal, yieldRange[1]]);
+	};
+	const setMaxYield = (newVal) => {
+		setYieldRange([yieldRange[0], newVal]);
+	};
+
 	return (
 		<Modal
 			className="filter-box"
@@ -86,20 +110,20 @@ const FilterBox = ({ open, onSave, onCancel }) => {
 			{/* <RangeSlider></RangeSlider> */}
 			<div className="price-range">
 				<InputNumber
-					value={priceRange[0]}
-					onChange={setMinPrice}
+					value={valuationRange[0]}
+					onChange={setMinValuation}
 				></InputNumber>
 				<Slider
 					range
 					defaultValue={[20, 100]}
-					value={priceRange}
-					onChange={handlePriceRangeChange}
+					value={valuationRange}
+					onChange={handleValuationRangeChange}
 					// tooltip={{ open: true }}
 					className="slider"
 				></Slider>
 				<InputNumber
-					value={priceRange[1]}
-					onChange={setMaxPrice}
+					value={valuationRange[1]}
+					onChange={setMaxValuation}
 				></InputNumber>
 			</div>
 			
@@ -109,20 +133,20 @@ const FilterBox = ({ open, onSave, onCancel }) => {
 			{/* <RangeSlider></RangeSlider> */}
 			<div className="price-range">
 				<InputNumber
-					value={priceRange[0]}
-					onChange={setMinPrice}
+					value={yieldRange[0]}
+					onChange={setMinYield}
 				></InputNumber>
 				<Slider
 					range
 					defaultValue={[20, 100]}
-					value={priceRange}
-					onChange={handlePriceRangeChange}
+					value={yieldRange}
+					onChange={handleYieldRangeChange}
 					// tooltip={{ open: true }}
 					className="slider"
 				></Slider>
 				<InputNumber
-					value={priceRange[1]}
-					onChange={setMaxPrice}
+					value={yieldRange[1]}
+					onChange={setMaxYield}
 				></InputNumber>
 			</div>
 			<br />
