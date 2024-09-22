@@ -157,23 +157,23 @@ const Navbar = () => {
 					<div className="action">
 						<CustomButton
 							style={{
-								background: "grey",
-								color: "#fff",
-								padding: "10px",
-								height: "2em",
-							}}
-							invert
-							text={"Log in"}
-						/>
-						<CustomButton
-							style={{
-								background: "grey",
-								color: "#fff",
+								// background: "grey",
+								// color: "#fff",
 								padding: "10px",
 								height: "2em",
 							}}
 							invert
 							text={"Request a callback"}
+						/>
+						<CustomButton
+							style={{
+								// background: "grey",
+								// color: "#fff",
+								padding: "10px",
+								height: "2em",
+							}}
+							// invert
+							text={"Log in"}
 						/>
 					</div>
 				)}

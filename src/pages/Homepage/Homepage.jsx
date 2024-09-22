@@ -33,92 +33,136 @@ for (let p of projectData) {
 }
 
 const Homepage = () => {
-    const { innerWidth } = window;
-    return (
-        <div className="homepage">
-            <div className="banner">
-                <div className="text">Unlock Global Real Estate Wealth with AI-Powered Insights</div>
-                {/* <Search /> */}
-                <SearchBox></SearchBox>
-            </div>
-            <div className="projects">
-                <div className="heading">Trending Projects</div>
-                {innerWidth > 630 ? (
-                    <CustomCarousel items={ProjectList} />
-                ) : (
-                    <Mobcarousel items={ProjectList} width={"--card-width"} />
-                )}
-            </div>
-            {innerWidth > 1000 ? (
-                <div className="project-deal">
-                    <ProjectDeal />
-                </div>
-            ) : (
-                <div className="project-deal">
-                    <div className="heading">Deal of the Month</div>
-                    {ProjectList[0]}
-                </div>
-            )}
 
-            <div className="about-section">
-                <div className="about">
-                    <div className="heading">
-                        Marrfa brings cross-border real estate investment opportunities to your fingertips
-                    </div>
-                    <div className="bullets">
-                        <div className="vertical-bar"></div>
-                        <div className="bullet-icon">
-                            <div className="bullet">
-                                <SearchOutlined />
-                            </div>
-                        </div>
-                        <div className="point"> Real-time view of available investment opportunities</div>
-                        <div className="bullet-icon">
-                            <div className="bullet">
-                                <BarChartOutlined />
-                            </div>
-                        </div>
-                        <div className="point"> Compare opportunities across metrics</div>
-                        <div className="bullet-icon">
-                            <div className="bullet">
-                                <TeamOutlined />
-                            </div>
-                        </div>
-                        <div className="point"> Online Customer success manager</div>
-                        <div className="bullet-icon">
-                            <div className="bullet">
-                                <LineChartOutlined />
-                            </div>
-                        </div>
-                        <div className="point">Track project and handover status in-app</div>
-                        <div className="bullet-icon">
-                            <div className="bullet">
-                                <CarryOutOutlined />
-                            </div>
-                        </div>
-                        <div className="point">Track real-time market pulse on Marrfa</div>
-                    </div>
-                    <CustomButton style={{ padding: "10px 30px" }} text={"Enquire about Project and Details"} />
-                </div>
-                <img src="/assets/marrfa-clipart.png" />
-            </div>
-            <div className="story-wrapper">
-                <div className="heading">Marrfa's Success Stories</div>
-                <Mobcarousel items={StoryList} width={"--story-width"} />
-            </div>
-            <div className="news-wrapper">
-                <div className="heading">News and Articles</div>
-                {innerWidth > 630 ? (
-                    <CustomCarousel items={NewsList} />
-                ) : (
-                    <div className="expanded-news">
-                        {NewsList.slice(0, 3).map((v)=>v)}
-                        <CustomButton text={"Real all"} fullWidth  />
-                    </div>
-                )}
-            </div>
-        </div>
-    );
+    const { innerWidth } = window;
+
+    return (
+		<div className="homepage">
+			<section className="banner">
+				<div className="text">
+					Unlock Global Real Estate Wealth with AI-Powered Insights
+				</div>
+				{/* <Search /> */}
+				<SearchBox></SearchBox>
+			</section>
+			<section className="projects">
+				<div className="heading">Explore our Trending Projects</div>
+				{innerWidth > 630 ? (
+					<CustomCarousel items={ProjectList} />
+				) : (
+					<Mobcarousel items={ProjectList} width={"--card-width"} />
+				)}
+			</section>
+			{innerWidth > 1000 ? (
+				<div className="project-deal">
+					<ProjectDeal />
+				</div>
+			) : (
+				<div className="project-deal">
+					<div className="heading">Deal of the Month</div>
+					{ProjectList[0]}
+				</div>
+			)}
+
+			<section className="about-section">
+				<div className="about">
+					<div className="heading">
+						Marrfa brings cross-border real estate investment
+						opportunities to your fingertips
+					</div>
+					<div className="bullets">
+						<div className="vertical-bar"></div>
+						<div className="bullet-icon">
+							<div className="bullet">
+								<SearchOutlined />
+							</div>
+						</div>
+						<div className="point">
+							{" "}
+							Real-time view of available investment opportunities
+						</div>
+						<div className="bullet-icon">
+							<div className="bullet">
+								<BarChartOutlined />
+							</div>
+						</div>
+						<div className="point">
+							{" "}
+							Compare opportunities across metrics
+						</div>
+						<div className="bullet-icon">
+							<div className="bullet">
+								<TeamOutlined />
+							</div>
+						</div>
+						<div className="point">
+							{" "}
+							Online Customer success manager
+						</div>
+						<div className="bullet-icon">
+							<div className="bullet">
+								<LineChartOutlined />
+							</div>
+						</div>
+						<div className="point">
+							Track project and handover status in-app
+						</div>
+						<div className="bullet-icon">
+							<div className="bullet">
+								<CarryOutOutlined />
+							</div>
+						</div>
+						<div className="point">
+							Track real-time market pulse on Marrfa
+						</div>
+					</div>
+					<CustomButton
+						style={{ padding: "10px 30px" }}
+						text={"Enquire about Project and Details"}
+					/>
+				</div>
+				<img src="/assets/marrfa-clipart.png" />
+			</section>
+			<section className="story-wrapper">
+				<div className="heading">
+					Stories where Marrfa turned vision into success
+				</div>
+				<Mobcarousel items={StoryList} width={"--story-width"} />
+				{innerWidth <=
+					720 && (
+						<div className="advertise">
+							<div className="question">
+								Looking to advertise a property? We can help.
+							</div>
+							<CustomButton
+								themecolor={"#000"}
+								style={{
+									padding: "1rem 2rem",
+                                    fontWeight: "600",
+                                    
+								}}
+								invert
+                            text={"List your Property with us"}
+                            fullWidth
+							/>
+						</div>
+					)}
+			</section>
+			<section className="news-wrapper">
+				<div className="heading">
+					Be updated with latest news and articles
+				</div>
+				{innerWidth > 630 ? (
+					<CustomCarousel items={NewsList} />
+				) : (
+					<div className="expanded-news">
+						{NewsList.slice(0, 3).map((v) => v)}
+						<CustomButton text={"Real all"} fullWidth />
+					</div>
+				)}
+			</section>
+		</div>
+	);
 };
 
 export default Homepage;

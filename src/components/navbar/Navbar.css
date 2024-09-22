@@ -17,7 +17,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: #fff;
+	/* color: var(--text-color); */
+    color: white;
 	width: min(100%, var(--page-width));
 	background-color: transparent;
 	padding: 0px 2rem;
