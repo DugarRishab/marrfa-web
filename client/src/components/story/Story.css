@@ -5,6 +5,7 @@
     width: var(--story-width);
     gap: 1rem;
     color: #fff;
+    margin-bottom: 2rem
 }
 
 .story img {

@@ -32,8 +32,8 @@ export const Location = ({ text }) => {
 export const ButtonGroup = () => {
     return (
         <div className="base-section">
-            <CustomButton startIcon={<PhoneOutlined />} rounded={false} fullWidth text={"Call"} />
-            <CustomButton startIcon={<WhatsAppOutlined />} rounded={false} fullWidth text={"Whatsapp"} />
+            <CustomButton startIcon={<PhoneOutlined />}  fullWidth text={"Call"} />
+            <CustomButton startIcon={<WhatsAppOutlined />}  fullWidth text={"Whatsapp"} />
         </div>
     );
 };
@@ -91,7 +91,7 @@ const Project = ({ data }) => {
                 {/* <Location text = {`${data.location.state}, ${data.location.country}`} /> */}
             </div>
             {/* <div className="base">
-                <CustomButton text={"Invest Now!"} fullWidth rounded={false} />
+                <CustomButton text={"Invest Now!"} fullWidth  />
             </div> */}
             <ButtonGroup />
         </div>

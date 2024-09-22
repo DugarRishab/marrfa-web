@@ -85,7 +85,7 @@ For example, I'm looking for an apartment in Downtown Dubai"
                         style={{marginBottom: "1rem"}}
                     />
 
-                    <CustomButton rounded={false} text={"Submit Request"} style={{margin: 0}}/>
+                    <CustomButton  text={"Submit Request"} style={{margin: 0}}/>
                 </form>
                 <div className="consent">
                     I confirm that I have read and accept the Privacy Policy and Personal Data Processing Guidelines.

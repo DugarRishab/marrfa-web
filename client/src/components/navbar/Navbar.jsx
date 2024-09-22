@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import Logo from "/assets/Marrfa.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
 import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
@@ -54,7 +54,7 @@ const DrawerToggle = ({ selected, handleSelect }) => {
                 ))}
                 <CustomButton style = {{
                     marginTop: "1rem"
-                }} rounded={false} text={"Request a CallBack"} />
+                }}  text={"Request a CallBack"} />
 
                 {/* </div> */}
             </Drawer>
@@ -77,7 +77,14 @@ const BrandName = ({ mobile = false }) => {
 };
 
 const Navbar = () => {
-    const [selected, setSelected] = useState(0);
+    const location = useLocation();
+    const [selected, setSelected] = useState(location.pathname.slice(1));
+
+    useEffect(() => {
+        // Update selected tab whenever the location changes
+        setSelected(location.pathname.slice(1));
+    }, [location]);
+
 
     const handleSelect = (item) => {
         setSelected(() => item);
@@ -97,8 +104,7 @@ const Navbar = () => {
                         Object.keys(tabroutes).map((key, idx) => (
                             <Link
                                 key={idx}
-                                onClick={() => handleSelect(idx)}
-                                className={"item" + (selected == idx ? " active" : "")}
+                                className={"item" + (selected === tabroutes[key] ? " active" : "")}
                                 to={`/${tabroutes[key]}`}
                             >
                                 {key}
@@ -115,18 +121,18 @@ const Navbar = () => {
                         <CustomButton
                             style={{ background: "grey", color: "#fff", padding: "10px", height: "2em" }}
                             invert
-                            rounded={false}
+                            
                             text={"Log in"}
                         />
                         <CustomButton
                             style={{ background: "grey", color: "#fff", padding: "10px", height: "2em" }}
                             invert
-                            rounded={false}
+                            
                             text={"Request a callback"}
                         />
                     </div>
                 )}
-                {!DesktopView && <CustomButton rounded={false} text={"Log in"} />}
+                {!DesktopView && <CustomButton  text={"Log in"} />}
             </div>
         </div>
     );

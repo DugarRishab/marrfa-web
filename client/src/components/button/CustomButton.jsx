@@ -6,8 +6,6 @@ const CustomButton = ({
     text,
     invert = false,
     fullWidth = false,
-    rounded = true,
-    borderRadius = "100px", // Custom border radius prop
     background = "var(--mix-background)", // Custom background color prop
     startIcon = null,
     circled = false,
@@ -35,7 +33,7 @@ const CustomButton = ({
                 size={size}
                 style={{
                     width: fullWidth ? "100%" : "max-content",
-                    borderRadius: rounded ? borderRadius : "",
+                    // borderRadius: rounded ? borderRadius : "",
                     background: invert ? "#fff" : background,
                     color: invert ? "#000" : "#fff",
                     lineHeight: circled ? "1.2em" : "",

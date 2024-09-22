@@ -94,7 +94,7 @@ const Project = ({ data }) => {
                 {/* <Location text = {`${data.location.state}, ${data.location.country}`} /> */}
             </div>
             <div className="base">
-                <CustomButton text={"Invest Now!"} fullWidth rounded={false} />
+                <CustomButton text={"Invest Now!"} fullWidth  />
             </div>
         </div>
     );

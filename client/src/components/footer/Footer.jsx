@@ -28,7 +28,7 @@ const Footer = () => {
                     style={{ padding: "1rem 2rem", fontWeight: "600"}}
                     invert
                     text={"List your Property with us"}
-                    rounded={false}
+                    
                 />
             </div>
             <div className="footer">

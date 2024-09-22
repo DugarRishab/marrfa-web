@@ -1,6 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./AboutUs.css";
-import { BankOutlined, LineChartOutlined, PlusCircleFilled, PlusCircleOutlined, SearchOutlined, TranslationOutlined } from "@ant-design/icons";
+import {
+    BankOutlined,
+    LineChartOutlined,
+    SearchOutlined,
+    TranslationOutlined,
+    EnvironmentFilled,
+    MailFilled,
+    PhoneFilled,
+} from "@ant-design/icons";
+import GoogleMap from "../../components/GoogleMap/GoogleMap";
 
 const Tabs = ["Company", "History", "Our values", "Our team", "Reviews", "Contact us"];
 
@@ -28,18 +38,16 @@ const helpInfo = [
 ];
 
 const IconMap = {
-    search: <SearchOutlined style={{fontSize: 25}} />,
-    monitoring: <LineChartOutlined style={{fontSize: 25}} />,
-    payments: <BankOutlined style={{fontSize: 25}} />,
-    translate: <TranslationOutlined style={{fontSize: 25}} />
-}
+    search: <SearchOutlined style={{ fontSize: 25 }} />,
+    monitoring: <LineChartOutlined style={{ fontSize: 25 }} />,
+    payments: <BankOutlined style={{ fontSize: 25 }} />,
+    translate: <TranslationOutlined style={{ fontSize: 25 }} />,
+};
 
 const HelpCard = ({ heading, icon, detail }) => {
     return (
         <div className="helpcard">
-            <div className="icon">
-                {IconMap[icon]}
-            </div>
+            <div className="icon">{IconMap[icon]}</div>
             <div className="topic">{heading}</div>
             <div className="detail">{detail}</div>
         </div>
@@ -50,7 +58,7 @@ const HistoryItem = () => {
     return (
         <div className="history-item">
             <div className="year">2024</div>
-            <PlusCircleOutlined />
+            <div className="big-dot"></div>
             <div className="desc">
                 <div className="title">Opening store</div>
                 <div className="para">
@@ -63,24 +71,94 @@ const HistoryItem = () => {
     );
 };
 
+const ValuePoint = () => {
+    return (
+        <div className="valuepoint">
+            <div className="icon-area">
+                <div className="icon-wrap">
+                    <LineChartOutlined className="bullet-icon" />
+                </div>
+            </div>
+            <div className="desc">
+                <h2>Important</h2>
+                We provide clear, data-driven insights to help investors make informed decisions with full visibility
+                into their investments.
+            </div>
+        </div>
+    );
+};
+
+const AvatarCard = () => {
+    return (
+        <div className="avatar">
+            <img src="/assets/balloon.jpeg" />
+            <div className="name">Mallika</div>
+            <div className="desig">Head designer</div>
+        </div>
+    );
+};
+
+const ReviewCard = () => {
+    return (
+        <div className="reviewcard">
+            <div className="image">
+                <img src="/assets/balloon.jpeg" />
+                <div className="name">Marrfa</div>
+                <div className="org">CEO, Nike</div>
+            </div>
+            <div className="desc">
+                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum, totam molestiae exercitationem
+                eveniet voluptatem tempore ipsam aspernatur iste accusamus eos. Rem minus dolore eius autem veniam
+                dignissimos exercitationem. Illum, molestiae!"
+            </div>
+        </div>
+    );
+};
+
 const AboutUs = () => {
     const [selected, setSelected] = useState(0);
-    console.log(selected);
+    const refList = {};
+    for (let tab of Tabs) {
+        refList[tab] = useRef();
+    }
+
+    const homeRef = useRef();
+
+    const handleScroll = (value) => {
+        const targetRef = refList[value];
+        setSelected(Tabs.indexOf(value))
+    
+        if (targetRef && targetRef.current) {
+            // Calculate the target position
+            const targetPosition = targetRef.current.offsetTop;
+    
+            // Set your desired offset
+            const yOffset = 100; // Adjust this value as needed (negative for scrolling up)
+    
+            // Scroll to the calculated position
+            window.scrollTo({
+                top: targetPosition - yOffset,
+                behavior: 'smooth',
+            });
+        }
+    };
+    
 
     return (
-        <div className="about-us">
-            <section className="tabs">
+        <div ref={homeRef} className="about-us">
+            <div className="tabs">
                 {Tabs.map((value, idx) => (
                     <a
+                        // ref={refList[value]}
                         key={idx}
-                        onClick={() => setSelected(idx)}
+                        onClick={() => handleScroll(value)}
                         className={"tabitem" + (selected == idx ? " active" : "")}
                     >
                         {value}
                     </a>
                 ))}
-            </section>
-            <section className="company">
+            </div>
+            <section ref={refList["Company"]} id="Company" className="company">
                 <div className="left">
                     <div className="heading">Company</div>
 
@@ -135,12 +213,68 @@ const AboutUs = () => {
                     ))}
                 </div>
             </section>
-            <section className="history">
+            <section ref={refList["History"]} id="History" className="history">
                 <div className="heading">History</div>
                 <div className="history-list">
+                    <div className="vertical">
+                        <div className="leftline"></div>
+                        <div className="rightline"></div>
+                    </div>
                     <HistoryItem />
                     <HistoryItem />
                     <HistoryItem />
+                </div>
+            </section>
+            <section ref={refList["Our values"]} id="Our values" className="values">
+                <div className="heading">Our values</div>
+                <div className="value-box">
+                    <ValuePoint />
+                    <ValuePoint />
+                    <ValuePoint />
+                    <ValuePoint />
+                </div>
+            </section>
+            <section ref={refList["Our team"]} id="Our team" className="our-team">
+                <div className="heading">Our Team</div>
+                <div className="executives">
+                    <div className="sub-heading">Executives</div>
+                    <div className="members">
+                        <AvatarCard />
+                        <AvatarCard />
+                        <AvatarCard />
+                        <AvatarCard />
+                    </div>
+                </div>
+            </section>
+            <section ref={refList["Reviews"]} id="Reviews" className="reviews">
+                <div className="heading">Reviews</div>
+                <div className="review-container">
+                    <ReviewCard />
+                    <ReviewCard />
+                    <ReviewCard />
+                    <ReviewCard />
+                </div>
+            </section>
+            <section ref={refList["Contact us"]} id="Contact us" className="contactus">
+                <div className="heading">Contact us</div>
+                <div className="body">
+                    <div className="left">
+                        <a className="link">
+                            <EnvironmentFilled />
+                            Citadel Tower Office No. 1003 and 1004 Business Bay, Dubai.
+                        </a>
+                        <a className="link">
+                            <MailFilled />
+                            sales@marrfa.com
+                        </a>
+                        <a className="link">
+                            <PhoneFilled />
+                            +971-563282700
+                        </a>
+                    </div>
+                    <div className="right">
+                        <GoogleMap />
+                    </div>
                 </div>
             </section>
         </div>

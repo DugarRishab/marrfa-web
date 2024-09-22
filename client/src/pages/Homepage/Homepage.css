@@ -19,7 +19,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     flex-direction: column;
-    padding-top: var(--navbar-height);
+    /* padding-top: var(--navbar-height); */
     gap: 3rem;
 }
 

@@ -8,8 +8,17 @@
     color: #fff;
 }
 
+.big-dot {
+    aspect-ratio: 1/1;
+    /* width: 20px; */
+    height: 20px;
+    border-radius: 50%;
+    background: var(--cyan);
+    z-index: 2
+}
+
 .about-us .tabs {
-    margin-top: var(--navbar-height);
+    /* margin-top: var(--navbar-height); */
     width: 100%;
     display: flex;
     align-items: center;
@@ -17,6 +26,10 @@
     gap: 2rem;
     border-bottom: 1px solid #fff;
     padding: 10px 2px;
+    position: sticky;
+    top: var(--navbar-height);
+    z-index: 100;
+    background: var(--blue-conic-background)
 }
 
 .about-us .tabs .tabitem {
@@ -27,6 +40,7 @@
     z-index: 0;
     font-weight: 600;
     color: #fff;
+    cursor: pointer;
 
 }
 
@@ -157,8 +171,8 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    padding-top: 3rem;
-    width: 80%;
+    width: 85%;
+    padding: 5rem 0rem
 }
 
 .about-us .history .history-list {
@@ -168,6 +182,35 @@
     flex-direction: column;
     gap: 3rem;
     margin-top: 3rem;
+    position: relative;
+}
+
+.about-us .history .history-list .vertical {
+    position: absolute;
+    top: -40px;
+    width: 2px;
+    height: calc(100% + 40px);
+    left: 59px;
+    background-color: var(--cyan);
+}
+
+.about-us .history .history-list .vertical .leftline {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 15px;
+    background: var(--cyan);
+    transform: rotate(30deg);
+    left: -4px
+}
+.about-us .history .history-list .vertical .rightline {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 15px;
+    background: var(--cyan);
+    transform: rotate(-30deg);
+    left: 4px
 }
 
 .history-item {
@@ -190,3 +233,213 @@
     line-height: 1.2em;
     padding-top: 5px;
 }
+
+.valuepoint {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    width: 30rem;
+}
+
+.valuepoint .icon-area {
+    aspect-ratio: 1/1;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    margin-top: 1rem;
+    background: var(--mix-background)
+}
+
+.valuepoint .icon-area .icon-wrap {
+    border: 2px solid #fff;
+    aspect-ratio: 1/1;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.valuepoint .icon-area .icon-wrap .bullet-icon {
+    transform: rotate(-45deg);
+    font-size: 1.4rem;
+}
+
+.valuepoint .desc h2{
+    font-weight: 600;
+}
+
+.about-us .values {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 85%;
+    padding: 5rem 0rem
+}
+
+.about-us .values .value-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-us .our-team {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 85%;
+    min-height: 70vh;
+}
+
+.about-us .our-team .executives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.about-us .our-team .executives .sub-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.about-us .our-team .executives .members{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.avatar img {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    width: 180px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.avatar .name {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.avatar .desig {
+    font-weight: 100;
+    line-height: 1em;
+
+}
+
+.about-us .reviews {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 85%;
+    padding-top: 4rem;
+}
+
+.about-us .reviews .review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+.reviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 35rem;
+}
+
+.reviewcard .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 1px solid #fff;
+    padding: 1rem;
+}
+
+.reviewcard .image img {
+    aspect-ratio: 1/1;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.reviewcard .image .org {
+    font-weight: 100;
+    line-height: 1em;
+    font-size: 0.8rem;
+}
+
+.reviewcard .desc {
+    font-style: italic;
+}
+
+.about-us .contactus {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 85%;
+    flex-direction: column;
+    padding-top: 4rem;
+    margin-top: 5rem;
+    border-top: 1px solid #fff;
+    padding-bottom: 3rem
+}
+
+.about-us .contactus .body {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 5rem;
+    /* width: 80%; */
+}
+
+.about-us .contactus .body .left {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 3rem
+}
+.about-us .contactus .body .left .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 10px;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.about-us .contactus .body .left .link:hover {
+    text-decoration: underline;
+}
+
+
