@@ -12,6 +12,8 @@ import {
 } from "@ant-design/icons";
 import GoogleMap from "../../components/GoogleMap/GoogleMap";
 
+import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+
 const Tabs = ["Company", "History", "Our values", "Our team", "Reviews", "Contact us"];
 
 const helpInfo = [
@@ -92,8 +94,10 @@ const AvatarCard = () => {
     return (
         <div className="avatar">
             <img src="/assets/balloon.jpeg" />
-            <div className="name">Mallika</div>
-            <div className="desig">Head designer</div>
+            <div className="whois">
+                <div className="name">Mallika</div>
+                <div className="desig">Head designer</div>
+            </div>
         </div>
     );
 };
@@ -126,23 +130,22 @@ const AboutUs = () => {
 
     const handleScroll = (value) => {
         const targetRef = refList[value];
-        setSelected(Tabs.indexOf(value))
-    
+        setSelected(Tabs.indexOf(value));
+
         if (targetRef && targetRef.current) {
             // Calculate the target position
             const targetPosition = targetRef.current.offsetTop;
-    
+
             // Set your desired offset
             const yOffset = 100; // Adjust this value as needed (negative for scrolling up)
-    
+
             // Scroll to the calculated position
             window.scrollTo({
                 top: targetPosition - yOffset,
-                behavior: 'smooth',
+                behavior: "smooth",
             });
         }
     };
-    
 
     return (
         <div ref={homeRef} className="about-us">
@@ -158,6 +161,16 @@ const AboutUs = () => {
                     </a>
                 ))}
             </div>
+            <section className="intro">
+                <div className="heading">About us</div>
+                <h3>Marrfa is real king!</h3>
+                <div className="intro-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eum odio veritatis perferendis,
+                    veniam assumenda beatae nihil et. Adipisci perferendis aliquid cumque blanditiis obcaecati ea, alias
+                    autem sequi excepturi voluptatibus.
+                </div>
+                <img src="/assets/company-section.png" />
+            </section>
             <section ref={refList["Company"]} id="Company" className="company">
                 <div className="left">
                     <div className="heading">Company</div>
@@ -179,7 +192,7 @@ const AboutUs = () => {
                     </p>
                 </div>
                 <div className="right">
-                    <img src="/assets/company-section.png" />
+                    <img src="/assets/unique-section.png" />
                 </div>
             </section>
             <section className="unique">
@@ -206,6 +219,11 @@ const AboutUs = () => {
             </section>
             <section className="helping">
                 <div className="heading">How Marrfa helps Clients</div>
+                <div className="how-help">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati dolores natus vero ea deleniti.
+                    Excepturi quisquam, dolore, consectetur consequuntur perferendis itaque ea eius doloremque fugiat ex
+                    quod. Culpa, numquam voluptatibus.
+                </div>
                 <div className="card-container">
                     <div className="horizontal"></div>
                     {helpInfo.map((value, idx) => (
@@ -234,6 +252,9 @@ const AboutUs = () => {
                     <ValuePoint />
                 </div>
             </section>
+            <div className="value-section">
+                <img src="/assets/values-section.png" />
+            </div>
             <section ref={refList["Our team"]} id="Our team" className="our-team">
                 <div className="heading">Our Team</div>
                 <div className="executives">
@@ -253,9 +274,10 @@ const AboutUs = () => {
                     <ReviewCard />
                     <ReviewCard />
                     <ReviewCard />
+                <Mobcarousel className={"rev-car"} items={[<ReviewCard />, <ReviewCard />, <ReviewCard />]} width="--review-width" />
                 </div>
             </section>
-            <section ref={refList["Contact us"]} id="Contact us" className="contactus">
+            {/* <section ref={refList["Contact us"]} id="Contact us" className="contactus">
                 <div className="heading">Contact us</div>
                 <div className="body">
                     <div className="left">
@@ -276,7 +298,7 @@ const AboutUs = () => {
                         <GoogleMap />
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };
