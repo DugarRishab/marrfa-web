@@ -26,6 +26,7 @@
     width: 100%;
     padding-top: 2rem;
     min-height: 100vh;
+    background: #fff;
 }
 
 .projects .choice-wrapper > .heading {
@@ -76,6 +77,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
 }
 
 .projects .sale-wrapper .headline .sub-heading {
@@ -111,9 +114,9 @@
 }
 
 @media only screen and (max-width: 520px) {
-    .projects .sale-wrapper {
+    /* .projects .sale-wrapper {
         display: none
-    }
+    } */
 
     .projects .choice-wrapper > .heading {
         padding-left: 0px;

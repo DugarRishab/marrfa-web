@@ -16,14 +16,19 @@ import CustomCarousel from "../../components/carousel/Carousel";
 import SearchBox from "../../components/SearchBox/SearchBox";
 
 const columns = [];
+var i = 0;
 const colnames = ["Project Name", "Price", "Yield", "Area", `Absolute Return`, "Marrfex", "Date"];
 for (let name of colnames) {
     columns.push({
         title: <div style={{ textAlign: "center", color: "#fff", maxWidth: "12ch" }}>{name}</div>,
         dataIndex: name.split(" ")[0].toLowerCase(),
         key: name.split(" ")[0].toLowerCase(),
-        align: "center"
+        align: "center",
     });
+    if (name !== "Project Name") {
+        columns[i].responsive = ["md"];
+    }
+    i++;
 }
 
 // columns[0]['fixed'] = 'left';
@@ -59,7 +64,7 @@ const sortFlags = [
 ];
 
 const Projects = () => {
-    const {innerWidth} = window;
+    const { innerWidth } = window;
     return (
         <div className="projects">
             <section className="banner">
@@ -70,10 +75,7 @@ const Projects = () => {
                 <div className="headline">
                     <div className="heading">
                         Properties for sale in Dubai
-                        <CustomButton
-                            startIcon={<BellOutlined />}
-                            text={"Subscribe to notifications"}
-                        />
+                        <CustomButton startIcon={<BellOutlined />} text={"Subscribe to notifications"} />
                     </div>
 
                     <div className="sub-heading">
@@ -98,10 +100,16 @@ const Projects = () => {
                         </div>
                     </div>
                 </div>
-                <Table scroll={{x: 1100}} className="project-table" pagination={{ defaultPageSize: 5 }} columns={columns} dataSource={data} />
+                <Table
+                    scroll={{ x: 1100 }}
+                    className="project-table"
+                    pagination={{ defaultPageSize: 5, position: ["bottomCenter"] }}
+                    columns={columns}
+                    dataSource={data}
+                />
             </section>
             <section className="choice-wrapper">
-            <div className="heading">Trending Projects</div>
+                <div className="heading">Trending Projects</div>
                 {innerWidth > 630 ? (
                     <CustomCarousel items={ProjectList} />
                 ) : (
