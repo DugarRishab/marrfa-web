@@ -8,6 +8,8 @@
     box-shadow: var(--shadow);
     color: #000;
     transition: all ease 0.3s;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .news-card:hover{
@@ -17,9 +19,10 @@
 
 .news-card img {
     width: 100%;
-    height: 12rem;
+    height: 10rem;
     object-fit: cover;
     object-position: top;
+    border-radius: 5px;
 }
 
 .news-card label {
@@ -41,6 +44,7 @@
     line-height: 1.2em; /* Adjust based on your desired line height */
     height: calc(1.2em * 2); /* Line height * number of lines */
     color: var(--grey-text);
+    margin-bottom: 0.5rem;
 }
 
 .news-card .heading {
@@ -48,5 +52,6 @@
     font-weight: 500;
     line-height: 1.2em;
     align-self: start;
-    height: 2.4em;
+    /* height: 2.4em; */
+    margin: 0.5rem 0;
 }
