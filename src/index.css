@@ -55,6 +55,7 @@
 
 body {
     overflow-x: hidden;
+    background: var(--blue-background);
 }
 
 button {
