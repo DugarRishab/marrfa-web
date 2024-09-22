@@ -1,0 +1,11 @@
+.filter-box .price-range{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	gap: 10px;
+}
+.filter-box .price-range .slider{
+	flex-grow: 1;
+}

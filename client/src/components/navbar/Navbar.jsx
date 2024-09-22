@@ -46,7 +46,7 @@ const DrawerToggle = ({ selected, handleSelect }) => {
                             handleSelect(idx);
                             onClose();
                         }}
-                        className={"item" + (selected == idx ? " active" : "")}
+                        className={"item" + (selected == tabroutes[key] ? " active" : "")}
                         to={`/${tabroutes[key]}`}
                     >
                         {key}

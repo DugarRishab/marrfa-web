@@ -13,6 +13,7 @@ import { formatPrice, formatNumber } from "../../App";
 import { BellOutlined } from "@ant-design/icons";
 import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
 import CustomCarousel from "../../components/carousel/Carousel";
+import SearchBox from "../../components/SearchBox/SearchBox";
 
 const columns = [];
 const colnames = ["Project Name", "Price", "Yield", "Area", `Absolute Return`, "Marrfex", "Date"];
@@ -63,6 +64,7 @@ const Projects = () => {
         <div className="projects">
             <section className="banner">
                 {/* <Search /> */}
+                <SearchBox />
             </section>
             <section className="sale-wrapper">
                 <div className="headline">
