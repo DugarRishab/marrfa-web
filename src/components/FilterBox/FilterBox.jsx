@@ -35,19 +35,10 @@ export const Dropdown = ({ label, options }) => {
 
 const FilterBox = ({ open, onSave, onCancel }) => {
 	
-	const [priceRange, setPriceRange] = useState([0, 100]);
+	// const [priceRange, setPriceRange] = useState([0, 100]);
 	const [valuationRange, setValuationRange] = useState([0, 100]);
 	const [yieldRange, setYieldRange] = useState([0, 100]);
 
-	const handlePriceRangeChange = (newVal) => {
-		setPriceRange(newVal);
-	}
-	const setMinPrice = (newVal) => {
-		setPriceRange([newVal, priceRange[1]]);
-	}
-	const setMaxPrice = (newVal) => {
-		setPriceRange([priceRange[0], newVal]);
-	};
 
 	const handleValuationRangeChange = (newVal) => {
 		setValuationRange(newVal);
@@ -84,28 +75,6 @@ const FilterBox = ({ open, onSave, onCancel }) => {
 				</>
 			}
 		>
-			<h4>Set Price range</h4>
-
-			{/* <RangeSlider></RangeSlider> */}
-			<div className="price-range">
-				<InputNumber
-					value={priceRange[0]}
-					onChange={setMinPrice}
-				></InputNumber>
-				<Slider
-					range
-					defaultValue={[20, 100]}
-					value={priceRange}
-					onChange={handlePriceRangeChange}
-					// tooltip={{ open: true }}
-					className="slider"
-				></Slider>
-				<InputNumber
-					value={priceRange[1]}
-					onChange={setMaxPrice}
-				></InputNumber>
-			</div>
-			<br />
 			<h4>Set Current Valuation</h4>
 			{/* <RangeSlider></RangeSlider> */}
 			<div className="price-range">

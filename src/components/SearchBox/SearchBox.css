@@ -1,18 +1,55 @@
-.search-box{
+.search-box {
 	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.search-box .price-range {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	gap: 10px;
+	background-color: rgba(255, 255, 255, 0.178);
+	padding: 10px 20px;
+	border-radius: 5px;
+	color: white;
+}
+.search-box .price-range .slider {
+	flex-grow: 1;
+	width: 70%;
+}
+.search-box .row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
-	
+	width: 100%;
 }
 
-@media only screen and (max-width: 720px){
-	.search-box{
+@media only screen and (max-width: 720px) {
+	.search-box {
 		width: 90%;
 		flex-flow: row wrap;
 		align-items: flex-start;
 		justify-content: flex-start;
+	}
+	.search-box .price-range {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.search-box .row {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		justify-content: flex-start;
+		width: 100%;
+	}
+	.search-box .price-range .slider{
+		width: 100%;
 	}
 }
