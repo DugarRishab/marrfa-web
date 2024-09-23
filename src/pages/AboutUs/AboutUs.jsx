@@ -63,6 +63,8 @@ const IconMap = {
     translate: <TranslationOutlined style={{ fontSize: 25 }} />,
 };
 
+const lorem="Marrfa simplifies global real estate investments by breaking down barriers like complex processes and lack of transparency."
+
 const HelpCard = ({ heading, icon, detail }) => {
     return (
         <div className="helpcard">
@@ -106,30 +108,28 @@ const ValuePoint = ({heading, desc, icon}) => {
     );
 };
 
-const AvatarCard = () => {
+const AvatarCard = ({name, designation, dp}) => {
     return (
         <div className="avatar">
-            <img src="/assets/balloon.jpeg" />
+            <img src={dp} />
             <div className="whois">
-                <div className="name">Mallika</div>
-                <div className="desig">Head designer</div>
+                <div className="name">{name}</div>
+                <div className="desig">{designation}</div>
             </div>
         </div>
     );
 };
 
-const ReviewCard = () => {
+const ReviewCard = ({name, org, comment}) => {
     return (
         <div className="reviewcard">
             <div className="image">
                 <img src="/assets/balloon.jpeg" />
-                <div className="name">Marrfa</div>
-                <div className="org">CEO, Nike</div>
+                <div className="name">{name}</div>
+                <div className="org">{org}</div>
             </div>
             <div className="desc">
-                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum, totam molestiae exercitationem
-                eveniet voluptatem tempore ipsam aspernatur iste accusamus eos. Rem minus dolore eius autem veniam
-                dignissimos exercitationem. Illum, molestiae!"
+                {`"${comment}"`}
             </div>
         </div>
     );
@@ -278,21 +278,21 @@ const AboutUs = () => {
                 <div className="executives">
                     <div className="sub-heading">Executives</div>
                     <div className="members">
-                        <AvatarCard />
-                        <AvatarCard />
-                        <AvatarCard />
-                        <AvatarCard />
+                        <AvatarCard name={"Mallika"} designation={"Head designer, Marrfa"} dp={"/assets/balloon.jpeg"} />
+                        <AvatarCard name={"Mallika"} designation={"Head designer, Marrfa"} dp={"/assets/balloon.jpeg"} />
+                        <AvatarCard name={"Mallika"} designation={"Head designer, Marrfa"} dp={"/assets/balloon.jpeg"} />
+                        <AvatarCard name={"Mallika"} designation={"Head designer, Marrfa"} dp={"/assets/balloon.jpeg"} />
                     </div>
                 </div>
             </section>
             <section ref={refList["Reviews"]} id="Reviews" className="reviews">
                 <div className="heading">Reviews</div>
                 <div className="review-container">
-                    <ReviewCard />
-                    <ReviewCard />
-                    <ReviewCard />
-                    <ReviewCard />
-                    <Mobcarousel items={[<ReviewCard />, <ReviewCard />, <ReviewCard />]} width="--review-width" />
+                    <ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />
+                    <ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />
+                    <ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />
+                    <ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />
+                    <Mobcarousel items={[<ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />, <ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />, <ReviewCard name={"Bob Ross"} org={"Marrfa"} comment={lorem}  />]} width="--review-width" />
                 </div>
             </section>
             <section ref={refList["Contact us"]} id="Contact us" className="contactus">

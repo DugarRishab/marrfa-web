@@ -157,7 +157,7 @@ const Homepage = () => {
 				) : (
 					<div className="expanded-news">
 						{NewsList.slice(0, 3).map((v) => v)}
-						<CustomButton text={"Real all"} fullWidth />
+						<CustomButton text={"Read all"} fullWidth />
 					</div>
 				)}
 			</section>

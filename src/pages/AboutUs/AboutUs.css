@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: min(100%, var(--app-width));
-    /* background: var(--blue-conic-background); */
+    background: var(--blue-dark-background);
     color: #fff;
 }
 
@@ -29,7 +29,7 @@
     position: sticky;
     top: var(--navbar-height);
     z-index: 100;
-    background: var(--blue-conic-background)
+    background: var(--blue-dark-background)
 }
 
 .about-us .intro {
@@ -518,15 +518,16 @@
     }
 
     .about-us .intro .heading {
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         font-weight: 600;
         padding-bottom: 0.5rem;
     }
 
     .about-us .intro h3 {
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 600;
         padding-bottom: 2rem;
+        line-height: 1.2em;
     }
 
     .about-us .company,
