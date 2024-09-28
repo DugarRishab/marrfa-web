@@ -195,6 +195,7 @@ const Property = () => {
 					Aut dolor quibusdam aut numquam consequatur id quide
 				</div>
 			</section>
+			
 		</div>
 	);
 };
