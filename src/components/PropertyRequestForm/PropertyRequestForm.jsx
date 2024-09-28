@@ -5,7 +5,7 @@ import banner from "/assets/banner/formbanner.png";
 import { Input, Select } from "antd";
 const { TextArea } = Input;
 import CustomButton from "../button/CustomButton";
-import cflags from "../../../public/data/countrycodes/CountryCodes.json";
+import cflags from "../../assets/data/countrycodes/CountryCodes.json";
 
 function Flag({ code, dcode, cname }) {
     return (

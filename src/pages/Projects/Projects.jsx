@@ -116,9 +116,9 @@ const Projects = () => {
                     <Mobcarousel items={ProjectList} width={"--card-width"} />
                 )}
             </section>
-            {/* <section className="request-wrapper">
+            <section className="request-wrapper">
                 <PropertyRequestForm />
-            </section> */}
+            </section>
         </div>
     );
 };
