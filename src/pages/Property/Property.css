@@ -20,7 +20,7 @@
 	flex-direction: row;
 	align-items: flex-start;
 	gap: 1rem;
-	border: 1px solid yellow;
+	border: 0px solid yellow;
 }
 .property .section-1 .imgs .cover{
 	width: 70%;
@@ -39,7 +39,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	border: 1px solid red;
+	border: 0px solid red;
 	gap: 1rem;
 	height: 70vh;
 }
@@ -48,13 +48,15 @@
 	flex-grow: 1;
 	overflow: hidden;
 	border-radius: 5px;
+	width: 100%;
 }
 .property .section-1 .imgs .side .img img{
 	width: 100%;
 	min-height: 100%;
+	min-width: 100%;
 	object-fit: cover;
 	object-position: center;
-	height: 70vh;
+	/* height: 70vh; */
 }
 .property .section-2{
 	display: flex;
@@ -177,4 +179,7 @@
 .property .section-4 .desc{
 	color: white;
 	margin-top: 1rem;	
+}
+.property .section-4 .tag{
+	color: white;
 }

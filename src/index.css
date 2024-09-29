@@ -59,7 +59,7 @@
 
 body {
     overflow-x: hidden;
-    background: var(--blue-background);
+    background: var(--blue-dark-background);
 }
 
 button {

@@ -3,6 +3,7 @@ import "./Property.css";
 import { Checkbox, Input, Select } from "antd";
 import cflags from "../../assets/data/countrycodes/CountryCodes.json";
 import CustomButton from "../../components/button/CustomButton";
+import Tag from "../../components/tag/Tag";
 
 function Flag({ code, dcode, cname }) {
 	return (
@@ -168,7 +169,7 @@ const Property = () => {
 							</div>
 							<Input placeholder="Email" size="large"></Input>
 							<Input placeholder="Enquiry" size="large"></Input>
-							<Checkbox>
+							<Checkbox style={{ width: "100%" }}>
 								I confirm that I have read and accept the
 								Privacy Policy and Personal Data Processing
 								Guidelines.
@@ -194,8 +195,15 @@ const Property = () => {
 					minus At rerum fuga aut perspiciatis aperiam a quos ipsam.
 					Aut dolor quibusdam aut numquam consequatur id quide
 				</div>
+				<br/>
+				<div className="heading">
+					<div className="title">Amenities</div>
+				</div>
+				<br />
+				<div className="amenities">
+					<Tag text="Urban Beach"></Tag>
+				</div>
 			</section>
-			
 		</div>
 	);
 };
