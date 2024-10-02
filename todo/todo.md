@@ -12,10 +12,11 @@
 - [x] why are the values not in same line as their heading?
 ![cards]({32B5578A-0118-47C6-965E-0F748DBF1B33}.png)
 
-- [ ] make all btns consistent with 10px border radius design
-- [ ] controllers missing
+- [ ] make all btns consistent with 10px border radius design - RISHAB
+
+- [ ] controllers missing - SOUMYAJIT
   ![alt text]({2EECD15D-50F5-4DCF-A216-7F6031FBD7FC}.png)
 
-- [ ] Make all headings consistent. Make a .heading and .sub-heading class in index.css and apply those classes everywhere
+- [ ] Make all headings consistent. Make a .heading and .sub-heading class in index.css and apply those classes everywhere - RISHAB
 
-- [ ]
+- [ ] Sorting in the table - SOUMYAJIT
