@@ -67,6 +67,10 @@
     opacity: 1;
 }
 
+.about-us .company {
+    margin-top: 1.5rem;
+}
+
 .about-us .company,
 .about-us .unique {
     display: flex;

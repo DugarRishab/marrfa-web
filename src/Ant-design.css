@@ -10,19 +10,20 @@
     border-radius: 0px !important;
 }
 
-.ant-table-cell-row-hover {
+.ant-table-cell-row-hover,
+.ant-table-column-sorters,
+.ant-table-tbody >tr >td {
     background: transparent !important;
 }
 
-.ant-pagination .ant-table-pagination .ant-table-pagination-right .css-dev-only-do-not-override-qnu6hi > *:hover {
-    background-color: green;
+.ant-pagination-next .ant-pagination-item-link,
+.ant-pagination-prev .ant-pagination-item-link {
+    color: var(--cyan) !important;
 }
 
-.css-dev-only-do-not-override-qnu6hi.ant-table-wrapper
     .ant-table-thead
     > tr
     > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before,
-.css-dev-only-do-not-override-qnu6hi.ant-table-wrapper
     .ant-table-thead
     > tr
     > td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
@@ -33,11 +34,11 @@
     padding: 5px !important; /* Adjust padding around the icon */
 }
 
-.css-dev-only-do-not-override-1i2g8ja.ant-table-wrapper .ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before, .css-dev-only-do-not-override-1i2g8ja.ant-table-wrapper .ant-table-thead >tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+.ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before, .ant-table-thead >tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
     display: none;
 }
 
-.css-dev-only-do-not-override-1i2g8ja.ant-carousel .slick-list .slick-slide.slick-active {
+.slick-list .slick-slide.slick-active {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -45,4 +46,24 @@
 
 .slick-dots li button{
     background-color: var(--slickdot) !important;
+}
+
+.ant-table-column-sorter-down,
+.ant-table-column-sorter-up {
+    color: #fff ;
+}
+
+.ant-pagination-item a{
+    color: var(--cyan) !important;
+}
+
+.ant-pagination-item:hover {
+    transition: all ease 0.2s !important;
+    background: rgb(233, 233, 233) !important;
+    /* color: #fff !important; */
+}
+
+.ant-pagination-item-active {
+    font-weight: bold !important;
+    border-width: 2px !important;
 }

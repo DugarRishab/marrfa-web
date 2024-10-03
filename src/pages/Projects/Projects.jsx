@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Projects.css";
 import Search from "../../components/search/Search";
 
@@ -31,10 +31,16 @@ for (let name of colnames) {
     i++;
 }
 
+columns[1]["sorter"] = (a,b)=>a.sortkey.price-b.sortkey.price;
+columns[2]["sorter"] = (a,b)=>a.sortkey.yield-b.sortkey.yield;
+columns[3]["sorter"] = (a,b)=>a.sortkey.area-b.sortkey.area;
+columns[4]["sorter"] = (a,b)=>a.sortkey.absolute-b.sortkey.absolute;
+columns[5]["sorter"] = (a,b)=>a.sortkey.marrfex-b.sortkey.marrfex;
+
 // columns[0]['fixed'] = 'left';
 // columns[0]['width'] = 450
 
-const data = [];
+var data = [];
 var key = 1;
 
 for (let item of SampleData) {
@@ -53,6 +59,14 @@ for (let item of SampleData) {
         absolute: item.return + " %",
         marrfex: item.marrfex,
         date: item.date,
+        sortkey: {
+            price: item.price,
+            yield: item.yield,
+            area: item.area,
+            marrfex: item.marrfex,
+            absolute: item.return,
+            date: item.date
+        },
     });
 }
 
@@ -65,6 +79,31 @@ const sortFlags = [
 
 const Projects = () => {
     const { innerWidth } = window;
+    const [sortColumn, setSortColumn] = useState("relevance");  // Initialize with "Relevance"
+    const [sortedData, setSortedData] = useState(data);  // This will hold the sorted data
+
+    // Function to sort based on the selected column
+    const handleSort = (column) => {
+        let sorted = [];
+        switch (column) {
+            case "price":
+                sorted = [...data].sort((a, b) => a.sortkey.price - b.sortkey.price);
+                break;
+            case "yield":
+                sorted = [...data].sort((a, b) => a.sortkey.yield - b.sortkey.yield);
+                break;
+            case "area":
+                sorted = [...data].sort((a, b) => a.sortkey.area - b.sortkey.area);
+                break;
+            case "relevance":
+                sorted = [...data]; // Keep the original order for "Relevance"
+                break;
+            default:
+                sorted = [...data];
+        }
+        setSortedData(sorted);
+    };
+
     return (
         <div className="projects">
             <section className="banner">
@@ -94,7 +133,10 @@ const Projects = () => {
                                     height: 30,
                                 }}
                                 size="small"
-                                // onChange={handleChange}
+                                onChange={(value) => {
+                                    setSortColumn(value.toLowerCase());
+                                    handleSort(value.toLowerCase());
+                                }}
                                 options={sortFlags}
                             />
                         </div>
@@ -105,7 +147,7 @@ const Projects = () => {
                     className="project-table"
                     pagination={{ defaultPageSize: 5, position: ["bottomCenter"] }}
                     columns={columns}
-                    dataSource={data}
+                    dataSource={sortedData}
                 />
             </section>
             <section className="choice-wrapper">
