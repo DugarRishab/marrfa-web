@@ -1,5 +1,5 @@
 .search-box {
-	width: 50%;
+	width: min(50%, 1000px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -13,10 +13,10 @@
 	justify-content: space-between;
 	width: 100%;
 	gap: 10px;
-	background-color: rgba(255, 255, 255, 0.178);
+	background-color: rgba(255, 255, 255);
 	padding: 10px 20px;
-	border-radius: 5px;
-	color: white;
+	border-radius: var(--border-radius);
+	color: rgb(0, 0, 0);
 }
 .search-box .price-range .slider {
 	flex-grow: 1;
@@ -28,6 +28,10 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+}
+.search-box .row .search-input .ant-input-group-addon, .search-box .row .search-input .ant-input-affix-wrapper{
+	border-radius: var(--border-radius);
+	background: rgba(255, 255, 255);
 }
 
 @media only screen and (max-width: 720px) {

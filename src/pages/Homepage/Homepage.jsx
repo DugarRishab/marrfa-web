@@ -15,6 +15,7 @@ import { Carousel } from "antd";
 import projectData from "../../assets/data/projects.json";
 import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
 import SearchBox from "../../components/SearchBox/SearchBox";
+import Heading from "../../components/Heading/Heading";
 // import 'antd/dist/antd.css';
 export const ProjectList = [];
 export const StoryList = [];
@@ -46,7 +47,11 @@ const Homepage = () => {
 				<SearchBox></SearchBox>
 			</section>
 			<section className="projects">
-				<div className="heading">Explore our Trending Projects</div>
+				<Heading
+					heading="Explore our Trending Projects"
+					sub="Lorem Ipsum doler sith"
+				></Heading>
+
 				{innerWidth > 630 ? (
 					<CustomCarousel items={ProjectList} />
 				) : (
@@ -59,17 +64,28 @@ const Homepage = () => {
 				</div>
 			) : (
 				<div className="project-deal">
-					<div className="heading">Deal of the Month</div>
+					{/* <div className="heading">Deal of the Month</div> */}
+					<Heading
+						heading="Deal of the Month"
+						sub="Lorem Ipsum doler sith"
+					></Heading>
 					{ProjectList[0]}
 				</div>
 			)}
 
 			<section className="about-section">
 				<div className="about">
-					<div className="heading">
+					{/* <div className="heading">
 						Marrfa brings cross-border real estate investment
 						opportunities to your fingertips
-					</div>
+					</div> */}
+					<Heading
+						heading="Marrfa brings cross-border real estate investment
+						opportunities to your fingertips"
+						color={"var(--blue)"}
+						align="left"
+						// sub="Lorem Ipsum doler sith"
+					></Heading>
 					<div className="bullets">
 						<div className="vertical-bar"></div>
 						<div className="bullet-icon">
@@ -124,34 +140,35 @@ const Homepage = () => {
 				<img src="/assets/marrfa-clipart.png" />
 			</section>
 			<section className="story-wrapper">
-				<div className="heading">
-					Stories where Marrfa turned vision into success
-				</div>
+				<Heading
+					heading="Stories where Marrfa turned vision into success"
+					sub="Lorem Ipsum doler sith"
+				></Heading>
 				<Mobcarousel items={StoryList} width={"--story-width"} />
-				{innerWidth <=
-					720 && (
-						<div className="advertise">
-							<div className="question">
-								Looking to advertise a property? We can help.
-							</div>
-							<CustomButton
-								themecolor={"#000"}
-								style={{
-									padding: "1rem 2rem",
-                                    fontWeight: "600",
-                                    
-								}}
-								invert
-                            text={"List your Property with us"}
-                            fullWidth
-							/>
+				{innerWidth <= 720 && (
+					<div className="advertise">
+						<div className="question">
+							Looking to advertise a property? We can help.
 						</div>
-					)}
+						<CustomButton
+							themecolor={"#000"}
+							style={{
+								padding: "1rem 2rem",
+								fontWeight: "600",
+							}}
+							invert
+							text={"List your Property with us"}
+							fullWidth
+						/>
+					</div>
+				)}
 			</section>
 			<section className="news-wrapper">
-				<div className="heading">
-					Be updated with latest news and articles
-				</div>
+				
+				<Heading
+					heading="Be updated with latest news and articles"
+					sub="Lorem Ipsum doler sith"
+				></Heading>
 				{innerWidth > 630 ? (
 					<CustomCarousel items={NewsList} />
 				) : (

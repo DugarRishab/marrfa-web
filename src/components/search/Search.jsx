@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import RangeSlider from "../rangeslider/RangeSlider";
 import { Select, ConfigProvider, Button, Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 
 const {Search} = Input;
 
@@ -90,8 +90,8 @@ const SearchField = () => {
     return (
         <div className="search-wrapper">
             <RangeSlider />
-            {/* <SearchBar filter={filter} filterToggle={toggleFilter} /> */}
-            <Search
+            <SearchBar filter={filter} filterToggle={toggleFilter} />
+            {/* <Search
                 placeholder="input search text"
                 allowClear
                 enterButton="Search"
@@ -101,14 +101,14 @@ const SearchField = () => {
                     borderRadius: "100px"
                 }}
                 // onSearch={onSearch}
-            />
-            {/* {filter && (
+            /> */}
+            {filter && (
                 <div className="dropdown-list">
                     {Object.keys(DropMenu).map((key, idx) => (
                         <Dropdown key={idx} label={key} options={DropMenu[key]} />
                     ))}
                 </div>
-            )} */}
+            )}
         </div>
     );
 };

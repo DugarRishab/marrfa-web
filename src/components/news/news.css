@@ -1,6 +1,6 @@
 .news-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     width: var(--card-width);
@@ -54,4 +54,7 @@
     align-self: start;
     /* height: 2.4em; */
     margin: 0.5rem 0;
+    color: #000;
+    text-align: left;
+    align-items: flex-start;
 }

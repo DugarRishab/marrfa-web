@@ -19,16 +19,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --app-width: 1920px;
+    --app-width: 1600px;
     
     --navbar-height: 60px;
     --page-width: 1280px;
     --dealcard-width: 65rem;
-    --heading-textsize: 2rem;
+    --heading-textsize: 2.5rem;
 
     --card-width: 20rem;
     --story-width: 45rem;
     --review-width: 35rem;
+
+    --border-radius: 8px;
     
     --text-color: hsl(218, 100%, 21%);
     --blue: #08254C;
@@ -36,7 +38,7 @@
     --navbar-color: rgba(255, 255, 255, 0.15);
     --slickdot: var(--cyan);
 
-    --mix-background: linear-gradient(90deg, #6083B4 0%, var(--cyan) 100%);
+    --mix-background: linear-gradient(90deg, #496ea1 0%, var(--cyan) 100%);
     --blue-background: linear-gradient(90deg, #08254C 0%, #31517C 100%);
     --blue-dark-background: linear-gradient(270deg, #08254C 0%, #0B0C10 100%);
 
@@ -66,5 +68,4 @@ button {
     position: relative;
     cursor: pointer;
 }
-
 

@@ -33,7 +33,7 @@ const CustomButton = ({
                 size={size}
                 style={{
                     width: fullWidth ? "100%" : "max-content",
-                    borderRadius: '5px',
+                    borderRadius: 'var(--border-radius)',
                     background: invert ? "#fff" : background,
                     color: invert ? "#000" : "#fff",
                     lineHeight: circled ? "1.2em" : "",

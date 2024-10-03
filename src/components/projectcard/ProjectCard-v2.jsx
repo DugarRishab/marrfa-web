@@ -1,5 +1,5 @@
 import React from "react";
-// import "./ProjectCard-v2.css";
+import "./ProjectCard-v2.css";
 
 import { WalletFilled, FormatPainterFilled, EnvironmentFilled, PhoneOutlined, WhatsAppOutlined } from "@ant-design/icons";
 

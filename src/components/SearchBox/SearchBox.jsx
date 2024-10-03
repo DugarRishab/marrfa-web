@@ -11,6 +11,7 @@ import {
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 import "./SearchBox.css";
 import FilterBox from '../FilterBox/FilterBox';
+import CustomButton from '../button/CustomButton';
 
 const { Search } = Input;
 
@@ -48,12 +49,14 @@ const SearchBox = () => {
 			<div className="row">
 				<Input
 					placeholder="City, District, Building Name"
+					className="search-input"
 					// prefix={<SearchOutlined />}
 					style={{
 						width: "100%",
 						lineHeight: "2.5em",
 						border: "none",
-						background: "white",
+						background: "rgba(255, 255, 255)",
+						borderRadius: "var(--border-radius)",
 					}}
 					addonBefore={<SearchOutlined />}
 					size="large"
@@ -63,12 +66,22 @@ const SearchBox = () => {
 					icon={<FilterOutlined />}
 					size="large"
 					onClick={() => handleOpenFilter(true)}
+					style={{
+						borderRadius: "var(--border-radius)",
+						// background: "rgba(255, 255, 255, 0.7)",
+					}}
 				>
 					Filters
 				</Button>
-				<Button icon={<SearchOutlined />} size="large" type="primary">
+				{/* <Button icon={<SearchOutlined />} size="large" type="primary">
 					Search
-				</Button>
+				</Button> */}
+				<CustomButton
+					startIcon={<SearchOutlined />}
+					size="large"
+					type="primary"
+					text={"Search"}
+				></CustomButton>
 				<FilterBox
 					open={openFilters}
 					onCancel={() => handleOpenFilter(false)}
