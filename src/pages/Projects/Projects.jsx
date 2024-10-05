@@ -31,17 +31,43 @@ for (let name of colnames) {
     i++;
 }
 
-columns[1]["sorter"] = (a,b)=>a.sortkey.price-b.sortkey.price;
-columns[2]["sorter"] = (a,b)=>a.sortkey.yield-b.sortkey.yield;
-columns[3]["sorter"] = (a,b)=>a.sortkey.area-b.sortkey.area;
-columns[4]["sorter"] = (a,b)=>a.sortkey.absolute-b.sortkey.absolute;
-columns[5]["sorter"] = (a,b)=>a.sortkey.marrfex-b.sortkey.marrfex;
+columns[1]["sorter"] = (a, b) => a.sortkey.price - b.sortkey.price;
+columns[2]["sorter"] = (a, b) => a.sortkey.yield - b.sortkey.yield;
+columns[3]["sorter"] = (a, b) => a.sortkey.area - b.sortkey.area;
+columns[4]["sorter"] = (a, b) => a.sortkey.absolute - b.sortkey.absolute;
+columns[5]["sorter"] = (a, b) => a.sortkey.marrfex - b.sortkey.marrfex;
 
 // columns[0]['fixed'] = 'left';
 // columns[0]['width'] = 450
 
 var data = [];
 var key = 1;
+
+const relevScore = (test, input) => {
+    // Split input and test strings into arrays of words
+    const inputWords = input.toLowerCase().split(" ");
+    const testWords = test.toLowerCase().split(" ");
+
+    // Initialize score
+    let score = 0;
+
+    // Calculate frequency score
+    const frequencyScore = inputWords.reduce((acc, word) => {
+        const wordCount = testWords.filter((testWord) => testWord === word).length;
+        return acc + wordCount;
+    }, 0);
+
+    // Calculate location score
+    const locationScore = inputWords.reduce((acc, word) => {
+        const wordIndex = testWords.indexOf(word);
+        return acc + (wordIndex !== -1 ? testWords.length - wordIndex : 0);
+    }, 0);
+
+    // Combine frequency and location scores
+    score = frequencyScore + locationScore;
+
+    return score;
+};
 
 for (let item of SampleData) {
     data.push({
@@ -65,7 +91,8 @@ for (let item of SampleData) {
             area: item.area,
             marrfex: item.marrfex,
             absolute: item.return,
-            date: item.date
+            date: item.date,
+            relevance: item.name.projectName + " " + item.name.highlights
         },
     });
 }
@@ -79,10 +106,11 @@ const sortFlags = [
 
 const Projects = () => {
     const { innerWidth } = window;
-    const [sortColumn, setSortColumn] = useState("relevance");  // Initialize with "Relevance"
-    const [sortedData, setSortedData] = useState(data);  // This will hold the sorted data
+    const [sortColumn, setSortColumn] = useState("relevance"); // Initialize with "Relevance"
+    const [sortedData, setSortedData] = useState(data); // This will hold the sorted data
 
     // Function to sort based on the selected column
+
     const handleSort = (column) => {
         let sorted = [];
         switch (column) {
@@ -96,7 +124,8 @@ const Projects = () => {
                 sorted = [...data].sort((a, b) => a.sortkey.area - b.sortkey.area);
                 break;
             case "relevance":
-                sorted = [...data]; // Keep the original order for "Relevance"
+                // sorted = [...data]; // Keep the original order for "Relevance"
+                sorted = [...data].sort((a, b) => relevScore(a.sortkey.relevance, "wow") - relevScore(b.sortkey.relevance, 'wow'))
                 break;
             default:
                 sorted = [...data];
