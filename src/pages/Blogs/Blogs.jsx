@@ -9,12 +9,13 @@ import News from "../../components/news/News";
 import Carousel from "../../components/carousel/Carousel";
 import CustomButton from "../../components/button/CustomButton";
 import BlogPagination from "../../components/BlogPagination/BlogPagination";
-import { BellOutlined } from "@ant-design/icons";
-import { Select } from "antd";
+import { BellOutlined, BorderHorizontalOutlined, SearchOutlined } from "@ant-design/icons";
+import { Divider, Select } from "antd";
 
 const BlogsList = [];
 
 import { NewsList } from "../../pages/Homepage/Homepage";
+import TrendingPost from "../../components/TrendingPost/TrendingPost";
 const Fin = []
 
 for (let p of projectData) {
@@ -69,7 +70,30 @@ const Blogs = () => {
                     <BlogCard />
                 </div>
                 <div className="right">
+                    <CustomButton text={"Looking for something specific?"} startIcon={<SearchOutlined />} style={{width: "100%", borderRadius: "2rem"}}/>
                     <div className="heading">Trending Posts</div>
+                    <div className="posts-list">
+                        <TrendingPost 
+                            heading={"Headline headline headline"} 
+                            heading_byline={"20th Aug, 2024 | Finance"}
+                            desc={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"}
+                            bannersrc={"/assets/banner/HomeBanner2.jpg"}
+                        />
+                        <Divider style={{border: "1px solid #fff", "margin":".5rem"}}/>
+                        <TrendingPost 
+                            heading={"Headline headline headline"} 
+                            heading_byline={"20th Aug, 2024 | Finance"}
+                            desc={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"}
+                            bannersrc={"/assets/banner/HomeBanner2.jpg"}
+                        />
+                        <Divider style={{border: "1px solid #fff", "margin":".5rem"}}/>
+                        <TrendingPost 
+                            heading={"Headline headline headline"} 
+                            heading_byline={"20th Aug, 2024 | Finance"}
+                            desc={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"}
+                            bannersrc={"/assets/banner/HomeBanner2.jpg"}
+                        />
+                    </div>
                 </div>
             </section>
             <section className="investments">
