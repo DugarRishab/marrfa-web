@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Carousel.css";
-import Arrow from "/assets/icons/arrow.png";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 import CustomButton from "../button/CustomButton";
 
@@ -23,32 +22,45 @@ const Carousel = ({ items, indicator = false }) => {
     const goRight = () => {
         if (margin > -delta * (N - numCards)) {
             setMargin(() => margin - delta);
-            setIndex(index + 1);
+            setIndex((prevIndex) => (prevIndex + 1) % N); // Loop to first item
+        } else {
+            // Reset to first position for infinite scroll
+            setMargin(0);
+            setIndex(0);
         }
     };
+
     const goLeft = () => {
         if (margin < 0) {
             setMargin(() => margin + delta);
-            setIndex(index - 1);
+            setIndex((prevIndex) => (prevIndex - 1 + N) % N); // Loop to last item
+        } else {
+            // Go to the last position for infinite scroll
+            setMargin(-delta * (N - numCards));
+            setIndex(N - 1);
         }
     };
 
     useEffect(() => {
-        if (childRef.current && childRef.current.children) setCardWidth(() => childRef.current.children[0].offsetWidth);
+        if (childRef.current && childRef.current.children) {
+            setCardWidth(() => childRef.current.children[0].offsetWidth);
+        }
     }, [childRef]);
 
     useEffect(() => {
-        if (containerRef.current) setContainerWidth(() => containerRef.current.offsetWidth);
+        if (containerRef.current) {
+            setContainerWidth(() => containerRef.current.offsetWidth);
+        }
     }, [containerRef]);
 
     return (
         <div className="indicator-wrapper">
             <div className="carousel-wrapper">
-            <CustomButton
+                <CustomButton
                     invert
                     onClick={goLeft}
                     style={{
-                        padding:0,
+                        padding: 0,
                         background: "transparent",
                         boxShadow: "none"
                     }}
@@ -56,7 +68,7 @@ const Carousel = ({ items, indicator = false }) => {
                         <LeftCircleOutlined
                             style={{
                                 fontSize: 30,
-                                color: "var(--cyan)",
+                                color: "var(--cyan)"
                             }}
                         />
                     }
@@ -76,7 +88,7 @@ const Carousel = ({ items, indicator = false }) => {
                         ref={childRef}
                     >
                         {items.map((value, idx) => (
-                            <>{value}</>
+                            <div key={idx}>{value}</div>
                         ))}
                     </div>
                 </div>
@@ -84,7 +96,7 @@ const Carousel = ({ items, indicator = false }) => {
                     invert
                     onClick={goRight}
                     style={{
-                        padding:0,
+                        padding: 0,
                         background: "transparent",
                         boxShadow: "none"
                     }}
@@ -92,7 +104,7 @@ const Carousel = ({ items, indicator = false }) => {
                         <RightCircleOutlined
                             style={{
                                 fontSize: 30,
-                                color: "var(--cyan)",
+                                color: "var(--cyan)"
                             }}
                         />
                     }
@@ -101,7 +113,7 @@ const Carousel = ({ items, indicator = false }) => {
             {indicator && (
                 <div className="indicators">
                     {items.map((value, idx) => (
-                        <div key={idx} className={"dot" + (idx == index ? " active" : "")}></div>
+                        <div key={idx} className={"dot" + (idx === index ? " active" : "")}></div>
                     ))}
                 </div>
             )}
