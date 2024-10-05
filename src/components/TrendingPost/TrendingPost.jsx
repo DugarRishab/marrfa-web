@@ -1,15 +1,13 @@
 import React from "react";
 import "./TrendingPost.css";
-import homebanner from "../../../public/assets/banner/HomeBanner2.jpg";
-import { Button } from "antd";
 import { ShareAltOutlined, RightOutlined } from "@ant-design/icons";
 import CustomButton from "../button/CustomButton";
 
-const TrendingPost = ({heading_byline, heading, desc, bannersrc}) => {
+const TrendingPost = ({heading_byline, heading, desc, date, tag, bannersrc}) => {
     return (
         <div className="trending-post">
             <div className="content">
-                <span className="head-byline">{heading_byline}</span>
+                <span className="head-byline">{`${date} | ${tag}`}</span>
                 <span className="post-heading">{heading}</span>
                 <p className="desc">
                     {desc}

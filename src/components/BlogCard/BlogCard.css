@@ -4,6 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: var(--mainblog-width);
+    max-width: max-content;
 }
 
 .blogcard .image-section {
@@ -46,17 +47,18 @@
 .blogcard .body-section .ribbon .categorylabel {
     border-left: 1.5px solid var(--lightblue);
     padding: 2px 5px;
-    color: var(--lightblue)
+    color: var(--lightblue);
+    font-size: 14px
 }
 
 .blogcard .body-section .heading {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: var(--blue);
     font-weight: 600;
 }
 
 .blogcard .body-section .desc {
-    font-size: 12px;
+    font-size: 0.9rem;
     line-height: 1.2em;
     width: 100%;
     border-bottom: 1px solid #000;
@@ -67,10 +69,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 800;
     color: var(--blue);
-    padding: 5px 0px;
+    line-height: 1em;
+    padding: 0.8rem 5px;
 }
 
 .blogcard .body-section .links .link-label {
@@ -80,8 +83,24 @@
     gap: 5px;
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 520px) {
     * {
         --mainblog-width: 20rem;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .blogcard {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    
+    .blogcard .image-section {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .blogcard .body-section {
+        border-radius: 0 0 10px 10px;
     }
 }
