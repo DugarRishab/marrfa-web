@@ -29,7 +29,7 @@
     --card-width: 20rem;
     --story-width: 45rem;
     --review-width: 35rem;
-    --mainblog-width: 33rem;
+    --mainblog-width: 40rem;
 
     --border-radius: 8px;
     
@@ -70,4 +70,3 @@ button {
     position: relative;
     cursor: pointer;
 }
-
