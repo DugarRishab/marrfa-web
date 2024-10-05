@@ -1,0 +1,121 @@
+.blogpage {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+    margin-top: var(--navbar-height);
+}
+
+.blogpage .mainblogs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding-bottom: 5rem;
+    color: #fff;
+}
+
+.blogpage .mainblogs .left {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blogpage .mainblogs .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blogpage .mainblogs .right .heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+}
+
+.blogpage .investments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+}
+
+.blogpage .bigdata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* width: 80%; */
+    max-width: 1000px;
+    padding-top: 2rem;
+}
+
+.blogpage .bigdata .headline {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    width: 100%;
+}
+.blogpage .bigdata .headline .upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    line-height: 1em;
+}
+
+.blogpage .bigdata .headline .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0px;
+    line-height: 1em;
+}
+
+.blogpage .bigdata .headline .middle .sort-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 200;;
+}
+
+.blogpage .bigdata .headline .middle .byline {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.category {
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--lightblue);
+    color: var(--lightblue);
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+.category.active {
+    background: var(--lightblue);
+    color: #fff;
+}
+
+.blogpage .bigdata .headline .lower {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+}

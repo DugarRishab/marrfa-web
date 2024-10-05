@@ -29,6 +29,7 @@
     --card-width: 20rem;
     --story-width: 45rem;
     --review-width: 35rem;
+    --mainblog-width: 33rem;
 
     --border-radius: 8px;
     
@@ -37,6 +38,7 @@
     --cyan: #46A29F;
     --navbar-color: rgba(255, 255, 255, 0.15);
     --slickdot: var(--cyan);
+    --lightblue: #6083B4;
 
     --mix-background: linear-gradient(90deg, #496ea1 0%, var(--cyan) 100%);
     --blue-background: linear-gradient(90deg, #08254C 0%, #31517C 100%);
