@@ -1,0 +1,70 @@
+.trending-post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.4rem;
+    /* border: 1px solid green; */
+    width: 23rem;
+    height: 9rem;
+    margin: 10rem;
+    color: #fff;
+}
+
+.trending-post .content {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.trending-post .content .head-byline {
+    font-size: 0.625rem;
+    font-weight: 300;
+    color: #6083B4;
+}
+
+.trending-post .content .post-heading {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.trending-post .content .desc {
+    font-weight: 300;
+    font-size: 0.625rem;
+    margin-top: 0.4rem;
+    color: #E0E2E5;
+    line-clamp: 4;
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis */
+}
+
+.trending-post .content .buttongrp {
+    font-size: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.trending-post .content .buttongrp button {
+    border-radius: 3px !important; 
+    box-shadow: none !important;
+}
+
+
+.trending-post .banner {
+    /* border: 1px solid blue; */
+    aspect-ratio: 1/1;
+    height: 100%;
+}
+
+.trending-post .banner img {
+    width: 100%;
+    height: 100%;
+}
