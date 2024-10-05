@@ -8,6 +8,7 @@ const CustomButton = ({
     fullWidth = false,
     background = "var(--mix-background)", // Custom background color prop
     startIcon = null,
+    endIcon = null,
     circled = false,
     style,
     size = "large",
@@ -46,6 +47,7 @@ const CustomButton = ({
             >
                 {startIcon ? startIcon : null}
                 {text ? text : null}
+                {endIcon ? endIcon : null}
             </Button>
         </ConfigProvider>
     );
