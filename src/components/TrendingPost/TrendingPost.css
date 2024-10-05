@@ -68,3 +68,20 @@
     width: 100%;
     height: 100%;
 }
+
+@media only screen and (max-width: 500px) {
+    .trending-post .content .desc {
+        display: none;
+    }
+
+    .trending-post .content .head-byline {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .trending-post .content .post-heading {
+        font-size: 1.2rem;
+    }
+
+
+}
