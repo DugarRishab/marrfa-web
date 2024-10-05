@@ -10,11 +10,13 @@
     width: 100%;
     height: 13rem;
     padding: 10px;
-
+}
+.blogcard .image-section .taglist {
     display: flex;
     align-items: start;
     justify-content: start;
     flex-wrap: wrap;
+    gap: 5px;
 }
 
 .blogcard .body-section {
@@ -41,7 +43,7 @@
     color: #fff;
 }
 
-.blogcard .body-section .ribbon .category {
+.blogcard .body-section .ribbon .categorylabel {
     border-left: 1.5px solid var(--lightblue);
     padding: 2px 5px;
     color: var(--lightblue)
@@ -77,5 +79,4 @@
     justify-content: center;
     gap: 5px;
 }
-
 

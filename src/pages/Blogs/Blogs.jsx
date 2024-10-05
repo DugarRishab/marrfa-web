@@ -34,6 +34,15 @@ const sortFlags = [
     { value: "Relevance", label: "Relevance" },
 ];
 
+const BlogDetails = {
+    imageURL: `/assets/balloon.jpeg`,
+    tags: ['Amazing', 'Cheap'],
+    date: '21 Aug 2024',
+    category: 'Finance',
+    heading: 'AshtonVilla Apartment in Dubai',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolores excepturi, molestias ipsam enim eligendi voluptates rem libero nam, eum qui ad nemo officia, hic atque rerum doloribus soluta quos?',  
+}
+
 const Category = ({ catname, activated, setActive }) => {
     return (
         <div onClick={() => setActive(catname)} className={"category" + (activated === catname ? " active" : "")}>
@@ -66,7 +75,7 @@ const Blogs = () => {
             <section className="mainblogs">
                 <div className="left">
                     <Heading heading={"Latest on the blog"} align="left" />
-                    <BlogCard />
+                    <BlogCard data={BlogDetails} />
                 </div>
                 <div className="right">
                     <div className="heading">Trending Posts</div>

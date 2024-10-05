@@ -4,32 +4,34 @@ import Tag from "../tag/Tag";
 import CustomButton from "../button/CustomButton";
 import { RightOutlined, ShareAltOutlined } from "@ant-design/icons";
 
-const BlogCard = () => {
+const BlogCard = ({data}) => {
     return (
         <div className="blogcard">
             <div
                 className="image-section"
                 style={{
-                    background: `url("/assets/balloon.jpeg")`,
+                    background: `url("${data.imageURL}")`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                 }}
             >
                 <div className="taglist">
-                    <Tag text={"hello"} />
+                    {data.tags.map((value, index)=>(
+                        <Tag version={2} text={value} key={index} />
+                    ))}
                 </div>
             </div>
             <div className="body-section">
                 <div className="ribbon">
-                    <div className="datelabel">21 Aug 2024 </div>
-                    <div className="category">
-                        Category: <span>Finance</span>
+                    <div className="datelabel">{data.date}</div>
+                    <div className="categorylabel">
+                        Category: <span>{data.category}</span>
                     </div>
                 </div>
-                <div className="heading">Hello</div>
+                <div className="heading">{data.heading}</div>
                 <div className="desc">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolores excepturi, molestias ipsam enim eligendi voluptates rem libero nam, eum qui ad nemo officia, hic atque rerum doloribus soluta quos?
+                    {data.description}
                 </div>
                 <div className="links">
                     <div className="link-label">Read <RightOutlined /> </div>
