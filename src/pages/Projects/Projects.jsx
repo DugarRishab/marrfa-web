@@ -9,7 +9,7 @@ import CustomButton from "../../components/button/CustomButton";
 import { Select, Table } from "antd";
 import ProjectDesc from "../../components/projectdesc/ProjectDesc";
 import SampleData from "../../assets/samples/ProdListing.json";
-import { formatPrice, formatNumber } from "../../App";
+import { formatPrice, formatNumber } from "../../utils/BasicFunctions";
 import { BellOutlined } from "@ant-design/icons";
 import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
 import CustomCarousel from "../../components/carousel/Carousel";

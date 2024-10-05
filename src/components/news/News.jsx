@@ -1,6 +1,6 @@
 import React from "react";
 import "./news.css";
-import { formatDate } from "../../App";
+import { formatDate } from "../../utils/BasicFunctions";;
 
 const News = ({ data }) => {
     return (
