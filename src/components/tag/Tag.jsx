@@ -11,7 +11,8 @@ const Tag = ({ text, version = 1 }) => {
                 padding: "5px 15px",
                 width: "max-content",
                 lineHeight: "1em",
-                background: version==1?"transparent":"rgba(0,0,0, 0.50)"
+                background: version==1?"transparent":"rgba(0,0,0, 0.50)",
+                color: "#fff"
             }}
             className="tag"
         >

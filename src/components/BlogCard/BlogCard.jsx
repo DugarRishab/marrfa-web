@@ -4,9 +4,9 @@ import Tag from "../tag/Tag";
 import CustomButton from "../button/CustomButton";
 import { RightOutlined, ShareAltOutlined } from "@ant-design/icons";
 
-const BlogCard = ({data}) => {
+const BlogCard = ({data, inMobile}) => {
     return (
-        <div className="blogcard">
+        <div style = {{marginBottom: inMobile?"2rem":"none"}} className="blogcard">
             <div
                 className="image-section"
                 style={{

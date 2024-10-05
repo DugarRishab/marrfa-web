@@ -3,7 +3,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	width: 100%;
+	width: 100vw;
     margin-top: var(--navbar-height);
 }
 
@@ -120,4 +120,19 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 5px 0px;
+}
+
+.blogpage .individual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 4px 0px;
+}
+
+@media only screen and (max-width: 480px) {
+    .blogpage .investments {
+        display: none
+    }
 }

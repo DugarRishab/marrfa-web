@@ -2,9 +2,9 @@ import React from "react";
 import "./news.css";
 import { formatDate } from "../../utils/BasicFunctions";;
 
-const News = ({ data }) => {
+const News = ({ data, inMobile=false }) => {
     return (
-        <div className="news-card">
+        <div style = {{marginBottom: inMobile?"2rem":"none"}} className="news-card">
             <img src={data.images.heroImg} />
             <label>{formatDate(data.metadata.datePosted)}</label>
             <div className="heading">{data.name}</div>
