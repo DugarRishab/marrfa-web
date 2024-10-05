@@ -3,9 +3,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import Projects from "./pages/Projects/Projects";
 import AboutUs from "./pages/AboutUs/AboutUs";
-import PropertyRequestForm from "./components/PropertyRequestForm/PropertyRequestForm";
 import Property from "./pages/Property/Property";
-// import TrendingPost from "./components/TrendingPost/TrendingPost";
+import Blogs from "./pages/Blogs/Blogs";
 
 const PageRoutes = () => {
     const location = useLocation();
@@ -25,7 +24,7 @@ const PageRoutes = () => {
                 <Route path="" element={<ComingSoon />}></Route>
                 </Route> */}
             {/* <Route exact path="/test" element={<ProjectDesc projectName={"Manhattan Project"} highlights={["amazing", "destructive", "hard", "physics", "bomb"]} image={"/assets/projects/projectbanner.png"}/>}></Route> */}
-            {/* <Route exact path="/test" element={<TrendingPost />} /> */}
+            <Route exact path="/blogs" element={<Blogs />} />
         </Routes>
     );
 };

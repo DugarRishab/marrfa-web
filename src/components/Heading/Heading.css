@@ -5,9 +5,10 @@
 	align-items: center;
 	justify-content: center;
 	font-weight: 500;
-	color: white;
-	width: 60%;
+	/* color: white; */
+	/* width: 60%; */
 	margin: 2rem 0;
+	line-height: 1.3em;
 }
 
 .section-heading .sub{

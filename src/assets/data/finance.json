@@ -1,0 +1,166 @@
+[
+    {
+        "name": "Modern Mansion",
+        "images": {
+            "heroImg": "https://example.com/mansion-hero.jpg",
+            "gallery": [
+                "https://example.com/mansion-gallery1.jpg",
+                "https://example.com/mansion-gallery2.jpg"
+            ],
+            "floorMap": [
+                "https://example.com/mansion-floorplan.jpg"
+            ]
+        },
+        "map": {
+            "lat": 51.507351,
+            "long": -0.127758
+        },
+        "type": "mansion",
+        "location": {
+            "lat": "51.507351",
+            "long": "-0.127758",
+            "address": "789 Kensington Ave",
+            "city": "London",
+            "district": "Kensington",
+            "state": "England",
+            "country": "UK",
+            "amenities": [
+                {
+                    "name": "Golf Course",
+                    "distance": {
+                        "value": 1,
+                        "unit": "km"
+                    }
+                },
+                {
+                    "name": "Museum",
+                    "distance": {
+                        "value": 3,
+                        "unit": "km"
+                    }
+                }
+            ]
+        },
+        "features": {
+            "amenities": ["Cinema", "Wine Cellar", "Heated Pool"],
+            "renovations": ["New Roof", "Basement Upgrade"],
+            "energyRating": "A",
+            "smartFeatures": ["Smart Thermostat", "Voice-Controlled Security"],
+            "views": ["Park", "City"]
+        },
+        "lastRenovation": {
+            "value": 3,
+            "unit": "years"
+        },
+        "listedBy": {
+            "name": "Elite Homes Realty",
+            "link": "https://elitehomes.com",
+            "contact": ["email", "phone"]
+        },
+        "description": {
+            "name": "A luxurious mansion in the heart of Kensington, featuring top-notch amenities and stunning park views."
+        },
+        "layout": {
+            "size": {
+                "value": 5000,
+                "unit": "sqft"
+            },
+            "bedrooms": 6,
+            "kitchen": 2,
+            "bathrooms": 7
+        },
+        "occupancy": "vacant",
+        "price": {
+            "value": 10000000,
+            "unit": "GBP"
+        },
+        "metadata": {
+            "mls": 654321987,
+            "datePosted": "2024-10-01T12:00:00Z",
+            "dateUpdated": "2024-10-05T12:00:00Z",
+            "views": 2000,
+            "likes": 350
+        }
+    },
+    {
+        "name": "Luxury Penthouse",
+        "images": {
+            "heroImg": "https://example.com/penthouse-hero.jpg",
+            "gallery": [
+                "https://example.com/penthouse-gallery1.jpg",
+                "https://example.com/penthouse-gallery2.jpg"
+            ],
+            "floorMap": []
+        },
+        "map": {
+            "lat": 48.856614,
+            "long": 2.3522219
+        },
+        "type": "penthouse",
+        "location": {
+            "lat": "48.856614",
+            "long": "2.3522219",
+            "address": "300 Avenue des Champs-Élysées",
+            "city": "Paris",
+            "district": "8th Arrondissement",
+            "state": "Île-de-France",
+            "country": "France",
+            "amenities": [
+                {
+                    "name": "Boutique Shops",
+                    "distance": {
+                        "value": 0.3,
+                        "unit": "km"
+                    }
+                },
+                {
+                    "name": "Fine Dining",
+                    "distance": {
+                        "value": 0.5,
+                        "unit": "km"
+                    }
+                }
+            ]
+        },
+        "features": {
+            "amenities": ["Private Elevator", "Jacuzzi", "Gym"],
+            "renovations": ["Interior Redesign"],
+            "energyRating": "B+",
+            "smartFeatures": ["Automated Blinds", "Keyless Entry"],
+            "views": ["Eiffel Tower", "Seine River"]
+        },
+        "lastRenovation": {
+            "value": 1,
+            "unit": "year"
+        },
+        "listedBy": {
+            "name": "Parisian Properties",
+            "link": "https://parisianproperties.fr",
+            "contact": ["email"]
+        },
+        "description": {
+            "name": "An exquisite penthouse with panoramic views of the Eiffel Tower and luxurious amenities for a modern lifestyle."
+        },
+        "layout": {
+            "size": {
+                "value": 2000,
+                "unit": "sqft"
+            },
+            "bedrooms": 3,
+            "kitchen": 1,
+            "bathrooms": 4
+        },
+        "occupancy": "vacant",
+        "price": {
+            "value": 8500000,
+            "unit": "EUR"
+        },
+        "metadata": {
+            "mls": 789123654,
+            "datePosted": "2024-09-25T12:00:00Z",
+            "dateUpdated": "2024-09-30T12:00:00Z",
+            "views": 1500,
+            "likes": 275
+        }
+    }
+]
