@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Blogs.css";
 import BlogCard from "../../components/BlogCard/BlogCard";
-import Heading from "../../components/Heading/heading";
+import Heading from "../../components/Heading/Heading";
 
 import projectData from "../../assets/data/projects.json";
 import financeData from "../../assets/data/finance.json";
