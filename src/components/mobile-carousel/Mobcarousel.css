@@ -4,3 +4,7 @@
     justify-content: center;
     width: 100%;
 }
+
+.mobile-carousel .slick-dots{
+    margin-top: 1rem;
+}

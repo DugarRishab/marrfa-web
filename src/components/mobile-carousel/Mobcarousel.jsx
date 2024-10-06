@@ -87,9 +87,10 @@ const Mobcarousel = ({ items }) => {
                 slidesToScroll={numCards}
                 onInit={updateDetails}
                 easing="ease-in-out"
-                dots
+                dots={innerWidth < 720}
                 dotPosition=""
                 accessibility
+                
                 // centerMode={true}
                 
 			>
