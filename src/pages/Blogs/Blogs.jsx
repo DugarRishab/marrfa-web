@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Blogs.css";
-import BlogCard from "../../components/Blogcard/Blogcard";
+import BlogCard from "../../components/BlogCard/BlogCard";
 import Heading from "../../components/Heading/heading";
 
 import projectData from "../../assets/data/projects.json";
