@@ -14,7 +14,8 @@ const Carousel = ({ items, indicator = false }) => {
     const [margin, setMargin] = useState(0);
     const gap = 16;
     const delta = cardWidth + gap;
-    const numCards = Math.round(containerWidth / cardWidth) - 1;
+    const numCards =
+		Math.floor(containerWidth / cardWidth);
     const width = delta * numCards + gap / 4;
 
     const [index, setIndex] = useState(0);
@@ -54,71 +55,79 @@ const Carousel = ({ items, indicator = false }) => {
     }, [containerRef]);
 
     return (
-        <div className="indicator-wrapper">
-            <div className="carousel-wrapper">
-                <CustomButton
-                    invert
-                    onClick={goLeft}
-                    style={{
-                        padding: 0,
-                        background: "transparent",
-                        boxShadow: "none"
-                    }}
-                    startIcon={
-                        <LeftCircleOutlined
-                            style={{
-                                fontSize: 30,
-                                color: "var(--cyan)"
-                            }}
-                        />
-                    }
-                />
-                <div
-                    style={{
-                        width: `${width}px`,
-                    }}
-                    className="carousel"
-                    ref={containerRef}
-                >
-                    <div
-                        style={{
-                            marginLeft: `${margin}px`,
-                        }}
-                        className="items"
-                        ref={childRef}
-                    >
-                        {items.map((value, idx) => (
-                            <div key={idx}>{value}</div>
-                        ))}
-                    </div>
-                </div>
-                <CustomButton
-                    invert
-                    onClick={goRight}
-                    style={{
-                        padding: 0,
-                        background: "transparent",
-                        boxShadow: "none"
-                    }}
-                    startIcon={
-                        <RightCircleOutlined
-                            style={{
-                                fontSize: 30,
-                                color: "var(--cyan)"
-                            }}
-                        />
-                    }
-                />
-            </div>
-            {indicator && (
-                <div className="indicators">
-                    {items.map((value, idx) => (
-                        <div key={idx} className={"dot" + (idx === index ? " active" : "")}></div>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
+		<div className="indicator-wrapper">
+			<div className="carousel-wrapper">
+				{width > 480 && (
+					<CustomButton
+						invert
+						onClick={goLeft}
+						style={{
+							padding: 0,
+							background: "transparent",
+							boxShadow: "none",
+						}}
+						startIcon={
+							<LeftCircleOutlined
+								style={{
+									fontSize: 30,
+									color: "var(--cyan)",
+								}}
+							/>
+						}
+					/>
+				)}
+
+				<div
+					style={{
+						width: `${width}px`,
+					}}
+					className="carousel"
+					ref={containerRef}
+				>
+					<div
+						style={{
+							marginLeft: `${margin}px`,
+						}}
+						className="items"
+						ref={childRef}
+					>
+						{items.map((value, idx) => (
+							<div key={idx}>{value}</div>
+						))}
+					</div>
+				</div>
+				{width > 480 && (
+					<CustomButton
+						invert
+						onClick={goRight}
+						style={{
+							padding: 0,
+							background: "transparent",
+							boxShadow: "none",
+						}}
+						startIcon={
+							<RightCircleOutlined
+								style={{
+									fontSize: 30,
+									color: "var(--cyan)",
+								}}
+							/>
+						}
+					/>
+				)}
+			</div>
+			{indicator && (
+				<div className="indicators">
+					{items.map((value, idx) => (
+						<div
+							key={idx}
+							className={"dot" + (idx === index ? " active" : "")}
+						></div>
+					))}
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default Carousel;

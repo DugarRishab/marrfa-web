@@ -52,11 +52,13 @@ const Homepage = () => {
 					sub="Lorem Ipsum doler sith"
 				></Heading>
 
-				{innerWidth > 630 ? (
+				{/* {innerWidth > 630 ? (
 					<CustomCarousel items={ProjectList} />
 				) : (
-					<Mobcarousel items={ProjectList} width={"--card-width"} />
-				)}
+					
+				)} */}
+				{/* <CustomCarousel items={ProjectList} /> */}
+				<Mobcarousel items={ProjectList} width={"--card-width"} />
 			</section>
 			{innerWidth > 1000 ? (
 				<div className="project-deal">
@@ -144,7 +146,7 @@ const Homepage = () => {
 					heading="Stories where Marrfa turned vision into success"
 					sub="Lorem Ipsum doler sith"
 				></Heading>
-				<Mobcarousel items={StoryList} width={"--story-width"} />
+				{/* <Mobcarousel items={StoryList} width={"--story-width"} /> */}
 				{innerWidth <= 720 && (
 					<div className="advertise">
 						<div className="question">
@@ -164,13 +166,12 @@ const Homepage = () => {
 				)}
 			</section>
 			<section className="news-wrapper">
-				
 				<Heading
 					heading="Be updated with latest news and articles"
 					sub="Lorem Ipsum doler sith"
 				></Heading>
 				{innerWidth > 630 ? (
-					<CustomCarousel items={NewsList} />
+					<Mobcarousel items={NewsList} />
 				) : (
 					<div className="expanded-news">
 						{NewsList.slice(0, 3).map((v) => v)}

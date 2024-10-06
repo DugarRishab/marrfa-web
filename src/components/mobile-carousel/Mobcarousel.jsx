@@ -1,63 +1,129 @@
-import React, {useRef} from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Carousel } from "antd";
 import "./Mobcarousel.css";
 import CustomButton from "../button/CustomButton";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 
-const Mobcarousel = ({ items, width }) => {
-    const carouselRef = useRef(null);
+const Mobcarousel = ({ items }) => {
+	const carouselRef = useRef(null);
+	const childRef = useRef([]);
 
-    const goToNext = () => {
-      carouselRef.current.next();
-    };
-  
-    const goToPrev = () => {
-      carouselRef.current.prev();
-    };
+	const { innerWidth } = window;
 
-    const {innerWidth} = window;
+	const [cardWidth, setCardWidth] = useState(0);
+	const [numCards, setNumCards] = useState(1);
 
-    return (
-        <div className="mobile-carousel">
-            {innerWidth>720 && <CustomButton
-                    invert
-                    onClick={goToPrev}
-                    style={{
-                        padding:0,
-                        background: "transparent",
-                        boxShadow: "none"
-                    }}
-                    startIcon={
-                        <LeftCircleOutlined
-                            style={{
-                                fontSize: 30,
-                                color: "var(--cyan)",
-                            }}
-                        />
-                    }
-                />}
-            <Carousel ref={carouselRef} style={{ width: `calc(20px + var(${width}))` }} infinite={true}>
-                {items.map((v) => v)}
-            </Carousel>
-            {innerWidth>720 && <CustomButton
-                    invert
-                    onClick={goToNext}
-                    style={{
-                        padding:0,
-                        background: "transparent",
-                        boxShadow: "none"
-                    }}
-                    startIcon={
-                        <RightCircleOutlined
-                            style={{
-                                fontSize: 30,
-                                color: "var(--cyan)",
-                            }}
-                        />
-                    }
-                />}
-        </div>
-    );
+	const gap = 16;
+	const delta = cardWidth + gap;
+	const width = delta * numCards + gap / 4;
+
+	// Handle next and previous carousel navigation
+	const goToNext = () => {
+		carouselRef.current.next();
+	};
+
+	const goToPrev = () => {
+		carouselRef.current.prev();
+	};
+
+	// Update details such as card width and number of cards
+	const updateDetails = () => {
+		if (childRef && childRef.current) {
+			// Ensure the first card is rendered before accessing its offsetWidth
+			const firstCard = childRef.current[0];
+			if (firstCard) {
+				const cardWidthCopy = firstCard.offsetWidth;
+				setCardWidth(cardWidthCopy);
+				// Calculate the number of cards to display based on screen width
+				setNumCards(
+					Math.max(1, Math.floor(innerWidth / (cardWidthCopy + gap)))
+				);
+			}
+		}
+	};
+
+	// Call updateDetails after the first render
+	useEffect(() => {
+		// Delay the update to ensure DOM is fully loaded
+		setTimeout(() => {
+			updateDetails();
+		}, 100); // Small delay
+
+		// Add event listener to update details on window resize for responsiveness
+		const handleResize = () => updateDetails();
+		window.addEventListener("resize", handleResize);
+
+		// Cleanup the event listener
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	return (
+		<div className="mobile-carousel">
+			{innerWidth > 720 && (
+				<CustomButton
+					invert
+					onClick={goToPrev}
+					style={{
+						padding: 0,
+						background: "transparent",
+						boxShadow: "none",
+					}}
+					startIcon={
+						<LeftCircleOutlined
+							style={{
+								fontSize: 30,
+								color: "var(--cyan)",
+							}}
+						/>
+					}
+				/>
+			)}
+			<Carousel
+				ref={carouselRef}
+				style={{ width: `${width}px` }}
+				infinite={true}
+				adaptiveHeight
+                slidesToShow={numCards}
+                slidesToScroll={numCards}
+                onInit={updateDetails}
+                easing="ease-in-out"
+                dots
+                dotPosition=""
+                accessibility
+                // centerMode={true}
+                
+			>
+				{items.map((item, idx) => (
+					<div
+						className="child-wrapper"
+						key={idx}
+						ref={(el) => (childRef.current[idx] = el)}
+					>
+						{item}
+					</div>
+				))}
+			</Carousel>
+			{innerWidth > 720 && (
+				<CustomButton
+					invert
+					onClick={goToNext}
+					style={{
+						padding: 0,
+						background: "transparent",
+						boxShadow: "none",
+					}}
+					startIcon={
+						<RightCircleOutlined
+							style={{
+								fontSize: 30,
+								color: "var(--cyan)",
+							}}
+						/>
+					}
+				/>
+			)}
+		</div>
+	);
 };
 
 export default Mobcarousel;

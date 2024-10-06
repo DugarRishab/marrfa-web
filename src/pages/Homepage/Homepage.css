@@ -41,7 +41,7 @@
 	justify-content: center;
 	flex-direction: column;
 	/* width: 100%; */
-	/* padding: 4rem 0; */
+	padding: 5rem 0;
 	/* min-height: calc(100vh); */
     /* background-color: #fff; */
 }
@@ -218,6 +218,7 @@
     .homepage .banner{
         align-items: flex-start;
 	    justify-content: center;
+		padding-left: 2rem;
     }
     .homepage .banner .text{
         width: 100%;
