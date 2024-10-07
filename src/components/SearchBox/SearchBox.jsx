@@ -7,11 +7,13 @@ import {
 	InputNumber,
 	Modal,
 	Slider,
+	message,
 } from "antd";
 import { SearchOutlined, FilterOutlined } from "@ant-design/icons";
 import "./SearchBox.css";
 import FilterBox from '../FilterBox/FilterBox';
 import CustomButton from '../button/CustomButton';
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const { Search } = Input;
 
@@ -19,6 +21,11 @@ const SearchBox = () => {
 
 	const [openFilters, setOpenFilters] = useState(false);
 	const [priceRange, setPriceRange] = useState([0, 100]);
+	
+	const [searchQuery, setSearchQuery] = useState();
+	const [searchParams, setSearchParams] = useSearchParams();
+
+	const navigate = useNavigate();
 
 	const handlePriceRangeChange = (newVal) => {
 		setPriceRange(newVal);
@@ -32,6 +39,13 @@ const SearchBox = () => {
 
 	const handleOpenFilter = (state) => {
 		setOpenFilters(state);
+	}
+
+	const handleOnSearch = () => {
+		if (searchQuery && searchQuery.length >= 3)
+			navigate(`/projects?search=${searchQuery}`);
+		else message.error('Please enter your query');
+		// setSearchParams({ search: searchQuery });
 	}
 	return (
 		<div className="search-box">
@@ -61,6 +75,8 @@ const SearchBox = () => {
 					addonBefore={<SearchOutlined />}
 					size="large"
 					allowClear
+					value={searchQuery}
+					onChange={e => setSearchQuery(e.target.value)}
 				/>
 				<Button
 					icon={<FilterOutlined />}
@@ -81,6 +97,7 @@ const SearchBox = () => {
 					size="large"
 					type="primary"
 					text={"Search"}
+					onClick={handleOnSearch}
 				></CustomButton>
 				<FilterBox
 					open={openFilters}

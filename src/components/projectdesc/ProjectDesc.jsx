@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // const tags = ["amazing", "beachview", "free", "transport", "etc"];
 // const image = "/assets/projects/projectbanner.png"
 
-const ProjectDesc = ({ projectName, highlights, image }) => {
+const ProjectDesc = ({ projectName, highlights, image, location }) => {
 	return (
 		<div className="project-desc">
 			<div className="banner">
@@ -16,8 +16,8 @@ const ProjectDesc = ({ projectName, highlights, image }) => {
 				<div className="pname">
 					<Link to="/property">{projectName}</Link>
 				</div>
-				<div style={{ fontWeight: 400, fontSize: "0.9rem" }}>
-					Highlights
+				<div className="location">
+					{location}
 				</div>
 				<div className="highlights-list">
 					{highlights.map((val, i) => {

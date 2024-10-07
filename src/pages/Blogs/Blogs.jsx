@@ -135,7 +135,7 @@ const Blogs = () => {
                         />
                     </div>
                 </div>
-            </section> */}
+            </section>
             <section className="investments">
                 <Heading color="black" align="left" heading={"Articles on real estate investments"} />
                 {innerWidth>=520?<Carousel items={BlogsList} />:<Mobcarousel items={BlogsList} width={"--card-width"} />}
