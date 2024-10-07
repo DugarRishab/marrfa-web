@@ -94,15 +94,17 @@ const DrawerToggle = ({ selected, handleSelect }) => {
 
 const BrandName = ({ mobile = false }) => {
 	return (
-		<div className="brand" style={{ gap: mobile ? "0px" : "5px" }}>
-			<img src={Logo} />
-			<div
-				style={{ fontSize: mobile ? "1.5rem" : "1.2rem" }}
-				className="brand-name"
-			>
-				arrfa
+		<Link to="/">
+			<div className="brand" style={{ gap: mobile ? "0px" : "5px" }}>
+				<img src={Logo} />
+				<div
+					style={{ fontSize: mobile ? "1.5rem" : "1.2rem" }}
+					className="brand-name"
+				>
+					arrfa
+				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 
