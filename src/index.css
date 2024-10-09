@@ -64,6 +64,7 @@
 body {
     overflow-x: hidden;
     background: var(--blue-dark-background);
+    background: #0B0C10;
 }
 
 button {

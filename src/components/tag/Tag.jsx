@@ -5,7 +5,8 @@ const Tag = ({ text, version = 1 }) => {
     return (
         <div
             style={{
-                fontSize: "0.8rem",
+                fontSize: "0.9rem",
+                fontWeight: 400,
                 border: version==1?"1.5px solid var(--cyan)":"none",
                 borderRadius: "100px",
                 padding: "5px 15px",

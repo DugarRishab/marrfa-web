@@ -1,9 +1,12 @@
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
+
 axios.defaults.withCredentials = true;
 
+
 const api = axios.create({
-	// baseURL: "http://localhost:8000/api/v1",
-	baseURL: "https://api.marrfa.com/api/v1",
+	baseURL: API_URL,
+	// baseURL: "https://api.marrfa.com/api/v1",
 	withCredentials: true,
 });
 

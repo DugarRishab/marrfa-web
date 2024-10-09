@@ -89,13 +89,13 @@ const Projects = () => {
 				></ProjectListSection>
 			)}
 
-			{/* {dubaiResults && (
+			{dubaiResults && (
 				<ProjectListSection
 					title="Properties for sale in Dubai"
 					data={dubaiResults}
 					columns={columns}
 				></ProjectListSection>
-			)} */}
+			)}
 			<section className="choice-wrapper">
 				<div className="heading">Trending Projects</div>
 				{innerWidth > 630 ? (
