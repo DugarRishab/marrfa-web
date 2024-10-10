@@ -1,28 +1,81 @@
-.project {
+.project-card2 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: var(--card-width);
+    width: 340px;
     box-shadow: var(--shadow);
     border-radius: 10px;
     transition: all ease 0.4s;
+    background-color: #fff;
 }
 
-.project:hover {
-    transform: scale(1.02)
+.project-card2:hover .image-section img {
+    transform: scale(1.02);
+    transition: 0.5s all;
 }
 
-.project .image-section{
-    height: 15rem;
+.project-card2 .image-section{
+    height: 25rem;
     width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: var(--border-radius);
     position: relative;
+    overflow: hidden;
     /* clip-path: polygon(0 1%, 100% 0%, 100% 100%, 0 85%); */
 }
+.project-card2 .image-section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -0;
+    transition: 0.5s all;
+}
+.project-card2 .image-section .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* width: 100%; */
+    padding: 0.5rem 5px;
+    gap: 0px;
+    border: 0px solid red;
+    height: 7em;
+    z-index: 1;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    max-width: calc(100% - 1rem);
+    width: calc(100% - 1rem);
 
-.project .image-section .image-tag {
+    transition: 0.5s all;
+}
+.project-card2:hover .image-section .heading{
+    height: 12em;
+}
+.project-card2 .image-section .heading .project-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.project-card2 .image-section .heading .location {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
+}
+.project-card2 .image-section .heading .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cyan);
+}
+
+.project-card2 .image-section .image-tag {
     position: absolute;
     left: 10px;
     top: 10px;
@@ -35,26 +88,20 @@
     color: var(--blue)
 }
 
-.project .image-section .material-icons {
+.project-card2 .image-section .marrfex-tag{
     position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+    right: 10px;
+    top: 10px;
+    background-color: var(--cyan);
+    font-size: 0.9rem;
+    padding: 5px;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 2px;
-    transition: all ease 0.2s;
-    border: 1px solid transparent;
+    line-height: 1em;
+    font-weight: 500;
+    color: white;
 }
 
-.project .image-section .material-icons:hover {
-    color: #fff;
-    background-color: rgba(0,0,0,0.3);
-    border-color: rgb(187, 187, 187)
-}
-
-.project .info-section {
+.project-card2 .info-section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,157 +112,76 @@
     /* padding-top: 0px; */
 }
 
-.project .info-section .icon {
-    position: absolute;
-    font-size: 18px;
-    right: 10px;
-    top: 60%;
-    background: var(--mix-background);
-    color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    transition: all ease 0.2s;
-    padding: 7px;
-
+.project-card2 .info-section .heading {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: all ease 0.2s;
-}
-
-.project .info-section .icon img {
-    aspect-ratio: 1/1;
-    width: 20px;
-}
-
-/* .project .info-section .icon:hover {
-    transform: scale(1.05);
-} */
-
-.project .info-section .icon:nth-child(1){
-    top: 80%;
-}
-
-.project .info-section .heading {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 100%;
-    padding: 2rem 5px;
+    padding: 0.5rem 5px;
     font-size: 1rem;
-    line-height: 1.5em;
-    height: 3em;
-    color: var(--blue);
-    gap: 5px;
-    /* padding-top: 1.5rem; */
+    line-height: 1.75rem;
+    gap: 0px;
+    border: 0px solid red;
+    height: 5em;
 }
 
-.project .info-section .heading .project-name {
-    font-size: 1.2rem;
+.project-card2 .info-section .heading .project-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.project-card2 .info-section .heading .location {
     font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
 }
 
-.project .info-section .heading .rating {
-    font-weight: 600;
+.project-card2 .info-section .stats {
     display: flex;
-    align-items: end;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
-.project .info-section .heading .rating .number {
-    line-height: 1em;
-}
-
-.project .info-section .stats {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
     width: 100%;
     padding: 5px;
     gap: 10px;
     /* padding-top: 1rem; */
 }
-
-.row {
+.project-card2 .info-section .stats .item{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px
-}
-
-.row .data-part {
-    display: flex;
-    align-items: start;
-    justify-content: center;
     flex-direction: column;
-    gap: 1px;
-}
-
-.row .data-part .label {
-    font-weight: 600;
-    font-size: 0.8rem;
-    line-height: 1em;
-    color: #7b7b7b
-}
-.row .data-part .value {
-    font-size: 0.8rem;
-    line-height: 1em;
-    font-weight: 600;
-    color: var(--blue);
-}
-
-.anticon {
-    /* display: inline-block; */
-    background: var(--mix-background);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.location {
-    display: flex;
     align-items: center;
-    justify-content: start;
-    font-size: 0.8rem;
-    width: 100%;
-    flex-direction: row;
-    padding-left: 5px;
-    gap: 5px;
+    justify-content: flex-start;
+    
 }
-
-.location img {
-    width: 20px;
+.project-card2 .info-section .stats .item .value{
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    font-weight: 600;
+    color: var(--cyan);
+    /* text-shadow: 2px 2px 5px rgb(0,0,0,0.25); */
 }
-
-.location .text {
-    width: max-content;
-    font-size: 0.7rem;
-    font-weight: 400;
-}
-
-.project .base{
+.project-card2 .base{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     border-top: 1px solid grey;
-    padding: 10px 20px;
+    padding: 10px 10px;
     width: 100%;
+    margin-top: 1rem;
 }
-
-.base-section {
+.project-card2 .base .item{
+    flex-direction: column;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px;
-    gap: 5px
+    justify-content: flex-start;
+    gap: 0px;
 }
-
+.project-card2 .base .item .icon span{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
 
 
