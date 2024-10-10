@@ -79,7 +79,19 @@ const Projects = () => {
 		<div className="projects">
 			<section className="banner">
 				{/* <Search /> */}
-				<SearchBox />
+				<div className="content">
+					<div className="heading">
+						Find the Property that matches your needs
+					</div>
+					{/* <br /> */}
+					<SearchBox />
+				</div>
+
+				<img
+					className="banner-img"
+					src="/assets/banner/projectBanner2.webp"
+					alt=""
+				/>
 			</section>
 			{searchResults && (
 				<ProjectListSection
@@ -98,16 +110,14 @@ const Projects = () => {
 			)}
 			<section className="choice-wrapper">
 				<div className="heading">Trending Projects</div>
-				{innerWidth > 630 ? (
-					<CustomCarousel items={ProjectList} />
-				) : (
-					<Mobcarousel items={ProjectList} width={"--card-width"} />
-				)}
+				<Mobcarousel items={ProjectList} />
 			</section>
 
-			<section className="request-wrapper">
-				<PropertyRequestForm />
-			</section>
+			{innerWidth > 720 && (
+				<section className="request-wrapper">
+					<PropertyRequestForm />
+				</section>
+			)}
 		</div>
 	);
 };

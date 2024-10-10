@@ -37,7 +37,7 @@
 
 .property-form .data-capture .f-heading {
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: var(--heading-textsize);
     line-height: 1.15em;
 }
 
@@ -82,6 +82,7 @@
     width: 370px;
     position: relative;
     z-index: 0;
+    border: 1px solid red;
 }
 
 .property-form .banner img {

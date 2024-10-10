@@ -14,6 +14,8 @@
     line-height: 1.5;
     font-weight: 400;
 
+    --heading-font: "Libre Baskerville", serif;
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -39,7 +41,7 @@
     --navbar-color: rgba(255, 255, 255, 0.15);
     --slickdot: var(--cyan);
     --lightblue: #6083B4;
-
+    --black: #0B0C10;
     --mix-background: linear-gradient(90deg, #496ea1 0%, var(--cyan) 100%);
     --blue-background: linear-gradient(90deg, #08254C 0%, #31517C 100%);
     --blue-dark-background: linear-gradient(270deg, #08254C 0%, #0B0C10 100%);
@@ -70,4 +72,10 @@ body {
 button {
     position: relative;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px){
+    :root{
+        --heading-textsize: 1.8rem;
+    }
 }

@@ -1,125 +1,222 @@
 .projects {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: min(100%, var(--app-width));
-    flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: min(100%, var(--app-width));
+	flex-direction: column;
+	margin-top: var(--navbar-height);
 }
 
 .projects > .banner {
-    background: url("/assets/banner/Projectbanner.png");
-    width: 100%;
-    height: 80vh;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+	/* background: url("/assets/banner/Projectbanner.png"); */
+	width: 100%;
+	height: 60vh;
+	max-height: 500px;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	flex-direction: column;
+	padding: 2rem;
+	padding-left: 5rem;
+	position: relative;
+}
+
+.projects > .banner .banner-img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	object-fit: cover;
+	object-position: center;
+	top: 0;
+	left: 0;
+	z-index: -10;
+	max-height: 100%;
+}
+.projects > .banner .content {
+	width: 100%;
+	max-width: var(--app-width);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	border: 0px solid red;
+	margin-bottom: -100px;
+}
+
+.projects > .banner .content .heading {
+	font-family: var(--heading-font);
+	font-size: var(--heading-textsize);
+	font-weight: 600;
+	width: 50%;
+	text-align: left;
+	padding: 1rem;
+	color: white;
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.411);
 }
 
 .projects .choice-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 2rem;
-    min-height: 100vh;
-    background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+
+	/* min-height: 100vh; */
+	background: #fff;
+	padding: 2rem 5rem;
+	gap: 2rem;
 }
 
 .projects .choice-wrapper > .heading {
-    font-size: var(--heading-textsize);
-    font-weight: 600;
-    align-self: start;
-    padding-left: 10rem;
+	font-size: var(--heading-textsize);
+	font-weight: 600;
+	/* align-self: start; */
+
+	/* padding-left: 10rem; */
 }
 
 .projects .request-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background: var(--blue-background); */
-    width: 100%;
-    height: min-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* background: var(--blue-background); */
+	width: 100%;
+	height: min-content;
 }
 
 .projects .sale-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    /* background: var(--blue-dark-background); */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	padding: 2rem 5rem;
+	/* background: var(--blue-dark-background); */
 }
 
 .projects .sale-wrapper .headline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 10px;
-    width: 80%;
-    color: #fff;
-    gap: 10px;
-    padding-top: 5rem;
-}
-
-.projects .sale-wrapper .project-table {
-    width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 10px;
+	width: 100%;
+	color: #fff;
+	gap: 10px;
+	padding-top: 5rem;
+    border: 0px solid yellow;
 }
 
 .projects .sale-wrapper .headline .heading {
-    font-size: var(--heading-textsize);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-    padding-bottom: 1rem;
+	font-size: var(--heading-textsize);
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	flex-wrap: wrap;
+	padding-bottom: 1rem;
+	gap: 1rem;
+	border: 0px solid red;
 }
 
 .projects .sale-wrapper .headline .sub-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 0.8rem;
-    font-weight: 200
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 0.8rem;
+	font-weight: 200;
+    border: 0px solid red;
 }
 /* .projects .sale-wrapper .headline .sub-heading .byline {
     
 } */
 
 .projects .sale-wrapper .headline .sub-heading .sort-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
 }
-
+.projects .sale-wrapper .project-table {
+	width: 100%;
+}
 .ant-table-wrapper .css-dev-only-do-not-override-1i2g8ja {
-    width: 100%;
+	/* width: 100%; */
 }
 
 @media only screen and (max-width: 1100px) {
-    .projects .sale-wrapper .project-table {
-        width: 95%;
-    }
-    .projects .sale-wrapper .headline {
-        width: 95%
-    }
+	.projects .sale-wrapper .project-table {
+		width: 95%;
+	}
+	.projects .sale-wrapper .headline {
+		width: 95%;
+	}
 }
 
-@media only screen and (max-width: 520px) {
-    /* .projects .sale-wrapper {
+@media only screen and (max-width: 800px) {
+	/* .projects .sale-wrapper {
         display: none
     } */
+	.projects > .banner {
+		padding-left: 1rem;
+		padding: 1rem;
+		height: 50vh;
+		max-width: 100%;
+	}
+	.projects > .banner .content {
+		margin-bottom: 0px;
+		border: 1px solid red;
+		width: calc(100% - 2rem);
+	}
+	.projects > .banner .content .heading {
+		width: 100%;
 
-    .projects .choice-wrapper > .heading {
-        padding-left: 0px;
-        align-self: center;
+		font-size: 1.8rem;
+		color: var(--black);
+		text-shadow: 0px 0px;
+	}
+    .projects .choice-wrapper{
+        padding: 5rem 1rem;
     }
+	.projects .choice-wrapper > .heading {
+		padding-left: 0px;
+		align-self: left;
+        text-align: left;
+        width: 100%;
+	}
+	.projects .sale-wrapper {
+		padding: 5rem 1rem;
+		padding-top: 5rem;
+		max-width: 100%;
+        align-items: flex-start;
+	}
+
+	.projects .sale-wrapper .headline {
+		padding: 0;
+		width: calc(100% - 2rem);
+	}
+    .projects .sale-wrapper .project-table{
+        width: calc(100% - 4rem);
+    }
+    .projects .sale-wrapper .project-list{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        gap: 20px;
+    }
+    .projects .sale-wrapper .project-list .project-desc{
+        width: 100%;
+    }
+
+    .projects .request-wrapper{
+        max-width: 100%;
+        overflow: hidden;
+    }
+
 }

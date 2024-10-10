@@ -4,23 +4,30 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
+	gap: 0.5rem;
+	z-index: 1;
+	/* background-color: black; */
+	padding: 1rem;
+	border-radius: var(--border-radius);
 }
 .search-box .price-range {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
 	justify-content: space-between;
 	width: 100%;
-	gap: 10px;
+	/* gap: 10px; */
 	background-color: rgba(255, 255, 255);
-	padding: 10px 20px;
+	padding: 10px 20px 5px 20px;
 	border-radius: var(--border-radius);
 	color: rgb(0, 0, 0);
+	
+	font-weight: 500;
 }
 .search-box .price-range .slider {
 	flex-grow: 1;
-	width: 70%;
+	width: 100%;
+	border: 0px solid red;
 }
 .search-box .row {
 	display: flex;
@@ -28,6 +35,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	gap: 0.5rem;
 }
 .search-box .row .search-input .ant-input-group-addon, .search-box .row .search-input .ant-input-affix-wrapper{
 	border-radius: var(--border-radius);

@@ -20,17 +20,15 @@ const sortFlags = [
 const ProjectListSection = ({ data, columns, title }) => {
 	// const [rows, setRows] = useState();
 	// const [rows, setRows] = useState([]);
+
+	const { innerWidth } = window;
 	console.log(data);
 
 	const rows = useMemo(() => {
-		console.log('recomputing');
+		console.log("recomputing");
 		return data.map((item) => ({
 			key: item.id,
-			project: (
-				<ProjectDesc
-					property={item}
-				/>
-			),
+			project: <ProjectDesc property={item} />,
 			price: formatPrice(item.price.value) + " " + item.price.unit,
 			yield: " NA",
 			area:
@@ -50,13 +48,12 @@ const ProjectListSection = ({ data, columns, title }) => {
 	}, [data, data.length, data[0]]);
 
 	// createRows();
-	console.log('rows -> ', rows);
-	
+	console.log("rows -> ", rows);
 
 	const [sortedData, setSortedData] = useState(rows); // This will hold the sorted data
 	const [sortColumn, setSortColumn] = useState("relevance"); // Initialize with "Relevance"
 
-	console.log('sortedData->',sortedData);
+	console.log("sortedData->", sortedData);
 
 	const relevScore = (test, input) => {
 		// Split input and test strings into arrays of words
@@ -160,7 +157,7 @@ const ProjectListSection = ({ data, columns, title }) => {
 					</div>
 				</div>
 			</div>
-			{sortedData && (
+			{sortedData && innerWidth > 720 ? (
 				<Table
 					scroll={{ x: 1100 }}
 					className="project-table"
@@ -171,6 +168,10 @@ const ProjectListSection = ({ data, columns, title }) => {
 					columns={columns}
 					dataSource={sortedData}
 				/>
+			) : (
+				<div className="project-list">
+					{rows.map((item, i) => item.project)}
+				</div>
 			)}
 		</section>
 	);

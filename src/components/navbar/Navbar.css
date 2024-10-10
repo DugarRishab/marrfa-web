@@ -1,6 +1,6 @@
 .navbar-wrapper {
 	height: var(--navbar-height);
-	background-color: #08254c75;
+	background-color: #08254c48;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -22,7 +22,7 @@
     color: white;
 	width: min(100%, var(--app-width));
 	background-color: transparent;
-	padding: 0px 2rem;
+	padding: 0px 5rem;
 	position: relative;
 	z-index: 2;
     border: 0px solid red;

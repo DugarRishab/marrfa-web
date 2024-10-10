@@ -3,7 +3,7 @@ import "./Homepage.css";
 
 import CustomButton from "../../components/button/CustomButton";
 import Tag from "../../components/tag/Tag";
-import ProjectCard from "../../components/projectcard/ProjectCard";
+import ProjectCard from "../../components/projectcard/ProjectCard-v2";
 import CustomCarousel from "../../components/carousel/Carousel";
 import Search from "../../components/search/Search";
 import News from "../../components/news/News";
@@ -58,7 +58,7 @@ const Homepage = () => {
 					
 				)} */}
 				{/* <CustomCarousel items={ProjectList} /> */}
-				<Mobcarousel items={ProjectList} width={"--card-width"} />
+				<Mobcarousel items={ProjectList} />
 			</section>
 			{innerWidth > 1000 ? (
 				<div className="project-deal">

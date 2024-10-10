@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    border: 0px solid red;
 }
 
 .mobile-carousel .slick-dots{

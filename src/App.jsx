@@ -26,7 +26,17 @@ const App = () => {
                     Descriptions: {
                         contentColor: 'white',
                         labelBg: 'rgb(255, 255, 255, 0.5)'
-                    }
+					},
+					Slider: {
+						// controlHeight: '50',
+						// handleColor: 'black',
+						railBg: 'var(--black)',
+						railHoverBg: 'var(--black)',
+						railSize: 5,
+						trackBg: 'var(--cyan)',
+						borderRadius: 8,
+						
+					}
                 },
 				// algorithm: theme.darkAlgorithm,
 			}}

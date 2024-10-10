@@ -1,7 +1,7 @@
 .property section{
 	width: 100%;
 	max-width: var(--app-width);
-	padding: 2rem;
+	padding: 2rem 5rem;
 	/* border: 1px solid red; */
 }
 .property section .heading{

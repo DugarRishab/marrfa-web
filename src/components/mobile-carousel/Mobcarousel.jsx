@@ -7,6 +7,7 @@ import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 const Mobcarousel = ({ items }) => {
 	const carouselRef = useRef(null);
 	const childRef = useRef([]);
+	const containerRef = useRef(null);
 
 	const { innerWidth } = window;
 
@@ -28,7 +29,10 @@ const Mobcarousel = ({ items }) => {
 
 	// Update details such as card width and number of cards
 	const updateDetails = () => {
-		if (childRef && childRef.current) {
+		if (childRef && childRef.current && containerRef && containerRef.current) {
+
+			const containerWidth = containerRef.current.offsetWidth;
+			console.log(containerWidth)
 			// Ensure the first card is rendered before accessing its offsetWidth
 			const firstCard = childRef.current[0];
 			if (firstCard) {
@@ -36,7 +40,7 @@ const Mobcarousel = ({ items }) => {
 				setCardWidth(cardWidthCopy);
 				// Calculate the number of cards to display based on screen width
 				setNumCards(
-					Math.max(1, Math.floor(innerWidth / (cardWidthCopy + gap)))
+					Math.max(1, Math.floor(containerWidth / (cardWidthCopy + gap)))
 				);
 			}
 		}
@@ -58,7 +62,7 @@ const Mobcarousel = ({ items }) => {
 	}, []);
 
 	return (
-		<div className="mobile-carousel">
+		<div className="mobile-carousel" ref={containerRef}>
 			{innerWidth > 720 && (
 				<CustomButton
 					invert

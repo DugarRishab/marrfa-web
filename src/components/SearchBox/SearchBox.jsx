@@ -20,7 +20,7 @@ const { Search } = Input;
 const SearchBox = () => {
 
 	const [openFilters, setOpenFilters] = useState(false);
-	const [priceRange, setPriceRange] = useState([0, 100]);
+	const [priceRange, setPriceRange] = useState([20, 80]);
 	
 	const [searchQuery, setSearchQuery] = useState();
 	const [searchParams, setSearchParams] = useSearchParams();
