@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Property.css";
-import { Checkbox, Descriptions, Divider, Input, Select } from "antd";
+import { Checkbox, Descriptions, Divider, Input, message, Select, Skeleton } from "antd";
 import cflags from "../../assets/data/countrycodes/CountryCodes.json";
 import CustomButton from "../../components/button/CustomButton";
 import Tag from "../../components/tag/Tag";
 import { formatNumber, formatPrice } from "../../utils/BasicFunctions";
 import { PropertyMap } from "../../components/PropertyMap/Map";
 import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+import { useParams } from "react-router-dom";
+import { viewProperty } from "../../services/api";
+import PropertySkeleton from "./PropertySkeleton";
 
 function Flag({ code, dcode, cname }) {
 	return (
@@ -118,276 +121,347 @@ const Property = () => {
 	const [Phone, setPhone] = useState("");
 	const [CountryCode, setCountryCode] = useState("+91");
 
+	const [property, setProperty] = useState();
+
 	const { innerWidth, innerHeight } = window;
+
+	const params = useParams();
+
+	const handleGetData = async () => {
+		const { id } = params;
+		try {
+			if (id) {
+				const res = await viewProperty(id);
+				setProperty(res.data.data.property);
+				console.log(res.data.data.property);
+			}
+		} catch (err) {
+			message.error(err.response.data.message | err.message);
+		}
+	};
+
+	useEffect(() => {
+		handleGetData();
+	}, []);
 
 	return (
 		<div className="property">
-			<section className="section-1">
-				{innerWidth > 800 ? (
-					<div className="imgs">
-						<div className="cover">
-							<img src="./assets/properties/2.jpeg" alt="" />
-							<div className="float-title">
-								<div className="heading">
-									<div className="title">Luxurious Villa</div>
-									<div className="developer">
-										John Doe Realty - Dubai, UAE
+			{property ? (
+				<>
+					<section className="section-1">
+						{innerWidth > 800 ? (
+							<div className="imgs">
+								<div className="cover">
+									<img src={property.images.heroImg} alt="" />
+									<div className="float-title">
+										<div className="heading">
+											<div className="title">
+												{property.name}
+											</div>
+											<div className="developer">
+												{property.listedBy.name} -{" "}
+												{property.location.city},{" "}
+												{property.location.country}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="side">
+									<div className="img">
+										<img
+											src={property.images.gallery[0]}
+											alt=""
+										/>
+									</div>
+									<div className="img">
+										<img
+											src={property.images.gallery[1]}
+											alt=""
+										/>
+									</div>
+									<div className="price">
+										<p className="sub">Price starts from</p>
+										<p className="value">
+											{property.price.unit}{" "}
+											{formatPrice(property.price.value)}
+										</p>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div className="side">
-							<div className="img">
-								<img src="./assets/properties/1.webp" alt="" />
-							</div>
-							<div className="img">
-								<img src="./assets/properties/3.jpg" alt="" />
+						) : (
+							<Mobcarousel
+								items={[
+									<div className="carousel-img" key="0">
+										<img
+											src={property.images.heroImg}
+											alt=""
+										/>
+									</div>,
+
+									...property.images.gallery.map(
+										(img, id) => (
+											<div
+												className="carousel-img"
+												key={id}
+											>
+												<img src={img} alt="" />
+											</div>
+										)
+									),
+								]}
+							></Mobcarousel>
+						)}
+					</section>
+					{innerWidth < 800 && (
+						<section className="section-2">
+							<div className="heading">
+								<div className="title">{property.name}</div>
+								<div className="developer">
+									{property.listedBy.name} -{" "}
+									{property.location.city},{" "}
+									{property.location.country}
+								</div>
 							</div>
 							<div className="price">
 								<p className="sub">Price starts from</p>
 								<p className="value">
-									AED {formatPrice(2000000)}
+									{property.price.unit}{" "}
+									{formatPrice(property.price.value)}
 								</p>
 							</div>
+						</section>
+					)}
+					{/*  */}
+					<section className="section-3">
+						<div className="left-col">
+							<div className="heading">
+								<div className="title">Key Information</div>
+							</div>
+							<div className="list">
+								<div className="item">
+									<div className="prop">Completion Date</div>
+									<div className="value">
+										{property.metadata.completionData ||
+											"NA"}
+									</div>
+								</div>
+								<div className="item">
+									<div className="prop">Price from</div>
+									<div className="value">
+										{property.price.unit}{" "}
+										{formatPrice(property.price.value)}
+									</div>
+								</div>
+								<div className="item">
+									<div className="prop">Area from</div>
+									<div className="value">
+										{property.layout.size.value +
+											" " +
+											property.layout.size.unit}
+									</div>
+								</div>
+								<div className="item">
+									<div className="prop">Property Type</div>
+									<div className="value">
+										{property.type.toUpperCase()}
+									</div>
+								</div>
+								<div className="item">
+									<div className="prop">Yield</div>
+									<div className="value">{"NA"}</div>
+								</div>
+								<div className="item">
+									<div className="prop">Marrfex</div>
+									<div className="value">{"NA"}</div>
+								</div>
+								<div className="item">
+									<div className="prop">Payment Plan</div>
+									<div className="value">{"NA"}</div>
+								</div>
+								<div className="item">
+									<div className="prop">Location</div>
+									<div className="value">
+										{property.location.city},{" "}
+										{property.location.country}
+									</div>
+								</div>
+							</div>
+							<br />
+							<div className="heading">
+								<div className="title">Description</div>
+							</div>
+							<div className="desc">{property.description}</div>
 						</div>
-					</div>
-				) : (
-					<Mobcarousel
-						items={[
-							<div className="carousel-img" key="1">
-								<img
-									src="./assets/properties/2.jpeg"
-									key="1"
-									alt=""
-								/>
-							</div>,
+						<div className="right-col">
+							<div className="contact-box">
+								<div className="heading">
+									<div className="title">
+										Learn more about this property
+									</div>
+									<div className="sub-title">
+										Ask your questions to the Destination
+										Manager
+									</div>
+								</div>
+								<div className="profile">
+									<div className="img">
+										<img src="./assets/dp.webp" alt="" />
+									</div>
+									<div className="text">
+										<div className="name">John Doe</div>
+										<div className="designation">
+											Junior Manager
+										</div>
+									</div>
+								</div>
+								<div className="form">
+									<Input
+										placeholder="Name"
+										size="large"
+										style={{ width: "50%" }}
+									></Input>
+									<div className="ph-inp">
+										<Select
+											className="flaginp"
+											defaultValue={"+91"}
+											popupMatchSelectWidth={false}
+											style={{
+												width: 60,
+											}}
+											size="large"
+											options={flags}
+											optionRender={(option) =>
+												option.data.show
+											}
+											onChange={(v) => setCountryCode(v)}
+										/>
+										<Input
+											placeholder="Phone"
+											type="tel"
+											className="phonenum"
+											size="large"
+											onChange={(v) => {
+												setPhone(v);
+											}}
+										/>
+									</div>
+									<Input
+										placeholder="Email"
+										size="large"
+									></Input>
+									<Input
+										placeholder="Enquiry"
+										size="large"
+									></Input>
+									<Checkbox style={{ width: "100%" }}>
+										I confirm that I have read and accept
+										the Privacy Policy and Personal Data
+										Processing Guidelines.
+									</Checkbox>
+									<CustomButton text="Submit Request"></CustomButton>
+								</div>
+							</div>
+						</div>
+					</section>
 
-							<div className="carousel-img" key="1">
-								<img
-									src="./assets/properties/1.webp"
-									key="1"
-									alt=""
-								/>
-							</div>,
-							<div className="carousel-img" key="1">
-								<img
-									src="./assets/properties/3.jpg"
-									key="1"
-									alt=""
-								/>
-							</div>,
-						]}
-					></Mobcarousel>
-				)}
-			</section>
-			{innerWidth < 800 && (
-				<section className="section-2">
-					<div className="heading">
-						<div className="title">Luxurious Villa</div>
-						<div className="developer">
-							John Doe Realty - Dubai, UAE
+					{/* <Divider className="divider"></Divider> */}
+					<section className="section-4">
+						<div className="left-col">
+							<PropertyMap
+								lat={property.location.lat}
+								long={property.location.long}
+							></PropertyMap>
 						</div>
-					</div>
-					<div className="price">
-						<p className="sub">Price starts from</p>
-						<p className="value">AED {formatPrice(2000000)}</p>
-					</div>
-				</section>
+						<div className="right-col">
+							<div className="heading">
+								<div className="title">Location</div>
+							</div>
+							<div className="list vertical">
+								<div className="item full">
+									<div className="prop">{"Address"}</div>
+									<div className="value">
+										{property.location["address"]}
+									</div>
+								</div>
+								{["city", "district", "state", "country"].map(
+									(key, i) => (
+										<div className="item" key={i}>
+											<div className="prop">{key}</div>
+											<div className="value">
+												{property.location[key]}
+											</div>
+										</div>
+									)
+								)}
+							</div>
+
+							<br />
+							<div className="heading">
+								<div className="title">
+									Accessibility by car
+								</div>
+							</div>
+							<br />
+							<div className="list vertical">
+								{property.location.amenities.map((item, i) => (
+									<div className="item" key={i}>
+										<div className="prop">
+											{"Distance from " + item.name}
+										</div>
+										<div className="value">
+											{item.distance.value +
+												item.distance.unit}
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</section>
+					<section className="section-5">
+						<div className="left-col">
+							<div className="heading">
+								<div className="title">Layout</div>
+							</div>
+							<div className="list">
+								<div className="item" key={1}>
+									<div className="prop">{"Area"}</div>
+									<div className="value">
+										{property.layout.size.value +
+											" " +
+											property.layout.size.unit}
+									</div>
+								</div>
+								{["bedrooms", "kitchen", "bathrooms"].map(
+									(key, i) => (
+										<div className="item" key={i}>
+											<div className="prop">{key}</div>
+											<div className="value">
+												{property.layout[key]}
+											</div>
+										</div>
+									)
+								)}
+							</div>
+							<br />
+							<div className="heading">
+								<div className="title">Features</div>
+							</div>
+							<div className="tag-list">
+								{property.features.amenities.map((item, i) => (
+									<Tag text={item} key={i}></Tag>
+								))}
+							</div>
+						</div>
+						<div className="right-col">
+							<div className="floorplan">
+								<img src={property.images.floorMap} alt="" />
+							</div>
+						</div>
+					</section>
+				</>
+			) : (
+				<PropertySkeleton></PropertySkeleton>
 			)}
-			{/*  */}
-			<section className="section-3">
-				<div className="left-col">
-					<div className="heading">
-						<div className="title">Key Information</div>
-					</div>
-					<div className="list">
-						<div className="item">
-							<div className="prop">Completion Date</div>
-							<div className="value">Q3 2025</div>
-						</div>
-						<div className="item">
-							<div className="prop">Price from</div>
-							<div className="value">AED 2,00,000</div>
-						</div>
-						<div className="item">
-							<div className="prop">Area from</div>
-							<div className="value">2000 sq. km.</div>
-						</div>
-						<div className="item">
-							<div className="prop">Property Type</div>
-							<div className="value">Commercial</div>
-						</div>
-						<div className="item">
-							<div className="prop">Yield</div>
-							<div className="value">7.6%</div>
-						</div>
-						<div className="item">
-							<div className="prop">Marrfex</div>
-							<div className="value">8.5</div>
-						</div>
-						<div className="item">
-							<div className="prop">Payment Plan</div>
-							<div className="value">Quaterly</div>
-						</div>
-						<div className="item">
-							<div className="prop">Location</div>
-							<div className="value">Dubai, UAE</div>
-						</div>
-					</div>
-					<br />
-					<div className="heading">
-						<div className="title">Description</div>
-					</div>
-					<div className="desc">
-						Lorem ipsum dolor sit amet. Qui molestiae ipsa qui nisi
-						reprehenderit ut assumenda unde ex laborum nihil ut sunt
-						sapiente in odio reiciendis vel iste harum. Id quia ipsa
-						est iste perspiciatis non sapiente veniam ut quos omnis.
-						Quo officiis reiciendis aut tempora impedit aut eveniet
-						pariatur non earum eaque. Aut adipisci velit ad ratione
-						mollitia eos voluptatum voluptate rem neque repellat qui
-						quod dolorem. Ea odit culpa aut nobis saepe sit corrupti
-						quia eos tenetur minus At rerum fuga aut perspiciatis
-						aperiam a quos ipsam. Aut dolor quibusdam aut numquam
-						consequatur id quide
-					</div>
-				</div>
-				<div className="right-col">
-					<div className="contact-box">
-						<div className="heading">
-							<div className="title">
-								Learn more about this property
-							</div>
-							<div className="sub-title">
-								Ask your questions to the Destination Manager
-							</div>
-						</div>
-						<div className="profile">
-							<div className="img">
-								<img src="./assets/dp.webp" alt="" />
-							</div>
-							<div className="text">
-								<div className="name">John Doe</div>
-								<div className="designation">
-									Junior Manager
-								</div>
-							</div>
-						</div>
-						<div className="form">
-							<Input
-								placeholder="Name"
-								size="large"
-								style={{ width: "50%" }}
-							></Input>
-							<div className="ph-inp">
-								<Select
-									className="flaginp"
-									defaultValue={"+91"}
-									popupMatchSelectWidth={false}
-									style={{
-										width: 60,
-									}}
-									size="large"
-									options={flags}
-									optionRender={(option) => option.data.show}
-									onChange={(v) => setCountryCode(v)}
-								/>
-								<Input
-									placeholder="Phone"
-									type="tel"
-									className="phonenum"
-									size="large"
-									onChange={(v) => {
-										setPhone(v);
-									}}
-								/>
-							</div>
-							<Input placeholder="Email" size="large"></Input>
-							<Input placeholder="Enquiry" size="large"></Input>
-							<Checkbox style={{ width: "100%" }}>
-								I confirm that I have read and accept the
-								Privacy Policy and Personal Data Processing
-								Guidelines.
-							</Checkbox>
-							<CustomButton text="Submit Request"></CustomButton>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* <Divider className="divider"></Divider> */}
-			<section className="section-4">
-				<div className="left-col">
-					<PropertyMap
-						lat={"34.073620"}
-						long="-118.400356"
-					></PropertyMap>
-				</div>
-				<div className="right-col">
-					<div className="heading">
-						<div className="title">Location</div>
-					</div>
-					<div className="list vertical">
-						{Object.keys(location).map((key, i) => (
-							<div className="item" key={i}>
-								<div className="prop">{key}</div>
-								<div className="value">{location[key]}</div>
-							</div>
-						))}
-					</div>
-
-					<br />
-					<div className="heading">
-						<div className="title">Accessibility by car</div>
-					</div>
-					<br />
-					<div className="list vertical">
-						{accessibility.map((item, i) => (
-							<div className="item" key={i}>
-								<div className="prop">
-									{"Distance from " + item.name}
-								</div>
-								<div className="value">
-									{item.distance.value + item.distance.unit}
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
-			<section className="section-5">
-				<div className="left-col">
-					<div className="heading">
-						<div className="title">Layout</div>
-					</div>
-					<div className="list">
-						<div className="item" key={1}>
-							<div className="prop">{"Area"}</div>
-							<div className="value">{3500 + " sqft"}</div>
-						</div>
-						{Object.keys(layout).map((key, i) => (
-							<div className="item" key={i}>
-								<div className="prop">{key}</div>
-								<div className="value">{layout[key]}</div>
-							</div>
-						))}
-					</div>
-					<br />
-					<div className="heading">
-						<div className="title">Features</div>
-					</div>
-					<div className="tag-list">
-						{amenities.map((item, i) => (
-							<Tag text={item} key={i}></Tag>
-						))}
-					</div>
-				</div>
-				<div className="right-col">
-					<div className="floorplan">
-						<img src="./assets/properties/floorplan3.jpg" alt="" />
-					</div>
-				</div>
-			</section>
 		</div>
 	);
 };

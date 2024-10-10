@@ -6,21 +6,27 @@ import { Link } from "react-router-dom";
 // const tags = ["amazing", "beachview", "free", "transport", "etc"];
 // const image = "/assets/projects/projectbanner.png"
 
-const ProjectDesc = ({ projectName, highlights, image, location }) => {
+const ProjectDesc = ({ property }) => {
 	return (
 		<div className="project-desc">
 			<div className="banner">
-				<img src={image} alt="project-image" />
+				<img src={property.images.heroImg} alt="project-image" />
 			</div>
 			<div className="info">
 				<div className="pname">
-					<Link to="/property">{projectName}</Link>
+					<Link to={"/property/" + property._id}>{property.name}</Link>
 				</div>
 				<div className="location">
-					{location}
+					{property.location.address +
+						", " +
+						property.location.city +
+						", " +
+						property.location.state +
+						", " +
+						property.location.country}
 				</div>
 				<div className="highlights-list">
-					{highlights.map((val, i) => {
+					{property.features.amenities.map((val, i) => {
 						return <Tag text={val} key={i} />;
 					})}
 				</div>

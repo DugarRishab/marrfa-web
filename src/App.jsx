@@ -27,7 +27,7 @@ const App = () => {
                         contentColor: 'white',
                         labelBg: 'rgb(255, 255, 255, 0.5)'
                     }
-                }
+                },
 				// algorithm: theme.darkAlgorithm,
 			}}
 		>

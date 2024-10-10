@@ -46,6 +46,7 @@
 	padding: 1rem 2rem;
 	background-color: white;
 	border-radius: var(--border-radius);
+	max-width: calc(100% - 2rem);
 }
 .property .section-1 .imgs .cover .float-title .heading .title{
 	color: black;
@@ -160,6 +161,10 @@
 	padding: 10px 10px;
 	background-color: rgba(255, 255, 255, 0.05);
 	/* border-radius: 10px; */
+	gap: 10px;
+}
+.property .list .item.full{
+	width: 100%;
 }
 .property .list .item .prop{
 	color: rgba(255, 255, 255, 0.7);

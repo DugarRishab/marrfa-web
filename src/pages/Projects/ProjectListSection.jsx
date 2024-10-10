@@ -28,18 +28,7 @@ const ProjectListSection = ({ data, columns, title }) => {
 			key: item.id,
 			project: (
 				<ProjectDesc
-					projectName={item.name}
-					highlights={item.features.amenities}
-					image={item.images.heroImg}
-					location={
-						item.location.address +
-						", " +
-						item.location.city +
-						", " +
-						item.location.state +
-						", " +
-						item.location.country
-					}
+					property={item}
 				/>
 			),
 			price: formatPrice(item.price.value) + " " + item.price.unit,

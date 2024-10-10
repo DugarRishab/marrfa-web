@@ -17,7 +17,7 @@ const PageRoutes = () => {
         <Routes>
             <Route exact path="/" element={<Homepage />}></Route>
             <Route exact path="/projects" element={<Projects />}></Route>
-            <Route exact path="/property" element={<Property></Property>}></Route>
+            <Route exact path="/property/:id" element={<Property></Property>}></Route>
             <Route exact path="/about" element={<AboutUs />}></Route>
             {/* <Route exact path="/chapters">
                 <Route path=":id" element={<Chapterpage></Chapterpage>}></Route>
