@@ -14,7 +14,9 @@ const ProjectDesc = ({ property }) => {
 			</div>
 			<div className="info">
 				<div className="pname">
-					<Link to={"/property/" + property._id}>{property.name}</Link>
+					<Link to={"/property/" + property._id}>
+						{property.name}
+					</Link>
 				</div>
 				<div className="location">
 					{property.location.address +
@@ -26,9 +28,11 @@ const ProjectDesc = ({ property }) => {
 						property.location.country}
 				</div>
 				<div className="highlights-list">
-					{property.features.amenities.map((val, i) => {
+					{/* {property.features.amenities.map((val, i) => {
 						return <Tag text={val} key={i} />;
-					})}
+					})} */}
+					<Tag text={property.occupancy} />
+					<Tag text={property.type} />
 				</div>
 			</div>
 		</div>

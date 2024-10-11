@@ -82,7 +82,7 @@
     width: 370px;
     position: relative;
     z-index: 0;
-    border: 1px solid red;
+    border: 0 solid red;
 }
 
 .property-form .banner img {
