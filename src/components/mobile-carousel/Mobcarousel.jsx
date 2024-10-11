@@ -54,11 +54,11 @@ const Mobcarousel = ({ items }) => {
 		}, 100); // Small delay
 
 		// Add event listener to update details on window resize for responsiveness
-		const handleResize = () => updateDetails();
-		window.addEventListener("resize", handleResize);
+		// const handleResize = () => updateDetails();
+		// window.addEventListener("resize", handleResize);
 
 		// Cleanup the event listener
-		return () => window.removeEventListener("resize", handleResize);
+		// return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
 	return (
