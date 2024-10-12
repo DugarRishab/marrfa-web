@@ -15,7 +15,10 @@ import { Divider, Input, Select } from "antd";
 const BlogsList = [];
 const mobile = 830
 
-import { NewsList } from "../../pages/Homepage/Homepage";
+// import { NewsList } from "../../pages/Homepage/Homepage";
+
+import NewsList from "../../assets/data/stories.json";
+
 import TrendingPost from "../../components/TrendingPost/TrendingPost";
 import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
 const Fin = [];

@@ -1,0 +1,57 @@
+.story-section {
+	/* width: 100%; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	/* height: 70vh; */
+	height: fit-content;
+	/* background: var(--blue-background); */
+	--slickdot: var(--cyan) !important;
+	/* background: linear-gradient(var(--cyan), var(--black)); */
+	background: 
+    linear-gradient(45deg, rgba(70, 162, 159, 1), var(--black) 70%),
+    linear-gradient(-135deg, rgba(96, 131, 180, 1), var(--black) 70%),
+    linear-gradient(90deg, rgba(70, 162, 159, 1), var(--black) 70%),
+	linear-gradient(180deg, rgba(96, 131, 180, 1), var(--black) 70%), 
+	linear-gradient(135deg, rgba(70, 162, 159, 1), var(--black) 70%);
+
+  	background-blend-mode:darken; /* Optional, blends the gradients */
+	border-radius: var(--border-radius);
+}
+.story-section .cards {
+	display: flex;
+	/* flex-direction: column; */
+	align-items: center;
+	flex-flow: column wrap;
+	max-height: 90rem;
+	height: 90rem;
+	border: 0px solid red;
+	gap: 1rem;
+	/* /* width: 100%; */
+	/* display: grid; */
+	/* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+	/* This is better for small screens, once min() is better supported */
+	/* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+	/* gap: 12rem; */ 
+}
+
+.story-section .advertise {
+	background: var(--mix-background);
+	padding: 1rem;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+	color: #fff;
+	margin: 2rem 0;
+}
+
+@media only screen and (max-width: 720px) {
+	.story-section .cards{
+		flex-flow: column nowrap;
+		max-height: unset;
+		height: fit-content;
+	}
+}

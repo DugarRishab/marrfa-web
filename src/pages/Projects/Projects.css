@@ -7,6 +7,11 @@
 	margin-top: var(--navbar-height);
 }
 
+.projects section {
+	width: 100%;
+	padding: 2rem 5rem;
+}
+
 .projects > .banner {
 	/* background: url("/assets/banner/Projectbanner.png"); */
 	width: 100%;
@@ -51,7 +56,7 @@
 	font-weight: 600;
 	width: 50%;
 	text-align: left;
-	padding: 1rem;
+	padding: 1rem 0;
 	color: white;
 	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.411);
 }
@@ -106,7 +111,7 @@
 	color: #fff;
 	gap: 10px;
 	padding-top: 5rem;
-    border: 0px solid yellow;
+	border: 0px solid yellow;
 }
 
 .projects .sale-wrapper .headline .heading {
@@ -129,7 +134,7 @@
 	width: 100%;
 	font-size: 0.8rem;
 	font-weight: 200;
-    border: 0px solid red;
+	border: 0px solid red;
 }
 /* .projects .sale-wrapper .headline .sub-heading .byline {
     
@@ -161,6 +166,10 @@
 	/* .projects .sale-wrapper {
         display: none
     } */
+	.projects section {
+		width: 100%;
+		padding: 2rem 1rem;
+	}
 	.projects > .banner {
 		padding-left: 1rem;
 		padding: 1rem;
@@ -169,7 +178,7 @@
 	}
 	.projects > .banner .content {
 		margin-bottom: 0px;
-		border: 1px solid red;
+		border: 0px solid red;
 		width: calc(100% - 2rem);
 	}
 	.projects > .banner .content .heading {
@@ -179,44 +188,43 @@
 		color: var(--black);
 		text-shadow: 0px 0px;
 	}
-    .projects .choice-wrapper{
-        padding: 5rem 1rem;
-    }
+	.projects .choice-wrapper {
+		padding: 5rem 1rem;
+	}
 	.projects .choice-wrapper > .heading {
 		padding-left: 0px;
 		align-self: left;
-        text-align: left;
-        width: 100%;
+		text-align: left;
+		width: 100%;
 	}
 	.projects .sale-wrapper {
 		padding: 5rem 1rem;
 		padding-top: 5rem;
 		max-width: 100%;
-        align-items: flex-start;
+		align-items: flex-start;
 	}
 
 	.projects .sale-wrapper .headline {
 		padding: 0;
 		width: calc(100% - 2rem);
 	}
-    .projects .sale-wrapper .project-table{
-        width: calc(100% - 4rem);
-    }
-    .projects .sale-wrapper .project-list{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-top: 1rem;
-        gap: 20px;
-    }
-    .projects .sale-wrapper .project-list .project-desc{
-        width: 100%;
-    }
+	.projects .sale-wrapper .project-table {
+		width: calc(100% - 4rem);
+	}
+	.projects .sale-wrapper .project-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		margin-top: 1rem;
+		gap: 20px;
+	}
+	.projects .sale-wrapper .project-list .project-desc {
+		width: 100%;
+	}
 
-    .projects .request-wrapper{
-        max-width: 100%;
-        overflow: hidden;
-    }
-
+	.projects .request-wrapper {
+		max-width: 100%;
+		overflow: hidden;
+	}
 }

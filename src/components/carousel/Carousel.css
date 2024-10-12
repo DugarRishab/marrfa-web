@@ -1,8 +1,11 @@
 .carousel-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
+    border: 0px solid blue;
+    margin: auto;
 }
 
 .carousel-wrapper .direction {
@@ -26,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    /* border: 1px solid red; */
+    border: 0px solid red;
     width: 100%;
     overflow: hidden;
 }
@@ -37,34 +40,41 @@
     justify-content: start;
     gap: 1rem;
     padding: 1rem 0.5rem;
-    /* border: 1px solid black; */
+    border: 0px solid yellow;
     transition: all ease 0.3s;
 }
 
-.indicator-wrapper {
+.carousel-wrapper .indicators {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    width: 100%;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
-.indicator-wrapper .indicators {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.indicator-wrapper .indicators .dot {
-    width: 7px;
-    height: 7px;
+.carousel-wrapper .indicators .dot {
+    width: 20px;
+    height: 2.5px;
     background-color: rgb(255, 255, 255, 0.5);
-    border-radius: 50%;
+    border-radius: var(--border-radius);
+    background: var(--cyan);
+    opacity: 50%;
 }
 
-.indicator-wrapper .indicators .dot.active {
-    width: 10px;
-    height: 10px;
+.carousel-wrapper .indicators .dot.active {
+    width: 30px;
+    height: 2.5px;
     background: var(--cyan);
+    opacity: 100%;
+}
+.carousel-wrapper .controller-indicator{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+.carousel-wrapper .controller-wrapper{
+    max-width: 100%;
 }

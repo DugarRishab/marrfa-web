@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Projects.css";
 import { useSearchParams } from "react-router-dom";
-import { ProjectList } from "../Homepage/Homepage";
 import PropertyRequestForm from "../../components/PropertyRequestForm/PropertyRequestForm";
-import SampleData from "../../assets/samples/ProdListing.json";
-import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
-import CustomCarousel from "../../components/carousel/Carousel";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import ProjectListSection from "./ProjectListSection";
+import ProjectListSection from "../../sections/ProjectListSection/ProjectListSection";
 import { searchProperties } from "../../services/api";
-import { message } from "antd";
+import TrendingProjectsSection from "../../sections/TrendingProjects/TrendingProjects";
 
 const columns = [];
 var i = 0;
@@ -108,10 +104,7 @@ const Projects = () => {
 					columns={columns}
 				></ProjectListSection>
 			)}
-			<section className="choice-wrapper">
-				<div className="heading">Trending Projects</div>
-				<Mobcarousel items={ProjectList} />
-			</section>
+			<TrendingProjectsSection></TrendingProjectsSection>
 
 			{innerWidth > 720 && (
 				<section className="request-wrapper">

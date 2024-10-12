@@ -1,0 +1,38 @@
+[
+	{
+		"title": "Innovating Healthcare Solutions",
+		"image": "healthcare_success.jpg",
+		"description": "Marrfa revolutionized patient care by implementing AI-powered health monitoring systems in rural areas.",
+		"date": "2023-06-15"
+	},
+	{
+		"title": "Transforming Education with Tech",
+		"image": "education_tech.jpg",
+		"description": "With Marrfa's EdTech platform, remote learning became accessible to over 1 million students across the globe. With Marrfa's EdTech platform, remote learning became accessible to over 1 million students across the globe.",
+		"date": "2023-09-10"
+	},
+	{
+		"title": "Redefining Retail with AI",
+		"image": "retail_ai.jpg",
+		"description": "Marrfa's AI-driven retail analytics increased profits by 30% for small businesses. Marrfa's AI-driven retail analytics increased profits by 30% for small businesses. Marrfa's AI-driven retail analytics increased profits by 30% for small businesses.",
+		"date": "2024-01-05"
+	},
+	{
+		"title": "Empowering Renewable Energy",
+		"image": "renewable_energy.jpg",
+		"description": "By creating smart grids, Marrfa helped cities transition to renewable energy and reduce carbon emissions. Marrfa's AI-driven retail analytics increased profits by 30% for small businesses.",
+		"date": "2024-03-22"
+	},
+	{
+		"title": "Building Smart Homes",
+		"image": "smart_home.jpg",
+		"description": "Marrfa's IoT solutions transformed the housing industry with intelligent energy-efficient homes.",
+		"date": "2023-12-01"
+	},
+	{
+		"title": "Agriculture Meets Innovation",
+		"image": "agri_innovation.jpg",
+		"description": "Marrfa's precision farming tools enhanced crop yields and minimized resource waste for farmers worldwide.",
+		"date": "2024-02-18"
+	}
+]
