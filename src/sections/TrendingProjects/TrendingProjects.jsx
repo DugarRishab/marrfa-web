@@ -5,6 +5,7 @@ import ProjectCard from "../../components/projectcard/ProjectCard-v2";
 import projectData from "../../assets/data/projects.json";
 import Heading from "../../components/Heading/Heading";
 import Carousel from "../../components/carousel/Carousel";
+import Mobcarousel from '../../components/mobile-carousel/Mobcarousel';
 
 export const ProjectList = [];
 for (let p of projectData) {
@@ -21,7 +22,8 @@ const TrendingProjectsSection = () => {
 				color='white'
 			></Heading>
 
-			<Carousel items={ProjectList} />
+			<Mobcarousel items={ProjectList} />
+
 		</section>
 	);
 }

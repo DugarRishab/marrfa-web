@@ -3,7 +3,9 @@ import Heading from "../../components/Heading/Heading";
 import CustomButton from "../../components/button/CustomButton";
 import storyData from "../../assets/data/stories.json";
 import StoryCard from "../../components/StoryCard/StoryCard";
+import Carousel from "../../components/carousel/Carousel";
 import "./StorySection.css";
+import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
 const StoryList = [];
 
 for (let s of storyData) {
@@ -18,12 +20,26 @@ const StorySection = () => {
 				heading="Stories where Marrfa turned vision into success"
 				sub="Lorem Ipsum doler sith"
 			></Heading>
-			<div className="cards">
-				{StoryList.map((item, i) => ( innerWidth < 720 && i <= 1) && item)}
-				{innerWidth > 720 && StoryList.map((item, i) => item)}
-			</div>
+			{/* <div className="cards">
+				<div className="col">
+					{StoryList.map(
+						(item, i) => i <= 1 && item
+					)}
+				</div>
+				<div className="col">
+					{StoryList.map(
+						(item, i) => i > 1 && i <= 3 && item
+					)}
+				</div>
+				<div className="col">
+					{StoryList.map(
+						(item, i) => i > 3 && i <= 5 && item
+					)}
+				</div>
+			</div> */}
 
 			{/* <Carousel items={StoryList}></Carousel> */}
+			<Mobcarousel items={StoryList}></Mobcarousel>
 			{/* {innerWidth <= 720 && (
 				<div className="advertise">
 					<div className="question">
