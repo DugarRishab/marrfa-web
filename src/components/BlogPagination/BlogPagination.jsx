@@ -38,7 +38,9 @@ const BlogPagination = ({items}) => {
                     padding: "1rem 0rem",
                 }}
             >
-                {currentCards.map((item) => item)}
+                {currentCards.map((index, item) => <News key={index} data={{
+                    
+                }} />)}
             </div>
 
             {/* Pagination controls */}

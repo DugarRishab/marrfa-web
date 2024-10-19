@@ -80,6 +80,8 @@ const Blogs = () => {
 
     useEffect(() => {
         setItems(Catmap[CatName]);
+        console.log(Items);
+        
     }, [CatName]);
 
     return (
@@ -175,7 +177,7 @@ const Blogs = () => {
                         </div>
                         <div className="lower">
                             {Categories.map((value, index) => (
-                                <Category catname={value} activated={CatName} setActive={setCatName} />
+                                <Category key={index} catname={value} activated={CatName} setActive={setCatName} />
                             ))}
                         </div>
                     </div>
