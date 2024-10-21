@@ -17,27 +17,36 @@ const App = () => {
 				token: {
 					// Seed Token
 					colorPrimary: "#46A29F",
-					borderRadius: 2,
+					borderRadius: 'var(--border-radius)',
 
 					// Alias Token
 					colorBgContainer: "#fff",
-                },
-                components: {
-                    Descriptions: {
-                        contentColor: 'white',
-                        labelBg: 'rgb(255, 255, 255, 0.5)'
+				},
+				components: {
+					Descriptions: {
+						contentColor: "white",
+						labelBg: "rgb(255, 255, 255, 0.5)",
 					},
 					Slider: {
 						// controlHeight: '50',
 						// handleColor: 'black',
-						railBg: 'var(--black)',
-						railHoverBg: 'var(--black)',
+						railBg: "var(--black)",
+						railHoverBg: "var(--black)",
 						railSize: 5,
-						trackBg: 'var(--cyan)',
+						trackBg: "var(--cyan)",
 						borderRadius: 8,
-						
-					}
-                },
+					},
+					Segmented: {
+						itemActiveBg: "var(--lightblue)",
+						itemSelectedBg: "var(--lightblue)",
+						trackBg: "rgba(225, 225, 225, 0.1)",
+						itemColor: "white",
+						itemSelectedColor: "white",
+						itemHoverColor: "white",
+						itemHoverBg: "rgba(225, 225, 225, 0.25)",
+						trackPadding: '5px'
+					},
+				},
 				// algorithm: theme.darkAlgorithm,
 			}}
 		>

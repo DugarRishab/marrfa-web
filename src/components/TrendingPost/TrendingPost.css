@@ -4,8 +4,8 @@
     align-items: center;
     gap: 1rem;
     padding: 0.4rem;
-    /* border: 1px solid green; */
-    width: 23rem;
+    border: 0px solid green;
+    width: 30rem;
     height: 9rem;
     /* margin: 10rem; */
     color: #fff;
@@ -22,20 +22,21 @@
 }
 
 .trending-post .content .head-byline {
-    font-size: 0.625rem;
+    font-size: 0.8rem;
     font-weight: 300;
     color: #6083B4;
 }
 
 .trending-post .content .post-heading {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
 .trending-post .content .desc {
     font-weight: 300;
-    font-size: 0.625rem;
+    font-size: 0.9rem;
     margin-top: 0.4rem;
+    line-height: 1.1rem;
     color: #E0E2E5;
     line-clamp: 4;
     -webkit-line-clamp: 4; /* Limit to 4 lines */
@@ -60,6 +61,8 @@
 
 .trending-post .banner {
     /* border: 1px solid blue; */
+    border-radius: var(--border-radius);
+    /* overflow: hidden; */
     aspect-ratio: 1/1;
     height: 100%;
 }
@@ -67,6 +70,7 @@
 .trending-post .banner img {
     width: 100%;
     height: 100%;
+    border-radius: var(--border-radius);
 }
 
 @media only screen and (max-width: 500px) {
