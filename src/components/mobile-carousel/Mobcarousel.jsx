@@ -16,7 +16,7 @@ const Mobcarousel = ({ items }) => {
 
 	const gap = 16;
 	const delta = cardWidth + gap;
-	const width = delta * numCards + gap / 4;
+	// const width = delta * numCards + gap / 4;
 
 	// Handle next and previous carousel navigation
 	const goToNext = () => {
@@ -48,18 +48,19 @@ const Mobcarousel = ({ items }) => {
 
 	// Call updateDetails after the first render
 	useEffect(() => {
+		updateDetails();
 		// Delay the update to ensure DOM is fully loaded
 		setTimeout(() => {
 			updateDetails();
 		}, 100); // Small delay
 
 		// Add event listener to update details on window resize for responsiveness
-		// const handleResize = () => updateDetails();
+		const handleResize = () => updateDetails();
 		// window.addEventListener("resize", handleResize);
 
 		// Cleanup the event listener
 		// return () => window.removeEventListener("resize", handleResize);
-	}, []);
+	}, [items]);
 
 	return (
 		<div className="mobile-carousel" ref={containerRef}>
@@ -84,24 +85,24 @@ const Mobcarousel = ({ items }) => {
 			)}
 			<Carousel
 				ref={carouselRef}
-				style={{ width: `${width}px` }}
+				style={{ width: `${cardWidth * numCards + gap}px` }}
 				infinite={true}
 				adaptiveHeight
-                slidesToShow={numCards}
-                slidesToScroll={numCards}
-                onInit={updateDetails}
-                easing="ease-in-out"
-                dots={innerWidth < 720}
-                dotPosition=""
-                accessibility
-                
-                // centerMode={true}
-                
+				slidesToShow={numCards}
+				slidesToScroll={numCards}
+				onInit={updateDetails}
+				easing="ease-in-out"
+				dots={innerWidth < 720}
+				dotPosition=""
+				accessibility
+
+				// centerMode={true}
 			>
 				{items.map((item, idx) => (
 					<div
 						className="child-wrapper"
 						key={idx}
+						style={{ width: "fit-content" }}
 						ref={(el) => (childRef.current[idx] = el)}
 					>
 						{item}
