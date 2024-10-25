@@ -1,0 +1,85 @@
+.people-page{
+	width: min(100%, 1600px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: var(--navbar-height);
+}
+
+.people-page .section-1{
+	padding: 2rem 5rem;
+	height: calc(100vh - var(--navbar-height));
+	
+}
+.people-page .section-1 .bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.people-page .section-1 .bg img{
+	width: 100%;
+	height: 100%;
+	
+	object-fit: cover;
+}
+.people-page .section-1 .content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	height: 100%;
+	width: 100%;
+}
+
+.people-page .section-1 .heading{
+	font-size: 3rem;
+	color: white;
+	font-family: var(--heading-font);
+	text-align: center;
+	width: 80%;
+}
+.people-page .section-1 .sub-heading{
+	font-size: 1.5rem;
+	color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	width: 80%;
+}
+.people-page .section-2{
+	margin: 2rem 0;
+}
+.people-page .section-2 .review-wrapper{
+	margin-left: -5rem;
+
+}
+.people-page .section-2 .review-wrapper.right{
+	margin-left: unset;
+	margin-right: -5rem;
+	
+	
+}
+.people-page .section-2 .review-wrapper.right .reviewcard{
+	display: flex;
+	flex-direction: row-reverse;
+}
+.people-page .section-2 .review-wrapper.right .reviewcard .desc{
+	text-align: right;
+}
+@media only screen and (max-width: 800px){
+	.people-page .section-1{
+		padding: 2rem 1rem;
+	}
+	.people-page .section-1 .heading{
+		font-size: 1.8rem;
+		width: 100%;
+	}
+	.people-page .section-1 .sub-heading{
+		font-size: 1.2rem;
+		width: 100%;
+	}
+	
+}

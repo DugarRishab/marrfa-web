@@ -393,7 +393,7 @@
     padding-top: 3rem;
 }
 
-.reviewcard {
+.about-us .reviewcard {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -401,7 +401,7 @@
     width: var(--review-width);
 }
 
-.reviewcard .image {
+.about-us .reviewcard .image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -410,25 +410,25 @@
     padding: 1rem;
 }
 
-.reviewcard .image img {
+.about-us .reviewcard .image img {
     aspect-ratio: 1/1;
     width: 100px;
     border-radius: 50%;
 }
 
-.reviewcard .image .org {
+.about-us .reviewcard .image .org {
     font-weight: 100;
     line-height: 1em;
     font-size: 0.8rem;
     color: #fff;
 }
 
-.reviewcard .desc {
+.about-us .reviewcard .desc {
     font-style: italic;
     color: #fff
 }
 
-.reviewcard .name {
+.about-us .reviewcard .name {
     color: #fff;
 }
 
@@ -643,7 +643,7 @@
         align-self: center;
     }
 
-    .reviewcard {
+    .about-us .reviewcard {
         background: var(--blue);
         padding: 1rem;
         border: 1px solid var(--cyan);
@@ -653,7 +653,7 @@
     .about-us .reviews .review-container .ant-carousel {
         display: flex;
     }
-    .about-us .reviews .review-container > .reviewcard{
+    .about-us .reviews .review-container > .about-us .reviewcard{
         display: none;
     }
 

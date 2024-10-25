@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import Logo from "/assets/Marrfa.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
 import { Button, Drawer } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
@@ -11,6 +11,8 @@ const tabroutes = {
 	Projects: "projects",
 	Blogs: "blogs",
 	"About us": "about",
+	People: "people",
+	Brouchure: "brouchure"
 };
 
 const DrawerToggle = ({ selected, handleSelect }) => {
@@ -134,7 +136,7 @@ const Navbar = () => {
 				{DesktopView && (
 					<div className="tabs">
 						{Object.keys(tabroutes).map((key, idx) => (
-							<Link
+							<NavLink
 								key={idx}
 								className={
 									"item" +
@@ -145,7 +147,7 @@ const Navbar = () => {
 								to={`/${tabroutes[key]}`}
 							>
 								{key}
-							</Link>
+							</NavLink>
 						))}
 					</div>
 				)}

@@ -1,0 +1,39 @@
+
+.reviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: var(--review-width);
+}
+
+.reviewcard .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border-right: 1px solid #fff; */
+    padding: 1rem;
+}
+
+.reviewcard .image img {
+    aspect-ratio: 1/1;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.reviewcard .image .org {
+    font-weight: 100;
+    line-height: 1em;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.reviewcard .desc {
+    font-style: italic;
+    color: #fff
+}
+
+.reviewcard .name {
+    color: #fff;
+}

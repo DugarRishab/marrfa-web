@@ -5,6 +5,8 @@ import Projects from "./pages/Projects/Projects";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Property from "./pages/Property/Property";
 import Blogs from "./pages/Blogs/Blogs";
+import PeoplePage from "./pages/People/People";
+import BrouchurePage from "./pages/Brouchure/Brouchure";
 
 const PageRoutes = () => {
     const location = useLocation();
@@ -25,6 +27,8 @@ const PageRoutes = () => {
                 </Route> */}
             {/* <Route exact path="/test" element={<ProjectDesc projectName={"Manhattan Project"} highlights={["amazing", "destructive", "hard", "physics", "bomb"]} image={"/assets/projects/projectbanner.png"}/>}></Route> */}
             <Route exact path="/blogs" element={<Blogs />} />
+            <Route exact path="/people" element={<PeoplePage></PeoplePage>}></Route>
+            <Route exact path="/brouchure" element={<BrouchurePage></BrouchurePage>}></Route>
         </Routes>
     );
 };
