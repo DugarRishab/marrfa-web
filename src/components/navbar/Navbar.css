@@ -70,6 +70,15 @@
 	gap: 0.5rem;
 }
 
+.navbar .action .btn-icon,
+.ant-drawer-content-wrapper .action .btn-icon {
+	width: 1.1rem;
+	max-width: 100%;
+	max-height: 1.1rem;
+	border: 0px solid red;
+	margin-left: 0.8rem;
+}
+
 .navbar .right-col{
     display: flex;
     flex-flow: row nowrap;

@@ -244,7 +244,10 @@ const Navbar = () => {
 								height: "2em",
 							}}
 							invert
-							endIcon={}
+							icon={
+								<img className="btn-icon" src="/assets/icons/whatsapp.svg"></img>
+							}
+							iconPosition="end"
 							text={"Request a callback"}
 						/>
 						{/* <CustomButton
