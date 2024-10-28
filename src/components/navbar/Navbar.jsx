@@ -1,19 +1,61 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import Logo from "/assets/Marrfa.png";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
-import { Button, Drawer } from "antd";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { Button, Drawer, Dropdown } from "antd";
+import { MenuOutlined, CloseOutlined, DownOutlined } from "@ant-design/icons";
 
 const tabroutes = {
 	Home: "",
-	Projects: "projects",
+	// Projects: "projects",
 	Blogs: "blogs",
 	"About us": "about",
-	People: "people",
-	Brouchure: "brouchure"
+	// People: "people",
+	// Brouchure: "brouchure"
 };
+
+const projectsSubMenu = [
+	{
+		label: (
+			<NavLink key={1} className={"item"} to={`/projects`}>
+				All Projects
+			</NavLink>
+		),
+
+		key: 1,
+	},
+	{
+		label: (
+			<NavLink key={2} className={"item"} to={`/brochure`}>
+				Project Brochures
+			</NavLink>
+		),
+		// route: "/brochure",
+		key: 2,
+	},
+];
+
+const aboutUsSubMenu = [
+	{
+		label: (
+			<NavLink key={1} className={"item"} to={`/about`}>
+				Our Story
+			</NavLink>
+		),
+		// route: "/brochure",
+		key: 1,
+	},
+	{
+		label: (
+			<NavLink key={2} className={"item"} to={`/people`}>
+				Our People
+			</NavLink>
+		),
+		// route: "/brochure",
+		key: 2,
+	},
+];
 
 const DrawerToggle = ({ selected, handleSelect }) => {
 	const [open, setOpen] = useState(false);
@@ -113,6 +155,7 @@ const BrandName = ({ mobile = false }) => {
 const Navbar = () => {
 	const location = useLocation();
 	const [selected, setSelected] = useState(location.pathname.slice(1));
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		// Update selected tab whenever the location changes
@@ -125,6 +168,12 @@ const Navbar = () => {
 
 	const { innerWidth, innerHeight } = window;
 	const DesktopView = innerWidth > 800;
+
+	// const handleSubMenuClick = ({key}) => {
+	// 	navigate(projectsSubMenu[key].route);
+	// }
+
+	const handleOpenProjectDropdown = useState(false);
 
 	return (
 		<div className="navbar-wrapper">
@@ -149,6 +198,34 @@ const Navbar = () => {
 								{key}
 							</NavLink>
 						))}
+						<Dropdown
+							menu={{
+								items: projectsSubMenu,
+								// onClick: handleSubMenuClick,
+							}}
+						>
+							<p>
+								Projects{" "}
+								<DownOutlined
+									size={"small"}
+									style={{ width: "12px" }}
+								></DownOutlined>{" "}
+							</p>
+						</Dropdown>
+						<Dropdown
+							menu={{
+								items: aboutUsSubMenu,
+								// onClick: handleSubMenuClick,
+							}}
+						>
+							<p>
+								About Us{" "}
+								<DownOutlined
+									size={"small"}
+									style={{ width: "12px" }}
+								></DownOutlined>{" "}
+							</p>
+						</Dropdown>
 					</div>
 				)}
 
@@ -167,9 +244,10 @@ const Navbar = () => {
 								height: "2em",
 							}}
 							invert
+							endIcon={}
 							text={"Request a callback"}
 						/>
-						<CustomButton
+						{/* <CustomButton
 							style={{
 								// background: "grey",
 								// color: "#fff",
@@ -178,7 +256,7 @@ const Navbar = () => {
 							}}
 							// invert
 							text={"Log in"}
-						/>
+						/> */}
 					</div>
 				)}
 				{!DesktopView && (

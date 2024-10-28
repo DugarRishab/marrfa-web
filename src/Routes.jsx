@@ -28,7 +28,7 @@ const PageRoutes = () => {
             {/* <Route exact path="/test" element={<ProjectDesc projectName={"Manhattan Project"} highlights={["amazing", "destructive", "hard", "physics", "bomb"]} image={"/assets/projects/projectbanner.png"}/>}></Route> */}
             <Route exact path="/blogs" element={<Blogs />} />
             <Route exact path="/people" element={<PeoplePage></PeoplePage>}></Route>
-            <Route exact path="/brouchure" element={<BrouchurePage></BrouchurePage>}></Route>
+            <Route exact path="/brochure" element={<BrouchurePage></BrouchurePage>}></Route>
         </Routes>
     );
 };
