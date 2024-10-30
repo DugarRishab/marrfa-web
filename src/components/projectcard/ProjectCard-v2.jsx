@@ -1,17 +1,26 @@
 import React from "react";
 import "./ProjectCard-v2.css";
+import { Link } from "react-router-dom";
 
 const Project = ({ data }) => {
+	console.log(data);
 	return (
 		<div className="project-card2">
 			<div className="image-section">
 				<img src={data.images.heroImg} alt="" />
-				<div className="image-tag">Residential</div>
+				<div className="image-tag">{ data.type}</div>
 				<div className="marrfex-tag">4.5</div>
 				<div className="heading">
-					<div className="price">AED 20,00,000</div>
-					<div className="project-name">{data.name}</div>
-					<div className="location">Downtown, Dubai</div>
+					<div className="price">{ data.price.unit +" "+ data.price.value}</div>
+					<div className="project-name">
+						{" "}
+						<Link to={"/property/" + data._id}>
+							{data.name}
+						</Link>{" "}
+					</div>
+					<div className="location">
+						{data.location.city}, {data.location.country}
+					</div>
 
 					<div className="base">
 						<div className="item">

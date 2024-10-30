@@ -64,6 +64,13 @@
 .project-card2 .image-section .heading .project-name {
     font-size: 1.1rem;
     font-weight: 700;
+   
+}
+.project-card2 .image-section .heading .project-name a{
+    color: black;
+}
+.project-card2 .image-section .heading .project-name a:hover{
+    text-decoration: underline;
 }
 
 .project-card2 .image-section .heading .location {
