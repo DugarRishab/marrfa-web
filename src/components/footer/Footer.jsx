@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "/assets/Marrfa.png";
 // import LinkedIn from "/assets/icons/linkedin.svg";
 // import YouTube from "/assets/icons/youtube.svg";
@@ -6,23 +6,28 @@ import Logo from "/assets/Marrfa.png";
 // import Twitter from "/assets/icons/twitter.svg";
 
 import {
-    LinkedinOutlined,
-    YoutubeOutlined,
-    InstagramOutlined,
-    XOutlined,
-    EnvironmentFilled,
-    MailFilled,
-    PhoneFilled,
+	LinkedinOutlined,
+	YoutubeOutlined,
+	InstagramOutlined,
+	XOutlined,
+	EnvironmentFilled,
+	MailFilled,
+	PhoneFilled,
+	WhatsAppOutlined,
 } from "@ant-design/icons";
 
 import CustomButton from "../button/CustomButton";
 import "./Footer.css";
+import { Button, Modal } from "antd";
+import PropertyAdvertiseForm from "../PropertyAdvertiseForm/PropertyAdvertiseForm";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+	const { innerWidth } = window;
 
-    const { innerWidth } = window;
-    
-    return (
+	const [openRequestBox, setOpenRequestBox] = useState(false);
+
+	return (
 		<footer>
 			{innerWidth > 720 && (
 				<div className="advertise">
@@ -34,9 +39,19 @@ const Footer = () => {
 						style={{ padding: "1rem 2rem", fontWeight: "600" }}
 						invert
 						text={"List your Property with us"}
+						onClick={() => setOpenRequestBox(true)}
 					/>
 				</div>
 			)}
+
+			<Modal
+				footer={null}
+				width={"fit-content"}
+				open={openRequestBox}
+				onCancel={() => setOpenRequestBox(false)}
+			>
+				<PropertyAdvertiseForm></PropertyAdvertiseForm>
+			</Modal>
 
 			<div className="footer">
 				<div className="about-col">
@@ -51,45 +66,68 @@ const Footer = () => {
 						global properties, all in one place.
 					</div>
 					<div className="social">
-						<CustomButton
-							startIcon={
-								<LinkedinOutlined style={{ fontSize: 20 }} />
+						<Button
+							icon={
+								<a href="https://www.linkedin.com/company/marrfa/">
+									<LinkedinOutlined
+										style={{ fontSize: 20, color: "white" }}
+									/>{" "}
+								</a>
 							}
 							circled
-						></CustomButton>
-						<CustomButton
-							startIcon={
-								<YoutubeOutlined style={{ fontSize: 20 }} />
+							type="text"
+						></Button>
+
+						<Button
+							icon={
+								<a href="https://www.instagram.com/marrfahq/">
+									<InstagramOutlined
+										style={{ fontSize: 20, color: "white" }}
+									/>
+								</a>
 							}
 							circled
-						></CustomButton>
-						<CustomButton
-							startIcon={
-								<InstagramOutlined style={{ fontSize: 20 }} />
+							type="outlined"
+						></Button>
+						<Button
+							icon={
+								<a href="https://x.com/Marrfadiscovery">
+									<XOutlined
+										style={{ fontSize: 20, color: "white" }}
+									/>
+								</a>
 							}
 							circled
-						></CustomButton>
-						<CustomButton
-							startIcon={<XOutlined style={{ fontSize: 20 }} />}
+							type="outlined"
+						></Button>
+						<Button
+							icon={
+								<a href="https://wa.me/+971586699457">
+									<WhatsAppOutlined
+										style={{ fontSize: 20, color: "white" }}
+									/>
+								</a>
+							}
 							circled
-						></CustomButton>
+							type="outlined"
+						></Button>
 					</div>
 				</div>
 				<div className="link-col">
 					<div className="quicklink">
 						<div className="heading">Quick Access</div>
-						<a className="link">Explore Projects</a>
-						<a className="link">News and Articles</a>
-						<a className="link">About us</a>
+						<Link className="link" to="/projects">Explore Projects</Link>
+						<Link className="link" to="/blogs">News and Articles</Link>
+						<Link className="link" to="/about">About us</Link>
 					</div>
 					<div className="quicklink">
 						<div className="heading">Contact us</div>
-						<a className="link">
+						<a className="link" href="https://maps.app.goo.gl/VKcdADPdj2QwPoRc7">
 							<EnvironmentFilled />
 							Citadel Tower Office No. 1003 and 1004 Business Bay,
 							Dubai.
 						</a>
-						<a className="link">
+						<a className="link" href="mailto: sales@marrfa.com ">
 							<MailFilled />
 							sales@marrfa.com
 						</a>
@@ -115,26 +153,51 @@ const Footer = () => {
 			</div>
 			<div className="rights">©2024 All rights Reserved by Marrfa.</div>
 			<div className="floating-social">
-				<CustomButton
-					style={{ padding: "0.5rem", height: "3.3em" }}
-					startIcon={<LinkedinOutlined style={{ fontSize: 25 }} />}
+				<Button
+					icon={
+						<a href="https://www.linkedin.com/company/marrfa/">
+							<LinkedinOutlined
+								style={{ fontSize: 20, color: "white" }}
+							/>{" "}
+						</a>
+					}
 					circled
-				></CustomButton>
-				<CustomButton
-					style={{ padding: "0.5rem", height: "3.3em" }}
-					startIcon={<YoutubeOutlined style={{ fontSize: 25 }} />}
+					type="text"
+				></Button>
+
+				<Button
+					icon={
+						<a href="https://www.instagram.com/marrfahq/">
+							<InstagramOutlined
+								style={{ fontSize: 20, color: "white" }}
+							/>
+						</a>
+					}
 					circled
-				></CustomButton>
-				<CustomButton
-					style={{ padding: "0.5rem", height: "3.3em" }}
-					startIcon={<InstagramOutlined style={{ fontSize: 25 }} />}
+					type="outlined"
+				></Button>
+				<Button
+					icon={
+						<a href="https://x.com/Marrfadiscovery">
+							<XOutlined
+								style={{ fontSize: 20, color: "white" }}
+							/>
+						</a>
+					}
 					circled
-				></CustomButton>
-				<CustomButton
-					style={{ padding: "0.5rem", height: "3.3em" }}
-					startIcon={<XOutlined style={{ fontSize: 25 }} />}
+					type="outlined"
+				></Button>
+				<Button
+					icon={
+						<a href="https://wa.me/+971586699457">
+							<WhatsAppOutlined
+								style={{ fontSize: 20, color: "white" }}
+							/>
+						</a>
+					}
 					circled
-				></CustomButton>
+					type="outlined"
+				></Button>
 			</div>
 		</footer>
 	);

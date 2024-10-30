@@ -95,7 +95,7 @@ footer {
 .footer .link-col .quicklink .heading {
     font-size: 1.5rem;
     font-weight: 600;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
     margin-bottom: 1rem;
 }
 
@@ -107,6 +107,8 @@ footer {
     justify-content: center;
     gap: 10px;
     padding-bottom: 5px;
+    color: white;
+    text-decoration: none;
 }
 
 .footer .link-col .quicklink .link i {
