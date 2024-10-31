@@ -5,38 +5,43 @@ import ReviewCard from "../../components/ReviewCard/ReviewCard";
 import { Input } from "antd";
 import { DownloadOutlined, SearchOutlined } from "@ant-design/icons";
 import CustomButton from "../../components/button/CustomButton";
-const brouchures = [
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-	{
-		name: "Lorem Ipsum Doler Sit",
-		img: "./assets/brouchure/brouchure1.jpg",
-	},
-];
+import brouchures from "../../assets/data/brochures.json";
+import { Link, useNavigate } from "react-router-dom";
+// const brouchures = [
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// 	{
+// 		name: "Lorem Ipsum Doler Sit",
+// 		img: "./assets/brouchure/brouchure1.jpg",
+// 	},
+// ];
 
 const BrouchurePage = () => {
+
+	const navigate = useNavigate();
+
 	return (
 		<div className="brouchure-page">
 			<section className="section-1">
@@ -48,7 +53,7 @@ const BrouchurePage = () => {
 						Explore Our Curated Collection of Property Brochures for
 						Smart Investment Decisions
 					</div>
-					<Input
+					{/* <Input
 						className="search"
 						addonBefore={<SearchOutlined />}
 						style={{
@@ -62,7 +67,7 @@ const BrouchurePage = () => {
 						allowClear
 						// prefix={<SearchOutlined></SearchOutlined>}
 						placeholder="Looking for something specific"
-					></Input>
+					></Input> */}
 				</div>
 			</section>
 			<section className="section-2">
@@ -72,10 +77,13 @@ const BrouchurePage = () => {
 							<img src={item.img} alt="" />
 							<div className="title">{item.name}</div>
 						</div>
-						<CustomButton
-							text={"Download"}
-							endIcon={<DownloadOutlined></DownloadOutlined>}
-						></CustomButton>
+						<a className="btn-wrapper" href={item.brochure} download={item.name + ".pdf"}>
+							<CustomButton
+								text={"Download"}
+								// onClick={}
+								endIcon={<DownloadOutlined></DownloadOutlined>}
+							></CustomButton>
+						</a>
 					</div>
 				))}
 			</section>

@@ -342,37 +342,7 @@
     flex-wrap: wrap;
 }
 
-.avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-}
 
-.avatar img {
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    width: 180px;
-    object-fit: cover;
-    object-position: center;
-}
-.avatar .whois {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.avatar .whois .name {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.avatar .whois .desig {
-    font-weight: 100;
-    line-height: 1em;
-
-}
 
 .about-us .reviews {
     display: flex;
@@ -470,6 +440,7 @@
     gap: 10px;
     cursor: pointer;
     transition: all ease 0.2s;
+    color: #fff;
 }
 
 .about-us .contactus .body .right {

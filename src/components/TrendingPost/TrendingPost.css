@@ -74,6 +74,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .trending-post{
+        width: 100%;
+    }
     .trending-post .content .desc {
         display: none;
     }

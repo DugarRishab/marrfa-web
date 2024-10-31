@@ -57,7 +57,7 @@
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 1rem;
+	gap: 1.5rem;
 	padding: 2rem 5rem;
 }
 .brouchure-page .section-2 .brouchure-card-wrapper{
@@ -66,6 +66,10 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
+}
+.brouchure-page .section-2 .brouchure-card-wrapper .btn-wrapper{
+	text-decoration: none;
+	width: 100%;
 }
 .brouchure-page .section-2 .brouchure-card-wrapper button{
 	width: 100% !important;
@@ -83,12 +87,17 @@
 	padding: 1rem;
 	justify-content: flex-end;
 
+	background: linear-gradient(to top, black, rgba(255, 255, 255, 0));
+
 }
 .brouchure-page .section-2 .brouchure-card-wrapper .brouchure-card img{
 	position: absolute;
 	object-fit: cover;
+	object-position: center;
 	min-height: 100%;
 	min-width: 100%;
+	height: 100%;
+	width: 100%;
 	z-index: -1;
 	top: 0;
 	left: 0;

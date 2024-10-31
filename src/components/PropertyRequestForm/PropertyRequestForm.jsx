@@ -41,64 +41,80 @@ const PropertyRequestForm = () => {
     const [Descrip, setDescrip] = useState("");
 
     return (
-        <div className="property-form">
-            <div className="data-capture">
-                <div className="f-heading">Marrfa's Managers are here to help you select a property</div>
-                <p>
-                    Leave a request, and our expert will contact you to clarify your enquiry and help select suitable
-                    properties.
-                </p>
+		<div className="property-form">
+			<div className="data-capture">
+				<div className="f-heading">
+					Marrfa's Managers are here to help you select your next
+					investment
+				</div>
+				<p>
+					Leave a request, and our expert will contact you to clarify
+					your enquiry and help select suitable properties.
+				</p>
 
-                <form action="#">
-                    <div className="basic-dtls">
-                        <Input placeholder="Name" size="large" onChange={(v) => setName(v)} />
-                        <div className="ph-inp">
-                            <Select
-                                className="flaginp"
-                                defaultValue={"+91"}
-                                popupMatchSelectWidth={false}
-                                style={{
-                                    width: 60,
-                                }}
-                                size="large"
-                                options={flags}
-                                optionRender={(option) => option.data.show}
-                                onChange={(v) => setCountryCode(v)}
-                            />
-                            <Input
-                                placeholder="Phone"
-                                type="tel"
-                                className="phonenum"
-                                size="large"
-                                onChange={(v) => {
-                                    setPhone(v);
-                                }}
-                            />
-                        </div>
-                        <Input placeholder="Email" size="large" onChange={(v) => setEmail(v)} />
-                    </div>
-                    <TextArea
-                        rows={4}
-                        placeholder="What are you looking for?
+				<form action="#">
+					<div className="basic-dtls">
+						<Input
+							placeholder="Name"
+							size="large"
+							onChange={(v) => setName(v)}
+						/>
+						<div className="ph-inp">
+							<Select
+								className="flaginp"
+								defaultValue={"+44"}
+								popupMatchSelectWidth={false}
+								style={{
+									width: 60,
+								}}
+								size="large"
+								options={flags}
+								optionRender={(option) => option.data.show}
+								onChange={(v) => setCountryCode(v)}
+							/>
+							<Input
+								placeholder="Phone"
+								type="tel"
+								className="phonenum"
+								size="large"
+								onChange={(v) => {
+									setPhone(v);
+								}}
+							/>
+						</div>
+						<Input
+							placeholder="Email"
+							size="large"
+							onChange={(v) => setEmail(v)}
+						/>
+					</div>
+					<TextArea
+						rows={4}
+						placeholder="What are you looking for?
 For example, I'm looking for an apartment in Downtown Dubai"
-                        onChange={(v) => setDescrip(v)}
-                        style={{marginBottom: "1rem"}}
-                    />
+						onChange={(v) => setDescrip(v)}
+						style={{ marginBottom: "1rem" }}
+					/>
 
-                    <CustomButton  text={"Submit Request"} style={{margin: 0}}/>
-                </form>
-                <div className="consent">
-                    I confirm that I have read and accept the Privacy Policy and Personal Data Processing Guidelines.
-                </div>
-            </div>
-            <div className="banner">
-                <img src={banner} alt="Jude Halpert" />
-                <div className="nameplate">
-                    <span style={{ fontWeight: 600 }}>Jude Halpert</span>,<i>Real Estate Expert Marrfa, UAE</i>
-                </div>
-            </div>
-        </div>
-    );
+					<CustomButton
+						text={"Submit Request"}
+						style={{ margin: 0 }}
+					/>
+				</form>
+				<div className="consent">
+					I confirm that I have read and accept the Privacy Policy and
+					Personal Data Processing Guidelines.
+				</div>
+			</div>
+			<div className="banner">
+				<img src={banner} alt="Jude Halpert" />
+				<div className="nameplate">
+					<span style={{ fontWeight: 600 }}>Ross Suleiman</span>,
+					<i>Managing Director, UAE</i>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default PropertyRequestForm;

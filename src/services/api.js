@@ -14,7 +14,8 @@ export const loginAuth = (payload) => api.post("./auth/login", payload);
 export const signupAuth = (payload) => api.post("./auth/signup", payload);
 export const logoutAuth = () => api.get("./auth/logout");
 
-export const viewProperties = (query) => api.get(`./property/?${query}`);
+export const viewProperties = (query) =>
+	api.get(`./property/${query ? "?" + query : ""}`);
 export const createProperty = (payload) =>
 	api.post("./property/", payload, {
 		headers: {
@@ -23,4 +24,6 @@ export const createProperty = (payload) =>
 	});
 export const viewProperty = (id) => api.get(`./property/${id}`);
 
-export const searchProperties = (query) => api.get(`./property/search?${query}`)
+export const searchProperties = (query) => api.get(`./property/search${query ? '?' + query : ''}`);
+
+export const getBlogs = () => api.get("./blog");

@@ -6,6 +6,7 @@ import SearchBox from "../../components/SearchBox/SearchBox";
 import ProjectListSection from "../../sections/ProjectListSection/ProjectListSection";
 import { searchProperties } from "../../services/api";
 import TrendingProjectsSection from "../../sections/TrendingProjects/TrendingProjects";
+import { message } from "antd";
 
 const columns = [];
 var i = 0;
@@ -56,7 +57,8 @@ const Projects = () => {
 			setter(res.data.data.properties);
 			console.log(res.data.data);
 		} catch (err) {
-			// message.error(err.response.data.message || err.message, "error");
+			console.log(err);
+			message.error(err.message || err.response.data.message || err.message);
 		}
     };
     

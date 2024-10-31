@@ -18,7 +18,7 @@ const StorySection = () => {
 		<section className="story-section">
 			<Heading
 				heading="Stories where Marrfa turned vision into success"
-				sub="Lorem Ipsum doler sith"
+				sub="Latest news and happenings from the world of Real Estate"
 			></Heading>
 			{/* <div className="cards">
 				<div className="col">

@@ -49,7 +49,7 @@ const Homepage = () => {
 				/>
 				{/* <div className="banner-img-gradient"></div> */}
 				<div className="text">
-					Unlock Global Real Estate Wealth with AI-Powered Insights
+					Invest in Top Real Estate Projects around the World
 				</div>
 
 				<SearchBox></SearchBox>
@@ -58,12 +58,22 @@ const Homepage = () => {
 
 			<TrendingProjectsSection></TrendingProjectsSection>
 			{/* <br /> */}
+			{innerWidth > 1000 ? (
+				<div className="project-deal">
+					<ProjectDeal />
+				</div>
+			) : (
+				<div className="project-deal">
+					{/* <div className="heading">Deal of the Month</div> */}
+					<Heading
+						heading="Deal of the Month"
+						// sub="Lorem Ipsum doler sith"
+					></Heading>
+					{ProjectList[0]}
+				</div>
+			)}
 			<section className="about-section">
 				<div className="about">
-					{/* <div className="heading">
-						Marrfa brings cross-border real estate investment
-						opportunities to your fingertips
-					</div> */}
 					<Heading
 						heading="Marrfa brings cross-border real estate investment
 						opportunities to your fingertips"
@@ -119,7 +129,7 @@ const Homepage = () => {
 					</div>
 					<CustomButton
 						style={{ padding: "10px 30px" }}
-						text={"Enquire about Project and Details"}
+						text={"Enquire about Projects"}
 					/>
 				</div>
 				<img src="/assets/marrfa-clipart.png" />
@@ -129,8 +139,8 @@ const Homepage = () => {
 			<section className="news-wrapper">
 				<Heading
 					heading="Be updated with latest news and articles"
-					sub="Lorem Ipsum doler sith"
-					color='black'
+					sub=""
+					color="black"
 				></Heading>
 				{innerWidth > 630 ? (
 					<Mobcarousel items={NewsList} />

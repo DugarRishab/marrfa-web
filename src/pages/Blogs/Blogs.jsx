@@ -14,8 +14,8 @@ import {
 	BorderHorizontalOutlined,
 	SearchOutlined,
 } from "@ant-design/icons";
-import { Divider, Input, Segmented, Select } from "antd";
-
+import { Divider, Input, Segmented, Select, message } from "antd";
+import { getBlogs } from "../../services/api";
 const BlogsList = [];
 const mobile = 830;
 
@@ -87,15 +87,35 @@ for (var i = 0; i < 10; i++) {
 	sample1.push(<BlogCard inMobile data={BlogDetails} />);
 }
 
+
+
 const Blogs = () => {
 	const [CatName, setCatName] = useState("Finance");
 	const [Items, setItems] = useState(Finance);
 	const { innerWidth } = window;
 
+	const [blogs, setBlogs] = useState();
+
+	const handleGetBlogs = async () => {
+		try {
+			const res = await getBlogs();
+			setBlogs(res.data.data.blogs);
+		} catch (error) {
+			message.error(
+				"Error saving the blog:",
+				error.reponse.data.message || error.message
+			);
+		}
+	}
+
 	useEffect(() => {
 		setItems(Catmap[CatName]);
 		console.log(Items);
 	}, [CatName]);
+
+	useEffect(() => {
+		handleGetBlogs();
+	}, []);
 
 	return (
 		<div className="blogpage">

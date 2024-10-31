@@ -4,7 +4,12 @@ import Logo from "/assets/Marrfa.png";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
 import { Button, Drawer, Dropdown } from "antd";
-import { MenuOutlined, CloseOutlined, DownOutlined } from "@ant-design/icons";
+import {
+	MenuOutlined,
+	CloseOutlined,
+	DownOutlined,
+	WhatsAppOutlined,
+} from "@ant-design/icons";
 
 const tabroutes = {
 	Home: "",
@@ -236,7 +241,7 @@ const Navbar = () => {
                 )} */}
 				{DesktopView && (
 					<div className="action">
-						<CustomButton
+						{/* <CustomButton
 							style={{
 								// background: "grey",
 								// color: "#fff",
@@ -245,11 +250,31 @@ const Navbar = () => {
 							}}
 							invert
 							icon={
-								<img className="btn-icon" src="/assets/icons/whatsapp.svg"></img>
+								<img
+									className="btn-icon"
+									src="/assets/icons/whatsapp.svg"
+								></img>
 							}
 							iconPosition="end"
 							text={"Request a callback"}
-						/>
+						/> */}
+						<Button.Group>
+							<Button>Request a callback</Button>
+							<Button
+								icon={
+									<a href="https://wa.me/+971586699457">
+										<WhatsAppOutlined
+											style={{
+												// fontSize: 20,
+												color: "black",
+											}}
+										/>
+									</a>
+								}
+								circled
+								// type="outlined"
+							></Button>
+						</Button.Group>
 						{/* <CustomButton
 							style={{
 								// background: "grey",

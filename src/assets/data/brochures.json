@@ -1,0 +1,57 @@
+[
+	{
+		"name": "Greenville",
+		"brochure": "/assets/brouchure/brochures/GREENVILLE.pdf",
+		"img": "./assets/brouchure/brochure_images/greenvile.jpg"
+	},
+	{
+		"name": "Jummeirah Lakes Towers",
+		"brochure": "/assets/brouchure/brochures/Jummeirah Lakes Towers.pdf",
+		"img": "./assets/brouchure/brochure_images/jumeirah lake towers.png"
+	},
+	{
+		"name": "Kensington Gardens",
+		"brochure": "/assets/brouchure/brochures/Kensington Gardens.pdf",
+		"img": "/assets/brouchure/brochure_images/kensington gardens.png"
+	},
+	{
+		"name": "Lake Views 2",
+		"brochure": "/assets/brouchure/brochures/Lake Views 2.pdf",
+		"img": "/assets/brouchure/brochure_images/lake views.png"
+	},
+	{
+		"name": "Legado by Prescott",
+		"brochure": "/assets/brouchure/brochures/Legado by Prescott.pdf",
+		"img": "/assets/brouchure/brochure_images/legado.png"
+	},
+	{
+		"name": "Reportage Village",
+		"brochure": "/assets/brouchure/brochures/Reportage Village.pdf",
+		"img": "/assets/brouchure/brochure_images/reportage village.png"
+	},
+	{
+		"name": "Samana Ocean Pearl",
+		"brochure": "/assets/brouchure/brochures/SAMANA OCEAN PEARL.pdf",
+		"img": "/assets/brouchure/brochure_images/ocean pearl.png"
+	},
+	{
+		"name": "Selene Beach Residences",
+		"brochure": "/assets/brouchure/brochures/Selene Beach Residences.pdf",
+		"img": "/assets/brouchure/brochure_images/beach residences.png"
+	},
+	{
+		"name": "Skyhills",
+		"brochure": "/assets/brouchure/brochures/Skyhills.pdf",
+		"img": "/assets/brouchure/brochure_images/skyhills2.png"
+	},
+	{
+		"name": "Sobha - AL Siniya Island",
+		"brochure": "/assets/brouchure/brochures/SOBHA _ Al siniya Island.pdf",
+		"img": "/assets/brouchure/brochure_images/al siniya island.png"
+	},
+	{
+		"name": "The Pier Redicence",
+		"brochure": "/assets/brouchure/brochures/The Pier Redicence2.pdf",
+		"img": "/assets/brouchure/brochure_images/the pier.png"
+	}
+]

@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from "react";
 import "./People.css";
-
+import AvatarCard from "../../components/AvatarCard/AvatarCard";
 import ReviewCard from "../../components/ReviewCard/ReviewCard";
+
 const members = [
-	{
-		name: "Rishab dugar",
-		tagline: "Lorem Ipsum",
-		text: "Our philosophy is simple; provide expert guidance and, helping clients make informed and profitablereal estate investments.",
-	},
-	{
-		name: "Rishab dugar",
-		tagline: "Lorem Ipsum",
-		text: "Our philosophy is simple; provide expert guidance and, helping clients make informed and profitablereal estate investments.",
-	},
-	{
-		name: "Rishab dugar",
-		tagline: "Lorem Ipsum",
-		text: "Our philosophy is simple; provide expert guidance and, helping clients make informed and profitablereal estate investments.",
-	},
+	<AvatarCard
+		name={"Jamil Ahmad"}
+		designation={"Founder & CEO"}
+		dp={"/assets/people/jamil.jpg"}
+		key={1}
+	/>,
+	<AvatarCard
+		name={"Mallika Boobna"}
+		designation={"Brand Marketing Strategist"}
+		dp={"/assets/people/malika.jpg"}
+		key={2}
+	/>,
+	<AvatarCard
+		name={"Ross S"}
+		designation={"Director - Investments"}
+		dp={"/assets/people/ross.jpg"}
+		key={3}
+	/>,
+	<AvatarCard
+		name={"Artem Gede"}
+		designation={"Investment Manager, EU"}
+		dp={"/assets/people/artem.jpg"}
+		key={4}
+	/>,
 ];
 
 const PeoplePage = () => {
@@ -41,18 +51,8 @@ const PeoplePage = () => {
 			</section>
 			<section className="section-2">
 				{members.map((item, id) => (
-					<div
-						className={
-							"review-wrapper " + ((id % 2) != 0 ? "right" : "")
-						}
-						key={id}
-					>
-						<ReviewCard
-							name={item.name}
-							tagline={item.tagline}
-							text={item.text}
-						></ReviewCard>
-					</div>
+					
+					item
 				))}
 			</section>
 		</div>
