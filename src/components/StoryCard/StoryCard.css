@@ -65,7 +65,7 @@
 
 @media only screen and (max-width: 480px) {
     .story-card{
-        width: calc(100% - 2rem);
+        width: calc(300px);
     }
     
 }

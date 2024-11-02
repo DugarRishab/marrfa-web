@@ -16,7 +16,7 @@ import {
 } from "@ant-design/icons";
 import GoogleMap from "../../components/GoogleMap/GoogleMap";
 import AvatarCard from "../../components/AvatarCard/AvatarCard";
-import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+import Mobcarousel from "../../components/MobCarousel/Mobcarousel";
 
 const Tabs = ["Company", "History", "Our values", "Our team", "Reviews", "Contact us"];
 

@@ -6,7 +6,7 @@ import CustomButton from "../../components/button/CustomButton";
 import Tag from "../../components/tag/Tag";
 import { formatNumber, formatPrice } from "../../utils/BasicFunctions";
 import { PropertyMap } from "../../components/PropertyMap/Map";
-import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+import Mobcarousel from "../../components/MobCarousel/Mobcarousel";
 import { useParams } from "react-router-dom";
 import { viewProperty } from "../../services/api";
 import PropertySkeleton from "./PropertySkeleton";

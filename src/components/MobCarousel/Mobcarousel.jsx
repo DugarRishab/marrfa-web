@@ -32,15 +32,17 @@ const Mobcarousel = ({ items }) => {
 		if (childRef && childRef.current && containerRef && containerRef.current) {
 
 			const containerWidth = containerRef.current.offsetWidth;
-			console.log(containerWidth)
+			
 			// Ensure the first card is rendered before accessing its offsetWidth
 			const firstCard = childRef.current[0];
 			if (firstCard) {
 				const cardWidthCopy = firstCard.offsetWidth;
 				setCardWidth(cardWidthCopy);
+				console.log(childRef)
+				console.log(cardWidth, containerWidth);
 				// Calculate the number of cards to display based on screen width
 				setNumCards(
-					Math.max(1, Math.floor(containerWidth / (cardWidthCopy + gap)))
+					Math.max(1, Math.floor(containerWidth / (cardWidthCopy + gap))) || 1
 				);
 			}
 		}
@@ -52,10 +54,14 @@ const Mobcarousel = ({ items }) => {
 		// Delay the update to ensure DOM is fully loaded
 		setTimeout(() => {
 			updateDetails();
-		}, 100); // Small delay
+		}, 1000); // Small delay
+
+
+		// console.log(childRef)
+
 
 		// Add event listener to update details on window resize for responsiveness
-		const handleResize = () => updateDetails();
+		// const handleResize = () => updateDetails();
 		// window.addEventListener("resize", handleResize);
 
 		// Cleanup the event listener
@@ -94,7 +100,7 @@ const Mobcarousel = ({ items }) => {
 				easing="ease-in-out"
 				dots={innerWidth < 720}
 				dotPosition=""
-				accessibility
+				// accessibility
 
 				// centerMode={true}
 			>
@@ -102,8 +108,13 @@ const Mobcarousel = ({ items }) => {
 					<div
 						className="child-wrapper"
 						key={idx}
-						style={{ width: "fit-content" }}
-						ref={(el) => (childRef.current[idx] = el)}
+						style={{
+							width: "max-content",
+							border: "1px solid red",
+						}}
+						ref={(el) =>
+							(childRef.current[idx] = el && el.childNodes[0])
+						}
 					>
 						{item}
 					</div>

@@ -6,7 +6,6 @@ import Heading from "../../components/Heading/Heading";
 import projectData from "../../assets/data/projects.json";
 import financeData from "../../assets/data/finance.json";
 import News from "../../components/news/News";
-import Carousel from "../../components/carousel/Carousel";
 import CustomButton from "../../components/button/CustomButton";
 import BlogPagination from "../../components/BlogPagination/BlogPagination";
 import {
@@ -16,15 +15,13 @@ import {
 } from "@ant-design/icons";
 import { Divider, Input, Segmented, Select, message } from "antd";
 import { getBlogs } from "../../services/api";
+import NewsList from "../../assets/data/stories.json";
+import TrendingPost from "../../components/TrendingPost/TrendingPost";
+import Mobcarousel from "../../components/MobCarousel/Mobcarousel";
+
 const BlogsList = [];
 const mobile = 830;
 
-// import { NewsList } from "../../pages/Homepage/Homepage";
-
-import NewsList from "../../assets/data/stories.json";
-
-import TrendingPost from "../../components/TrendingPost/TrendingPost";
-import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
 const Fin = [];
 
 for (let p of projectData) {

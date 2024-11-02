@@ -3,9 +3,8 @@ import Heading from "../../components/Heading/Heading";
 import CustomButton from "../../components/button/CustomButton";
 import storyData from "../../assets/data/stories.json";
 import StoryCard from "../../components/StoryCard/StoryCard";
-import Carousel from "../../components/carousel/Carousel";
 import "./StorySection.css";
-import Mobcarousel from "../../components/mobile-carousel/Mobcarousel";
+import Mobcarousel from "../../components/MobCarousel/Mobcarousel";
 const StoryList = [];
 
 for (let s of storyData) {

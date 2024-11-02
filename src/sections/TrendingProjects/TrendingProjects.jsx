@@ -4,9 +4,8 @@ import "./TrendingProjects.css";
 import ProjectCard from "../../components/projectcard/ProjectCard-v2";
 import projectData from "../../assets/data/projects.json";
 import Heading from "../../components/Heading/Heading";
-import Carousel from "../../components/carousel/Carousel";
-import Mobcarousel from '../../components/mobile-carousel/Mobcarousel';
-import { message } from 'antd';
+import Mobcarousel from "../../components/MobCarousel/Mobcarousel";
+import { message } from "antd";
 import { searchProperties, viewProperties } from "../../services/api";
 
 // export const ProjectList = [];
@@ -14,10 +13,7 @@ import { searchProperties, viewProperties } from "../../services/api";
 // 	ProjectList.push(<ProjectCard data={p} />);
 // }
 
-
-
 const TrendingProjectsSection = () => {
-
 	const ProjectList = [];
 
 	const [projects, setProjects] = useState([]);
@@ -55,6 +51,6 @@ const TrendingProjectsSection = () => {
 			<Mobcarousel items={ProjectList} />
 		</section>
 	);
-}
+};
  
 export default TrendingProjectsSection;
