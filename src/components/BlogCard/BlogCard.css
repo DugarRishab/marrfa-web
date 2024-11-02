@@ -4,7 +4,7 @@
     justify-content: center;
     flex-direction: column;
     width: var(--mainblog-width);
-    max-width: max-content;
+    /* max-width: max-content; */
 }
 
 .blogcard .image-section {
@@ -104,13 +104,13 @@
 }
 
 @media only screen and (max-width: 520px) {
-    * {
-        --mainblog-width: 20rem;
+    .blogcard {
+        width: 320px;
     }
 }
 @media only screen and (max-width: 1100px) {
     .blogcard {
-        width: 100%;
+        width: 320px;
     }
 }
 

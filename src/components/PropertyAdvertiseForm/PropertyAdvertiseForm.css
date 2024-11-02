@@ -1,5 +1,6 @@
-.property-form {
-    margin: 5rem 1rem;
+.property-advertise-form {
+    margin: 0rem 0rem;
+    padding: 1rem 0;
     /* border: 1px solid green; */
     background-color: #fff;
     display: flex;
@@ -7,69 +8,69 @@
     align-items: center;
 }
 
-.property-form .data-capture {
-    padding: 1.2rem;
+.property-advertise-form .data-capture {
+    /* padding: 1.2rem; */
     width: min-content;
 }
 
-/* .property-form .data-capture input,
-.property-form .data-capture textarea {
+/* .property-advertise-form .data-capture input,
+.property-advertise-form .data-capture textarea {
     border: 1px solid #E0E2E5;
     background-color: #E0E2E57A;
     padding: 0.7rem;
     border-radius: 5px;
 } */
 
-.property-form .data-capture textarea {
+.property-advertise-form .data-capture textarea {
     width: 100%;
     height: 100%;
 }
 
-.property-form .data-capture form .basic-dtls input::placeholder,
-.property-form .data-capture textarea::placeholder {
+.property-advertise-form .data-capture form .basic-dtls input::placeholder,
+.property-advertise-form .data-capture textarea::placeholder {
     color: #96989B;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-.property-form .data-capture form .basic-dtls input {
+.property-advertise-form .data-capture form .basic-dtls input {
     width: 200px
 }
 
-.property-form .data-capture .f-heading {
+.property-advertise-form .data-capture .f-heading {
     font-weight: 600;
-    font-size: var(--heading-textsize);
+    font-size: 2rem;
     line-height: 1.15em;
 }
 
-.property-form .data-capture p {
+.property-advertise-form .data-capture p {
     margin-top: 1rem;
 }
 
-.property-form .data-capture form {
+.property-advertise-form .data-capture form {
     padding-top: 1rem;
     /* border: 1px solid green; */
 }
 
-.property-form .data-capture form .basic-dtls {
+.property-advertise-form .data-capture form .basic-dtls {
     /* border: 1px solid green; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
 }
 
-.property-form .data-capture form textarea {
+.property-advertise-form .data-capture form textarea {
     margin-top: 0.5rem;
     resize: none;
 }
 
-.property-form .data-capture .consent {
+.property-advertise-form .data-capture .consent {
     font-weight: 300;
     font-size: 12px;
     color: var(--blue);
     
 }
 
-.property-form input[type="button"] {
+.property-advertise-form input[type="button"] {
     background: var(--mix-background);
     color: #fff;
     font-weight: 600;
@@ -78,14 +79,14 @@
     margin-top: 1rem;
 }
 
-.property-form .banner {
+.property-advertise-form .banner {
     width: 370px;
     position: relative;
     z-index: 0;
     border: 0 solid red;
 }
 
-.property-form .banner img {
+.property-advertise-form .banner img {
     transform: scale(0.9);
     position: absolute;
     z-index: -2;
@@ -93,7 +94,7 @@
     right: -1.2rem;    
 }
 
-.property-form .banner .nameplate {
+.property-advertise-form .banner .nameplate {
     position: absolute;
     /* z-index: 3; */
     background: var(--mix-background);
@@ -105,7 +106,7 @@
     right: 1.5rem;
 }
 
-.property-form .banner .nameplate::before {
+.property-advertise-form .banner .nameplate::before {
     content: "";
     width: 100%;
     height: 100%;

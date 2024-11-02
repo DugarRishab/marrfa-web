@@ -110,7 +110,7 @@ const Mobcarousel = ({ items }) => {
 						key={idx}
 						style={{
 							width: "max-content",
-							border: "1px solid red",
+							// border: "1px solid red",
 						}}
 						ref={(el) =>
 							(childRef.current[idx] = el && el.childNodes[0])

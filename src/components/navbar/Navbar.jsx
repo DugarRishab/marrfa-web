@@ -16,7 +16,7 @@ const tabroutes = {
 	Home: "",
 	// Projects: "projects",
 	Blogs: "blogs",
-	"About us": "about",
+	// "About us": "about",
 	// People: "people",
 	// Brouchure: "brouchure"
 };
@@ -65,44 +65,45 @@ const aboutUsSubMenu = [
 
 const DrawerToggle = ({ selected, handleSelect }) => {
 	const [open, setOpen] = useState(false);
+	const [openRequestBox, setOpenRequestBox] = useState(false);
+
 	const showDrawer = () => {
 		setOpen(true);
 	};
 	const onClose = () => {
 		setOpen(false);
 	};
+
 	return (
-		<div className="drawer">
+		<><div className="drawer">
 			{/* <CustomButton
-				style={{
-					borderRadius: "0px",
-					boxShadow: "none",
-					width: "min-content",
-					padding: "0px",
-				}}
-				onClick={open ? onClose : showDrawer}
-				startIcon={
-					open ? (
-						<CloseOutlined style={{ fontSize: 25 }} />
-					) : (
-						<MenuOutlined style={{ fontSize: 25 }} />
-					)
-				}
-				// invert
-			/> */}
+        style={{
+            borderRadius: "0px",
+            boxShadow: "none",
+            width: "min-content",
+            padding: "0px",
+        }}
+        onClick={open ? onClose : showDrawer}
+        startIcon={
+            open ? (
+                <CloseOutlined style={{ fontSize: 25 }} />
+            ) : (
+                <MenuOutlined style={{ fontSize: 25 }} />
+            )
+        }
+        // invert
+    /> */}
 
 			<Button
 				onClick={open ? onClose : showDrawer}
 				style={{
 					color: "white",
 				}}
-				icon={
-					open ? (
-						<CloseOutlined style={{ fontSize: 25 }} />
-					) : (
-						<MenuOutlined style={{ fontSize: 25 }} />
-					)
-				}
+				icon={open ? (
+					<CloseOutlined style={{ fontSize: 25 }} />
+				) : (
+					<MenuOutlined style={{ fontSize: 25 }} />
+				)}
 				type="secondary"
 			></Button>
 			<Drawer
@@ -114,7 +115,7 @@ const DrawerToggle = ({ selected, handleSelect }) => {
 			>
 				{/* <div className="list"> */}
 				{Object.keys(tabroutes).map((key, idx) => (
-					<Link
+					<NavLink
 						key={idx}
 						onClick={() => {
 							handleSelect(idx);
@@ -127,18 +128,66 @@ const DrawerToggle = ({ selected, handleSelect }) => {
 						to={`/${tabroutes[key]}`}
 					>
 						{key}
-					</Link>
+					</NavLink>
 				))}
-				<CustomButton
-					style={{
-						marginTop: "1rem",
+				<Dropdown
+					menu={{
+						items: projectsSubMenu,
+						// onClick: handleSubMenuClick,
 					}}
-					text={"Request a CallBack"}
-				/>
+				>
+					<p>
+						Projects{" "}
+						<DownOutlined
+							size={"small"}
+							style={{ width: "12px" }}
+						></DownOutlined>{" "}
+					</p>
+				</Dropdown>
+				<Dropdown
+					menu={{
+						items: aboutUsSubMenu,
+						// onClick: handleSubMenuClick,
+					}}
+				>
+					<p>
+						About Us{" "}
+						<DownOutlined
+							size={"small"}
+							style={{ width: "12px" }}
+						></DownOutlined>{" "}
+					</p>
+				</Dropdown>
+				<Button.Group>
+					<Button
+						onClick={() => setOpenRequestBox(true)}
+						size="large"
+					>
+						Request a callback
+					</Button>
+					<Button
+						size="large"
+						icon={<a href="https://wa.me/+971586699457">
+							<WhatsAppOutlined
+								style={{
+									// fontSize: 20,
+									color: "black",
+								}} />
+						</a>}
+						circled
+					></Button>
+				</Button.Group>
 
 				{/* </div> */}
 			</Drawer>
-		</div>
+		</div><Modal
+			open={openRequestBox}
+			onCancel={() => setOpenRequestBox(false)}
+			width={"fit-content"}
+			footer={""}
+		>
+				<CallbackRequestForm></CallbackRequestForm>
+			</Modal></>
 	);
 };
 
@@ -257,10 +306,14 @@ const Navbar = () => {
 									text={"Request a callback"}
 								/> */}
 							<Button.Group>
-								<Button onClick={() => setOpenRequestBox(true)}>
+								<Button
+									onClick={() => setOpenRequestBox(true)}
+									size="large"
+								>
 									Request a callback
 								</Button>
 								<Button
+									size="large"
 									icon={
 										<a href="https://wa.me/+971586699457">
 											<WhatsAppOutlined
@@ -286,24 +339,48 @@ const Navbar = () => {
 							/> */}
 						</div>
 					)}
-					{/* {!DesktopView && (
-					<div className="right-col">
-						<CustomButton
+
+					{!DesktopView && (
+						<div className="right-col">
+							{/* <CustomButton
 							text={"Log in"}
 							style={{
 								boxShadow: "none",
-							}} />
-						<DrawerToggle
-							selected={selected}
-							handleSelect={handleSelect} />
-					</div>
-				)} */}
+							}} /> */}
+							{/* <Button.Group>
+								<Button
+									onClick={() => setOpenRequestBox(true)}
+									size="small"
+								>
+									Request a callback
+								</Button>
+								<Button
+									size="small"
+									icon={
+										<a href="https://wa.me/+971586699457">
+											<WhatsAppOutlined
+												style={{
+													// fontSize: 20,
+													color: "black",
+												}}
+											/>
+										</a>
+									}
+									circled
+								></Button>
+							</Button.Group> */}
+							<DrawerToggle
+								selected={selected}
+								handleSelect={handleSelect}
+							/>
+						</div>
+					)}
 				</div>
 				<Modal
 					open={openRequestBox}
 					onCancel={() => setOpenRequestBox(false)}
 					width={"fit-content"}
-					footer={''}
+					footer={""}
 				>
 					<CallbackRequestForm></CallbackRequestForm>
 				</Modal>

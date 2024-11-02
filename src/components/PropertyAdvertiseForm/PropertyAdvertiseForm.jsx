@@ -41,7 +41,7 @@ const PropertyAdvertiseForm = () => {
     const [Descrip, setDescrip] = useState("");
 
     return (
-		<div className="property-form">
+		<div className="property-advertise-form">
 			<div className="data-capture">
 				<div className="f-heading">
 					Marrfa's Managers are here to help you advertise your

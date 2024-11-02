@@ -277,15 +277,15 @@ const Blogs = () => {
 						align="center"
 						heading={"Real Estate"}
 					/>
-					<Mobcarousel items={sample1} width={"--card-width"} />
+					<Mobcarousel items={sample1} />
 					<Heading color="white" align="center" heading={"Finance"} />
-					<Mobcarousel items={sample1} width={"--card-width"} />
+					<Mobcarousel items={sample1} />
 					<Heading
 						color="white"
 						align="center"
 						heading={"Projects"}
 					/>
-					<Mobcarousel items={sample1} width={"--card-width"} />
+					<Mobcarousel items={sample1} />
 					<CustomButton
 						style={{ margin: "2rem 0rem" }}
 						text={"View All Articles"}
