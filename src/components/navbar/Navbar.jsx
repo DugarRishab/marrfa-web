@@ -3,13 +3,14 @@ import "./Navbar.css";
 import Logo from "/assets/Marrfa.png";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomButton from "../button/CustomButton";
-import { Button, Drawer, Dropdown } from "antd";
+import { Button, Drawer, Dropdown, Modal } from "antd";
 import {
 	MenuOutlined,
 	CloseOutlined,
 	DownOutlined,
 	WhatsAppOutlined,
 } from "@ant-design/icons";
+import CallbackRequestForm from "../CallbackRequestForm/CallbackRequestForm";
 
 const tabroutes = {
 	Home: "",
@@ -162,6 +163,8 @@ const Navbar = () => {
 	const [selected, setSelected] = useState(location.pathname.slice(1));
 	const navigate = useNavigate();
 
+	const [openRequestBox, setOpenRequestBox] = useState(false);
+
 	useEffect(() => {
 		// Update selected tab whenever the location changes
 		setSelected(location.pathname.slice(1));
@@ -174,135 +177,138 @@ const Navbar = () => {
 	const { innerWidth, innerHeight } = window;
 	const DesktopView = innerWidth > 800;
 
-	// const handleSubMenuClick = ({key}) => {
-	// 	navigate(projectsSubMenu[key].route);
-	// }
-
-	const handleOpenProjectDropdown = useState(false);
-
 	return (
-		<div className="navbar-wrapper">
-			<div className="navbar">
-				<div className="brand">
-					{/* {DesktopView ? <BrandName /> : <DrawerToggle selected={selected} handleSelect={handleSelect} />} */}
-					<BrandName mobile={true} />
-				</div>
-				{DesktopView && (
-					<div className="tabs">
-						{Object.keys(tabroutes).map((key, idx) => (
-							<NavLink
-								key={idx}
-								className={
-									"item" +
-									(selected === tabroutes[key]
-										? " active"
-										: "")
-								}
-								to={`/${tabroutes[key]}`}
+		<>
+			<div className="navbar-wrapper">
+				<div className="navbar">
+					<div className="brand">
+						{/* {DesktopView ? <BrandName /> : <DrawerToggle selected={selected} handleSelect={handleSelect} />} */}
+						<BrandName mobile={true} />
+					</div>
+					{DesktopView && (
+						<div className="tabs">
+							{Object.keys(tabroutes).map((key, idx) => (
+								<NavLink
+									key={idx}
+									className={
+										"item" +
+										(selected === tabroutes[key]
+											? " active"
+											: "")
+									}
+									to={`/${tabroutes[key]}`}
+								>
+									{key}
+								</NavLink>
+							))}
+							<Dropdown
+								menu={{
+									items: projectsSubMenu,
+									// onClick: handleSubMenuClick,
+								}}
 							>
-								{key}
-							</NavLink>
-						))}
-						<Dropdown
-							menu={{
-								items: projectsSubMenu,
-								// onClick: handleSubMenuClick,
-							}}
-						>
-							<p>
-								Projects{" "}
-								<DownOutlined
-									size={"small"}
-									style={{ width: "12px" }}
-								></DownOutlined>{" "}
-							</p>
-						</Dropdown>
-						<Dropdown
-							menu={{
-								items: aboutUsSubMenu,
-								// onClick: handleSubMenuClick,
-							}}
-						>
-							<p>
-								About Us{" "}
-								<DownOutlined
-									size={"small"}
-									style={{ width: "12px" }}
-								></DownOutlined>{" "}
-							</p>
-						</Dropdown>
-					</div>
-				)}
+								<p>
+									Projects{" "}
+									<DownOutlined
+										size={"small"}
+										style={{ width: "12px" }}
+									></DownOutlined>{" "}
+								</p>
+							</Dropdown>
+							<Dropdown
+								menu={{
+									items: aboutUsSubMenu,
+									// onClick: handleSubMenuClick,
+								}}
+							>
+								<p>
+									About Us{" "}
+									<DownOutlined
+										size={"small"}
+										style={{ width: "12px" }}
+									></DownOutlined>{" "}
+								</p>
+							</Dropdown>
+						</div>
+					)}
 
-				{/* {!DesktopView && (
-                    <div className="floating-brand">
-                        <BrandName mobile={true} />
-                    </div>
-                )} */}
-				{DesktopView && (
-					<div className="action">
-						{/* <CustomButton
-							style={{
-								// background: "grey",
-								// color: "#fff",
-								padding: "10px",
-								height: "2em",
-							}}
-							invert
-							icon={
-								<img
-									className="btn-icon"
-									src="/assets/icons/whatsapp.svg"
-								></img>
-							}
-							iconPosition="end"
-							text={"Request a callback"}
-						/> */}
-						<Button.Group>
-							<Button>Request a callback</Button>
-							<Button
-								icon={
-									<a href="https://wa.me/+971586699457">
-										<WhatsAppOutlined
-											style={{
-												// fontSize: 20,
-												color: "black",
-											}}
-										/>
-									</a>
-								}
-								circled
-								// type="outlined"
-							></Button>
-						</Button.Group>
-						{/* <CustomButton
-							style={{
-								// background: "grey",
-								// color: "#fff",
-								padding: "10px",
-								height: "2em",
-							}}
-							// invert
-							text={"Log in"}
-						/> */}
-					</div>
-				)}
-				{!DesktopView && (
+					{/* {!DesktopView && (
+        <div className="floating-brand">
+            <BrandName mobile={true} />
+        </div>
+    )} */}
+					{DesktopView && (
+						<div className="action">
+							{/* <CustomButton
+									style={{
+										// background: "grey",
+										// color: "#fff",
+										padding: "10px",
+										height: "2em",
+									}}
+									invert
+									icon={
+										<img
+											className="btn-icon"
+											src="/assets/icons/whatsapp.svg"
+										></img>
+									}
+									iconPosition="end"
+									text={"Request a callback"}
+								/> */}
+							<Button.Group>
+								<Button onClick={() => setOpenRequestBox(true)}>
+									Request a callback
+								</Button>
+								<Button
+									icon={
+										<a href="https://wa.me/+971586699457">
+											<WhatsAppOutlined
+												style={{
+													// fontSize: 20,
+													color: "black",
+												}}
+											/>
+										</a>
+									}
+									circled
+								></Button>
+							</Button.Group>
+							{/* <CustomButton
+								style={{
+									// background: "grey",
+									// color: "#fff",
+									padding: "10px",
+									height: "2em",
+								}}
+								// invert
+								text={"Log in"}
+							/> */}
+						</div>
+					)}
+					{/* {!DesktopView && (
 					<div className="right-col">
 						<CustomButton
 							text={"Log in"}
 							style={{
 								boxShadow: "none",
-							}}
-						/>
+							}} />
 						<DrawerToggle
 							selected={selected}
-							handleSelect={handleSelect}
-						/>
+							handleSelect={handleSelect} />
 					</div>
-				)}
+				)} */}
+				</div>
+				<Modal
+					open={openRequestBox}
+					onCancel={() => setOpenRequestBox(false)}
+					width={"fit-content"}
+					footer={''}
+				>
+					<CallbackRequestForm></CallbackRequestForm>
+				</Modal>
 			</div>
-		</div>
+		</>
 	);
 };
 
