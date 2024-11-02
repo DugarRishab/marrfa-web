@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PropertyRequestForm.css";
 import banner from "/assets/banner/formbanner.png";
 // import PhoneInput from "./PhoneInput";
-import { Input, Select } from "antd";
+import { Input, Select, Checkbox } from "antd";
 const { TextArea } = Input;
 import CustomButton from "../button/CustomButton";
 import cflags from "../../assets/data/countrycodes/CountryCodes.json";
@@ -35,10 +35,10 @@ for (let flaginfo of cflags) {
 
 const PropertyRequestForm = () => {
     const [name, setName] = useState("");
-    const [Email, setEmail] = useState("");
-    const [Phone, setPhone] = useState("");
-    const [CountryCode, setCountryCode] = useState("+91");
-    const [Descrip, setDescrip] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [countryCode, setCountryCode] = useState("+91");
+    const [description, setDescription] = useState("");
 
     return (
 		<div className="property-form">
@@ -58,6 +58,7 @@ const PropertyRequestForm = () => {
 							placeholder="Name"
 							size="large"
 							onChange={(v) => setName(v)}
+							value={name}
 						/>
 						<div className="ph-inp">
 							<Select
@@ -71,6 +72,7 @@ const PropertyRequestForm = () => {
 								options={flags}
 								optionRender={(option) => option.data.show}
 								onChange={(v) => setCountryCode(v)}
+								value={countryCode}
 							/>
 							<Input
 								placeholder="Phone"
@@ -80,31 +82,36 @@ const PropertyRequestForm = () => {
 								onChange={(v) => {
 									setPhone(v);
 								}}
+								value={phone}
 							/>
 						</div>
 						<Input
 							placeholder="Email"
 							size="large"
 							onChange={(v) => setEmail(v)}
+							value={email}
 						/>
 					</div>
 					<TextArea
 						rows={4}
 						placeholder="What are you looking for?
 For example, I'm looking for an apartment in Downtown Dubai"
-						onChange={(v) => setDescrip(v)}
+						onChange={(v) => setDescription(v)}
 						style={{ marginBottom: "1rem" }}
+						value={description}
 					/>
-
+					<Checkbox style={{ width: "100%" }}>
+						I confirm that I have read and accept the Privacy Policy
+						and Personal Data Processing Guidelines.
+					</Checkbox>
+					<br />
+					<br />
 					<CustomButton
 						text={"Submit Request"}
 						style={{ margin: 0 }}
 					/>
 				</form>
-				<div className="consent">
-					I confirm that I have read and accept the Privacy Policy and
-					Personal Data Processing Guidelines.
-				</div>
+				
 			</div>
 			<div className="banner">
 				<img src={banner} alt="Jude Halpert" />

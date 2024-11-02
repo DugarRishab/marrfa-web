@@ -104,13 +104,7 @@ For example, I'm looking to advertise an apartment in Downtown Dubai"
 					/>
 				</form>
 			</div>
-			<div className="banner">
-				<img src={banner} alt="Jude Halpert" />
-				<div className="nameplate">
-                    <span style={{ fontWeight: 600 }}>Jude Halpert</span>,{" "}
-					<i>Real Estate Expert Marrfa, UAE</i>
-				</div>
-			</div>
+			
 		</div>
 	);
 };

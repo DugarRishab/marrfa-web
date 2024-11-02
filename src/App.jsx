@@ -18,7 +18,7 @@ const App = () => {
 					// Seed Token
 					colorPrimary: "#46A29F",
 					borderRadius: 'var(--border-radius)',
-
+					
 					// Alias Token
 					colorBgContainer: "#fff",
 				},
@@ -46,6 +46,10 @@ const App = () => {
 						itemHoverBg: "rgba(225, 225, 225, 0.25)",
 						trackPadding: '5px'
 					},
+					Checkbox: {
+						
+						borderRadiusSM: '4px'
+					}
 				},
 				// algorithm: theme.darkAlgorithm,
 			}}

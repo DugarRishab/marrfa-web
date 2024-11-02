@@ -1,0 +1,9 @@
+.request-form{
+	width: 320px;
+	padding: 1rem 0;
+}
+.request-form .form-heading{
+	font-size: 2rem;
+	font-weight: 600;
+}
+.request-form .form-heading
