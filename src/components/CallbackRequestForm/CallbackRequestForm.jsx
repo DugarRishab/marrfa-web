@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./CallbackRequestForm.css"
-import { Input, Select, Checkbox } from "antd";
+import "./CallbackRequestForm.css";
+import { Input, Select, Checkbox, message, Button } from "antd";
 const { TextArea } = Input;
 import CustomButton from "../button/CustomButton";
 import cflags from "../../assets/data/countrycodes/CountryCodes.json";
 import Heading from "../Heading/Heading";
+import { createUserRequest } from "../../services/api";
 
 function Flag({ code, dcode, cname }) {
 	return (
@@ -47,8 +48,34 @@ const CallbackRequestForm = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
-	const [countryCode, setCountryCode] = useState("+91");
+	const [countryCode, setCountryCode] = useState("+44");
 	const [description, setDescription] = useState("");
+
+	const [consent, setConsent] = useState(false);
+
+	const handleSubmit = async () => {
+		const data = {
+			userName: name,
+			email,
+			phone: {
+				number: phone,
+				code: countryCode,
+			},
+			query: description,
+		};
+
+		if ((!name, !email, !countryCode, !phone, !description)) {
+			message.error("Please fill all details to submit a query");
+		}
+
+		try {
+			const res = await createUserRequest(data);
+			message.success("Request Submitted");
+		} catch (err) {
+			console.log(err);
+			message.error(err.response ? err.response.data.message : err.message);
+		}
+	};
 
 	return (
 		<div className="request-form">
@@ -59,7 +86,7 @@ const CallbackRequestForm = () => {
 				<Input
 					placeholder="Name"
 					size="large"
-					onChange={(v) => setName(v)}
+					onChange={(e) => setName(e.target.value)}
 					value={name}
 				/>
 				<br />
@@ -83,8 +110,8 @@ const CallbackRequestForm = () => {
 						type="tel"
 						className="phonenum"
 						size="large"
-						onChange={(v) => {
-							setPhone(v);
+						onChange={(e) => {
+							setPhone(e.target.value);
 						}}
 						value={phone}
 					/>
@@ -93,7 +120,7 @@ const CallbackRequestForm = () => {
 				<Input
 					placeholder="Email"
 					size="large"
-					onChange={(v) => setEmail(v)}
+					onChange={(e) => setEmail(e.target.value)}
 					value={email}
 				/>
 				<br />
@@ -102,17 +129,28 @@ const CallbackRequestForm = () => {
 					rows={4}
 					placeholder="What are you looking for?
 For example, I'm looking for an apartment in Downtown Dubai"
-					onChange={(v) => setDescription(v)}
+					onChange={(e) => setDescription(e.target.value)}
 					style={{ marginBottom: "1rem" }}
 					value={description}
 				/>
-				<Checkbox style={{ width: "100%" }}>
+				<Checkbox
+					style={{ width: "100%" }}
+					checked={consent}
+					onChange={(e) => setConsent(e.target.checked)}
+				>
 					I confirm that I have read and accept the Privacy Policy and
 					Personal Data Processing Guidelines.
 				</Checkbox>
 				<br />
 				<br />
-				<CustomButton text={"Submit Request"} style={{ margin: 0 }} />
+				<Button
+					onClick={handleSubmit}
+					text={"Submit Request"}
+					style={{ margin: 0 }}
+					type="primary"
+
+					disabled={!(name && email && countryCode && description && phone && consent)}
+				>Submit Request</Button>
 			</form>
 		</div>
 	);
