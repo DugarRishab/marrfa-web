@@ -92,7 +92,7 @@ const FilterBox = ({ open, onCancel }) => {
 	]);
 	const [areaRange, setAreaRange] = useState([
 		params.get("areaMin") || 0,
-		params.get("areaMax") || 1000,
+		params.get("areaMax") || 10000,
 	]);
 
 	const [completionDate, setCompletionDate] = useState(params.get('completionDate'));
@@ -295,7 +295,7 @@ const FilterBox = ({ open, onCancel }) => {
 					step={1}
 					range
 					min={0}
-					max={1000}
+					max={10000}
 					// defaultValue={[20, 100]}
 					value={areaRange.map((item) => item)}
 					onChange={handleAreaRangeChange}
