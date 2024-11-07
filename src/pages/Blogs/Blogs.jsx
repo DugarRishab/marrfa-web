@@ -173,7 +173,7 @@ const Blogs = () => {
 							desc={
 								"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"
 							}
-							bannersrc={"/assets/banner/HomeBanner2.jpg"}
+							bannersrc={"/assets/balloon.webp"}
 						/>
 						<Divider
 							style={{
@@ -189,7 +189,7 @@ const Blogs = () => {
 							desc={
 								"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"
 							}
-							bannersrc={"/assets/banner/HomeBanner2.jpg"}
+							bannersrc={"/assets/balloon.webp"}
 						/>
 						<Divider
 							style={{
@@ -205,7 +205,7 @@ const Blogs = () => {
 							desc={
 								"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"
 							}
-							bannersrc={"/assets/banner/HomeBanner2.jpg"}
+							bannersrc={"/assets/balloon.webp"}
 						/>
 					</div>
 				</div>

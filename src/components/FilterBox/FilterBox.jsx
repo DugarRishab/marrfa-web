@@ -84,7 +84,7 @@ const FilterBox = ({ open, onCancel }) => {
 	]);
 	const [yieldRange, setYieldRange] = useState([
 		params.get("yieldMin") || 0,
-		params.get("yieldMax") || 100,
+		params.get("yieldMax") || 15,
 	]);
 	const [marrfexRange, setMarrfexRange] = useState([
 		params.get("marrfexMin") || 0,

@@ -113,7 +113,7 @@ const ReviewCard = ({name, org, comment}) => {
     return (
         <div className="reviewcard">
             <div className="image">
-                <img src="/assets/balloon.jpeg" />
+                <img src="/assets/balloon.webp" />
                 <div className="name">{name}</div>
                 <div className="org">{org}</div>
             </div>
@@ -180,7 +180,7 @@ const AboutUs = () => {
 					properties worldwide, eliminating the hassle of traditional
 					methods.
 				</div>
-				<img src="/assets/company-section.png" />
+				<img src="/assets/company-section.webp" />
 			</section>
 			<section ref={refList["Company"]} id="Company" className="company">
 				<div className="left">
@@ -211,12 +211,12 @@ const AboutUs = () => {
 					</p>
 				</div>
 				<div className="right">
-					<img src="/assets/unique-section.png" />
+					<img src="/assets/unique-section.webp" />
 				</div>
 			</section>
 			<section className="unique">
 				<div className="left">
-					<img src="/assets/company-section.png" />
+					<img src="/assets/company-section.webp" />
 				</div>
 				<div className="right">
 					<div className="heading">What makes Marrfa different</div>
@@ -295,7 +295,7 @@ const AboutUs = () => {
 				</div>
 			</section>
 			<div className="value-section">
-				<img src="/assets/values-section.png" />
+				<img src="/assets/values-section.webp" />
 			</div>
 			<section
 				ref={refList["Our team"]}

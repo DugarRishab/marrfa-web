@@ -43,8 +43,9 @@ const Homepage = () => {
 			<section className="banner">
 				<img
 					className="banner-img"
-					src="/assets/banner/HomeBanner2.jpg"
+					src="/assets/banner/HomeBanner2.webp"
 					alt=""
+					loading
 				/>
 				{/* <div className="banner-img-gradient"></div> */}
 				<div className="text">

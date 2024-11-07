@@ -33,8 +33,8 @@ const ProjectListSection = ({ data, columns, title }) => {
 				" " +
 				item.layout.size.unit,
 			absolute: "NA",
-			marrfex: "NA",
-			date: "NA",
+			marrfex: item.metadata.marrfex || '-',
+			date: item.metadata.dateUpdated,
 			sortkey: {
 				price: item.price.value,
 				yield: item.yield || 0,

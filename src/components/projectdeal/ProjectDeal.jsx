@@ -35,7 +35,7 @@ const ProjectDeal = () => {
                 {/* <BaseButton start = {12300} complete={2024} quarter={3} /> */}
                 <CustomButton fullWidth text={"Invest Now!"} />
             </div>
-            <img src="/assets/projects/balloon.jpeg" />
+            <img src="/assets/projects/balloon.webp" />
         </div>
     );
 };
