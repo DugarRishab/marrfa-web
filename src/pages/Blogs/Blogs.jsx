@@ -18,6 +18,10 @@ import { getBlogs } from "../../services/api";
 import NewsList from "../../assets/data/stories.json";
 import TrendingPost from "../../components/TrendingPost/TrendingPost";
 import Mobcarousel from "../../components/MobCarousel/Mobcarousel";
+import dayjs from "dayjs";
+import LocalizedFormat from "dayjs/plugin/localizedFormat";
+
+dayjs.extend(LocalizedFormat);
 
 const BlogsList = [];
 const mobile = 830;
@@ -99,7 +103,7 @@ const Blogs = () => {
 			setBlogs(res.data.data.blogs);
 		} catch (error) {
 			message.error(
-				"Error saving the blog:",
+				"Error displaying the blog:",
 				error.reponse.data.message || error.message
 			);
 		}
@@ -159,54 +163,27 @@ const Blogs = () => {
 					)}
 
 					<div className="posts-list">
-						<Divider
-							style={{
-								border: "1px solid #fff",
-								margin: ".5rem",
-								width: "100%",
-							}}
-						/>
-						<TrendingPost
-							heading={"Headline headline headline"}
-							date={"20th August, 2024"}
-							tag={"Finance"}
-							desc={
-								"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"
-							}
-							bannersrc={"/assets/balloon.webp"}
-						/>
-						<Divider
-							style={{
-								border: "1px solid #fff",
-								margin: ".5rem 0 .5rem 0",
-								width: "100%",
-							}}
-						/>
-						<TrendingPost
-							heading={"Headline headline headline"}
-							date={"20th August, 2024"}
-							tag={"Finance"}
-							desc={
-								"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"
-							}
-							bannersrc={"/assets/balloon.webp"}
-						/>
-						<Divider
-							style={{
-								border: "1px solid #fff",
-								margin: ".5rem",
-								width: "100%",
-							}}
-						/>
-						<TrendingPost
-							heading={"Headline headline headline"}
-							date={"20th August, 2024"}
-							tag={"Finance"}
-							desc={
-								"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse in sit minus quaerat ad ut explicabo quibusdam beatae aperiam ducimus?"
-							}
-							bannersrc={"/assets/balloon.webp"}
-						/>
+						{blogs &&
+							blogs.map((blog, id) => id <= 2 && (
+								<>
+									<Divider
+										style={{
+											border: "1px solid #fff",
+											margin: ".5rem",
+											width: "100%",
+										}}
+									/>
+									<TrendingPost
+										heading={blog.name}
+										date={dayjs(blog.metadata.datePosted).format('ll')}
+										tag={blog.tags && blog.tags[0]}
+										id={blog._id}
+										desc={blog.description}
+										bannersrc={blog.coverImg}
+									/>
+								</>
+							))}
+						
 					</div>
 				</div>
 			</section>
@@ -264,7 +241,10 @@ const Blogs = () => {
 									setActive={setCatName}
 								/>
 							))} */}
-							<Segmented options={Categories} onChange={setCatName}></Segmented>
+							<Segmented
+								options={Categories}
+								onChange={setCatName}
+							></Segmented>
 						</div>
 					</div>
 					<BlogPagination items={Items} />

@@ -30,8 +30,11 @@
 .trending-post .content .post-heading {
     font-size: 1rem;
     font-weight: 400;
+    color: white;
 }
-
+.trending-post .content .post-heading a{
+    color: white;
+}
 .trending-post .content .desc {
     font-weight: 300;
     font-size: 0.9rem;

@@ -41,12 +41,22 @@ const Homepage = () => {
 	return (
 		<div className="homepage">
 			<section className="banner">
-				<img
-					className="banner-img"
-					src="/assets/banner/HomeBanner2.webp"
-					alt=""
-					loading
-				/>
+				{innerWidth > 720 ? (
+					<img
+						className="banner-img"
+						src="/assets/banner/HomeBanner2.webp"
+						alt=""
+						
+					/>
+				) : (
+					<img
+						className="banner-img"
+						src="/assets/banner/HomeBanner2_mobile.webp"
+						alt=""
+						
+					/>
+				)}
+
 				{/* <div className="banner-img-gradient"></div> */}
 				<div className="text">
 					Invest in Top Real Estate Projects around the World

@@ -27,5 +27,6 @@ export const viewProperty = (id) => api.get(`./property/${id}`);
 export const searchProperties = (query) => api.get(`./property/search${query ? '?' + query : ''}`);
 
 export const getBlogs = () => api.get("./blog");
+export const getBlog = (id) => api.get("./blog/" + id)
 
 export const createUserRequest = (payload) => api.post("./userRequest", payload);
