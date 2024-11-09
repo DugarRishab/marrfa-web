@@ -34,6 +34,7 @@
 }
 .trending-post .content .post-heading a{
     color: white;
+    text-decoration: none;
 }
 .trending-post .content .desc {
     font-weight: 300;

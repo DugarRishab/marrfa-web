@@ -141,7 +141,7 @@ const Blogs = () => {
 						align="left"
 						style={{ marginTop: "0" }}
 					/>
-					<BlogCard data={BlogDetails} />
+					{blogs && <BlogCard data={blogs[0]} />}
 				</div>
 				<div className="right">
 					{innerWidth >= mobile && (
@@ -164,26 +164,30 @@ const Blogs = () => {
 
 					<div className="posts-list">
 						{blogs &&
-							blogs.map((blog, id) => id <= 2 && (
-								<>
-									<Divider
-										style={{
-											border: "1px solid #fff",
-											margin: ".5rem",
-											width: "100%",
-										}}
-									/>
-									<TrendingPost
-										heading={blog.name}
-										date={dayjs(blog.metadata.datePosted).format('ll')}
-										tag={blog.tags && blog.tags[0]}
-										id={blog._id}
-										desc={blog.description}
-										bannersrc={blog.coverImg}
-									/>
-								</>
-							))}
-						
+							blogs.map(
+								(blog, id) =>
+									id <= 2 && (
+										<>
+											<Divider
+												style={{
+													border: "1px solid #fff",
+													margin: ".5rem",
+													width: "100%",
+												}}
+											/>
+											<TrendingPost
+												heading={blog.name}
+												date={dayjs(
+													blog.metadata.datePosted
+												).format("ll")}
+												tag={blog.tags && blog.tags[0]}
+												id={blog._id}
+												desc={blog.description}
+												bannersrc={blog.coverImg}
+											/>
+										</>
+									)
+							)}
 					</div>
 				</div>
 			</section>
