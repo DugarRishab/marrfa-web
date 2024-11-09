@@ -19,10 +19,10 @@ const ProjectListSection = ({ data, columns, title }) => {
 	// const [rows, setRows] = useState([]);
 
 	const { innerWidth } = window;
-	console.log(data);
+	// console.log(data);
 
 	const rows = useMemo(() => {
-		console.log("recomputing");
+		// console.log("recomputing");
 		return data.map((item) => ({
 			key: item.id,
 			project: <ProjectDesc property={item} />,
@@ -45,12 +45,12 @@ const ProjectListSection = ({ data, columns, title }) => {
 	}, [data, data.length, data[0]]);
 
 	// createRows();
-	console.log("rows -> ", rows);
+	// console.log("rows -> ", rows);
 
 	const [sortedData, setSortedData] = useState(rows); // This will hold the sorted data
 	const [sortColumn, setSortColumn] = useState("relevance"); // Initialize with "Relevance"
 
-	console.log("sortedData->", sortedData);
+	// console.log("sortedData->", sortedData);
 
 	const relevScore = (test, input) => {
 		// Split input and test strings into arrays of words

@@ -66,7 +66,9 @@ const Projects = () => {
 
 	useEffect(() => {
 		// if(searchParams.get('search'))
-		getData(searchParams, setSearchResults);
+		console.log(searchParams.search)
+		if(searchParams.search)
+			getData(searchParams, setSearchResults);
 	}, [searchParams]);
 
 	useEffect(() => {

@@ -3,7 +3,7 @@ import "./ProjectCard-v2.css";
 import { Link } from "react-router-dom";
 
 const Project = ({ data }) => {
-	console.log(data);
+	// console.log(data);
 	return (
 		<div className="project-card2">
 			<div className="image-section">

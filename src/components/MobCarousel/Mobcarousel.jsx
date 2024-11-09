@@ -38,8 +38,8 @@ const Mobcarousel = ({ items }) => {
 			if (firstCard) {
 				const cardWidthCopy = firstCard.offsetWidth;
 				setCardWidth(cardWidthCopy);
-				console.log(childRef)
-				console.log(cardWidth, containerWidth);
+				// console.log(childRef)
+				// console.log(cardWidth, containerWidth);
 				// Calculate the number of cards to display based on screen width
 				setNumCards(
 					Math.max(1, Math.floor(containerWidth / (cardWidthCopy + gap))) || 1

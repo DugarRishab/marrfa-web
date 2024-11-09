@@ -409,8 +409,8 @@ const Property = () => {
 											{"Distance from " + item.name}
 										</div>
 										<div className="value">
-											{item.distance.value +
-												item.distance.unit}
+											{item.diistance ? (item.distance.value +
+												item.distance.unit): "-"}
 										</div>
 									</div>
 								))}
