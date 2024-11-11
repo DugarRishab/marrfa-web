@@ -312,7 +312,7 @@ const FilterBox = ({ open, onCancel }) => {
 			<div className="dropdown-list">
 				<Dropdown
 					label="Completion Date"
-					value={type}
+					value={completionDate}
 					options={DropMenu["Completion Date"]}
 					onChange={(newVal) => setCompletionDate(newVal)}
 				></Dropdown>
