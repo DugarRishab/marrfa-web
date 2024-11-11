@@ -5,6 +5,7 @@
     flex-direction: column;
     padding: 10px;
 	color: white;
+    width: 280px;
 }
 
 .avatar img {
@@ -29,4 +30,8 @@
     font-weight: 100;
     line-height: 1em;
 
+}
+.avatar .whois .description{
+    text-align: center;
+    margin-top: 10px;
 }
