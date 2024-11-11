@@ -8,12 +8,14 @@ const members = [
 		name={"Jamil Ahmad"}
 		designation={"Founder & CEO"}
 		dp={"/assets/people/jamil.jpg"}
+		description={"Ex-Co-Founder Fashinza"}
 		key={1}
 	/>,
 	<AvatarCard
 		name={"Mallika Boobna"}
 		designation={"Brand Marketing Strategist"}
 		dp={"/assets/people/malika.jpg"}
+		description={"5 years of building brands"}
 		key={2}
 	/>,
 	<AvatarCard
@@ -21,12 +23,14 @@ const members = [
 		designation={"Director - Investments"}
 		dp={"/assets/people/ross.jpg"}
 		key={3}
+		description={"7 years of Real Estate Experience"}
 	/>,
 	<AvatarCard
 		name={"Artem Gede"}
 		designation={"Investment Manager, EU"}
 		dp={"/assets/people/artem.jpg"}
 		key={4}
+		description={"4 years of EU Real Estate Expereince"}
 	/>,
 ];
 
