@@ -336,10 +336,12 @@
 
 .about-us .our-team .executives .members{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 
