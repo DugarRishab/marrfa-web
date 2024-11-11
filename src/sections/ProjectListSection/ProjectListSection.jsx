@@ -27,14 +27,14 @@ const ProjectListSection = ({ data, columns, title }) => {
 			key: item.id,
 			project: <ProjectDesc property={item} />,
 			price: formatPrice(item.price.value) + " " + item.price.unit,
-			yield: " NA",
+			yield: (item.finance && item.finance.yield + '%')  || "-",
 			area:
 				formatPrice(item.layout.size.value) +
 				" " +
 				item.layout.size.unit,
-			absolute: "NA",
-			marrfex: item.metadata.marrfex || '-',
-			date: item.metadata.dateUpdated,
+			// absolute: "NA",
+			marrfex: (item.finance && item.finance.marrfex) || "-",
+			completion: item.metadata.completionDate || "-",
 			sortkey: {
 				price: item.price.value,
 				yield: item.yield || 0,

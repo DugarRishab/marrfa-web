@@ -44,14 +44,11 @@ const Footer = () => {
 				</div>
 			)}
 
-			<Modal
-				footer={null}
-				width={"fit-content"}
-				open={openRequestBox}
-				onCancel={() => setOpenRequestBox(false)}
-			>
-				<PropertyAdvertiseForm></PropertyAdvertiseForm>
-			</Modal>
+			
+			
+				<PropertyAdvertiseForm open={openRequestBox}
+				onCancel={() => setOpenRequestBox(false)}></PropertyAdvertiseForm>
+			
 
 			<div className="footer">
 				<div className="about-col">

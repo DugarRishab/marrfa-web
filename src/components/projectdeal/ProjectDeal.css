@@ -1,84 +1,115 @@
 .deal-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    height: 32rem;
-    /* height: fit-content; */
-    width: var(--dealcard-width);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	height: 32rem;
+	/* height: fit-content; */
+	width: var(--dealcard-width);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	position: relative;
+    /* color: white; */
+}
+
+.deal-card .img {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-start;
+	width: 60%;
+	border: 0px solid red;
+	height: 100%;
+    margin-right: 0;
+    padding: 1rem;
 }
 
 .deal-card img {
-    height: 100%;
-    width: 100%;
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
-    object-fit: cover;
-    object-position: center;
+	height: 100%;
+	width: 100%;
+	clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+	object-fit: cover;
+	object-position: center;
+	transform: scale(1.05);
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60%;
+	z-index: 0;
+	/* border-radius: var(--border-radius); */
+}
+.deal-card .img .content {
+	border: 0px solid red;
+	z-index: 2;
+}
+.deal-card .img .content .rating {
+	font-weight: 600;
+    background-color: white;
+    padding: 5px;
+    border-radius: var(--border-radius);
 
 }
-
 .deal-card .info-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem;
-    /* border: 1px solid red; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 1rem;
+	/* border: 1px solid red; */
 }
 .deal-card .info-section .deal-head {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--blue);
-    width: max-content;
-    align-self:start;
+	font-size: 2.5rem;
+	font-weight: 600;
+	color: var(--blue);
+	width: max-content;
+	align-self: start;
 }
 .deal-card .info-section .icon {
-    position: absolute;
-    font-size: 18px;
-    right: 10px;
-    top: 40%;
-    background: linear-gradient(var(--blue), var(--cyan));
-    color: #fff;
-    border-radius: 50%;
-    padding: 7px;
-    cursor: pointer;
-    box-shadow: 1px 1px 3px #7e7d7d
+	position: absolute;
+	font-size: 18px;
+	right: 10px;
+	top: 40%;
+	background: linear-gradient(var(--blue), var(--cyan));
+	color: #fff;
+	border-radius: 50%;
+	padding: 7px;
+	cursor: pointer;
+	box-shadow: 1px 1px 3px #7e7d7d;
 }
 
-.deal-card .info-section .icon:nth-child(1){
-    top: 70%;
+.deal-card .info-section .icon:nth-child(1) {
+	top: 70%;
 }
 
 .deal-card .info-section .heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: flex-start;
-    color: var(--blue);
-    width: 100%;
-    padding: 5px;
-    font-size: 1rem;
-    margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: flex-start;
+	color: var(--blue);
+	width: 100%;
+	padding: 5px;
+	font-size: 1rem;
+	margin: 0;
 }
 
 .deal-card .info-section .heading .project-name {
-    font-size: 1.5rem;
-    font-weight: 600;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
 
-.deal-card .info-section .heading .rating {
-    font-weight: 600;
-}
+
 
 .deal-card .info-section .stats {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-    padding-left: 10px;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+	padding-left: 10px;
 }
 
 /* .deal-card .info-section .stats .label {
@@ -91,73 +122,73 @@
 } */
 
 .deal-card .info-section .location {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    font-size: 0.8rem;
-    width: 100%;
-    flex-direction: row;
-    padding-left: 5px;
-    padding-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	font-size: 0.8rem;
+	width: 100%;
+	flex-direction: row;
+	padding-left: 5px;
+	padding-top: 10px;
 }
 
 .deal-card .info-section .highlights {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 0rem;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	padding: 1rem 0rem;
 }
 
 .deal-card .info-section .highlights .heading {
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding-bottom: 10px;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding-bottom: 10px;
 }
 
 .deal-card .info-section .highlights .taglist {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    width: 20rem;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding-left: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	width: 20rem;
+	flex-wrap: wrap;
+	gap: 5px;
+	padding-left: 5px;
 }
 .deal-card .info-section .location img {
-    width: 20px;
+	width: 20px;
 }
 
-.deal-card .info-section .base-section{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    gap :10px;
-    margin-top: 10px;
-    padding: 5px 5px
+.deal-card .info-section .base-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+	gap: 10px;
+	margin-top: 10px;
+	padding: 5px 5px;
 }
 
 .deal-card .info-section .base-section .base-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: var(--light-mix-gradient);
-    border-radius: 10px;
-    padding: 5px 10px;
-    flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: var(--light-mix-gradient);
+	border-radius: 10px;
+	padding: 5px 10px;
+	flex-grow: 1;
 }
 
 .deal-card .info-section .base-section .base-button .label {
-    font-size: 0.6rem;
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 0.8em
+	font-size: 0.6rem;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 0.8em;
 }
 .deal-card .info-section .base-section .base-button .value {
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 600;
+	font-size: 1rem;
+	text-align: center;
+	font-weight: 600;
 }

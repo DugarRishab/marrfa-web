@@ -240,7 +240,7 @@ const FilterBox = ({ open, onCancel }) => {
 			</div>
 
 			<br />
-			{/* <h4>Set Yield range (in %)</h4>
+			<h4>Set Yield range (in %)</h4>
 			<div className="price-range">
 				<InputNumber
 					value={yieldRange[0]}
@@ -259,7 +259,7 @@ const FilterBox = ({ open, onCancel }) => {
 					onChange={setMaxYield}
 				></InputNumber>
 			</div>
-			<br /> */}
+			<br />
 
 			<h4>Set Marrfex range</h4>
 			<div className="price-range">

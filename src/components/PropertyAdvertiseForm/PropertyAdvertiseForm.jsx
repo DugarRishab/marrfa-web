@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PropertyAdvertiseForm.css";
 import banner from "/assets/banner/formbanner.png";
 // import PhoneInput from "./PhoneInput";
-import { Input, Select, Checkbox, message, Button } from "antd";
+import { Input, Select, Checkbox, message, Button, Modal } from "antd";
 const { TextArea } = Input;
 import CustomButton from "../button/CustomButton";
 import cflags from "../../assets/data/countrycodes/CountryCodes.json";
@@ -34,7 +34,7 @@ for (let flaginfo of cflags) {
     });
 }
 
-const PropertyAdvertiseForm = () => {
+const PropertyAdvertiseForm = ({open, onCancel}) => {
         const [name, setName] = useState("");
 		const [email, setEmail] = useState("");
 		const [phone, setPhone] = useState("");
@@ -61,6 +61,7 @@ const PropertyAdvertiseForm = () => {
 		try {
 			const res = await createUserRequest(data);
 			message.success("Request Submitted");
+			onCancel();
 		} catch (err) {
 			console.log(err);
 			message.error(
@@ -69,96 +70,103 @@ const PropertyAdvertiseForm = () => {
 		}
 	};
 
-    return (
-		<div className="property-advertise-form">
-			<div className="data-capture">
-				<div className="f-heading">
-					Marrfa's Managers are here to help you advertise your
-					property
-				</div>
-				<p>Submit your property details and we will get in touch</p>
+	return (
+		<Modal
+			open={open}
+			onCancel={onCancel}
+			width={"fit-content"}
+			footer={""}
+		>
+			<div className="property-advertise-form">
+				<div className="data-capture">
+					<div className="f-heading">
+						Marrfa's Managers are here to help you advertise your
+						property
+					</div>
+					<p>Submit your property details and we will get in touch</p>
 
-				<form action="#">
-					<div className="basic-dtls">
-						<Input
-							placeholder="Name"
-							size="large"
-							onChange={(e) => setName(e.target.value)}
-							value={name}
-						/>
-						<div className="ph-inp">
-							<Select
-								className="flaginp"
-								defaultValue={"+44"}
-								popupMatchSelectWidth={false}
-								style={{
-									width: 60,
-								}}
-								size="large"
-								options={flags}
-								optionRender={(option) => option.data.show}
-								onChange={(v) => setCountryCode(v)}
-								value={countryCode}
-							/>
+					<form action="#">
+						<div className="basic-dtls">
 							<Input
-								placeholder="Phone"
-								type="tel"
-								className="phonenum"
+								placeholder="Name"
 								size="large"
-								onChange={(e) => {
-									setPhone(e.target.value);
-								}}
-								value={phone}
+								onChange={(e) => setName(e.target.value)}
+								value={name}
+							/>
+							<div className="ph-inp">
+								<Select
+									className="flaginp"
+									defaultValue={"+44"}
+									popupMatchSelectWidth={false}
+									style={{
+										width: 60,
+									}}
+									size="large"
+									options={flags}
+									optionRender={(option) => option.data.show}
+									onChange={(v) => setCountryCode(v)}
+									value={countryCode}
+								/>
+								<Input
+									placeholder="Phone"
+									type="tel"
+									className="phonenum"
+									size="large"
+									onChange={(e) => {
+										setPhone(e.target.value);
+									}}
+									value={phone}
+								/>
+							</div>
+							<Input
+								required
+								placeholder="Email"
+								size="large"
+								onChange={(e) => setEmail(e.target.value)}
+								value={email}
 							/>
 						</div>
-						<Input
+						<TextArea
 							required
-							placeholder="Email"
-							size="large"
-							onChange={(e) => setEmail(e.target.value)}
-							value={email}
-						/>
-					</div>
-					<TextArea
-						required
-						rows={4}
-						placeholder="What are you looking for?
+							rows={4}
+							placeholder="What are you looking for?
 For example, I'm looking for an apartment in Downtown Dubai"
-						onChange={(e) => setDescription(e.target.value)}
-						style={{ marginBottom: "1rem" }}
-						value={description}
-					/>
-					<Checkbox
-						style={{ width: "100%" }}
-						checked={consent}
-						onChange={(e) => setConsent(e.target.checked)}
-					>
-						I confirm that I have read and accept the Privacy Policy
-						and Personal Data Processing Guidelines.
-					</Checkbox>
-					<br />
-					<br />
-					<Button
-						onClick={handleSubmit}
-						text={"Submit Request"}
-						style={{ margin: 0 }}
-						type="primary"
-						disabled={
-							!(
-								name &&
-								email &&
-								countryCode &&
-								description &&
-								phone &&
-								consent
-							)
-						}
-					>
-						Submit Request
-					</Button>
-				</form>
+							onChange={(e) => setDescription(e.target.value)}
+							style={{ marginBottom: "1rem" }}
+							value={description}
+						/>
+						<Checkbox
+							style={{ width: "100%" }}
+							checked={consent}
+							onChange={(e) => setConsent(e.target.checked)}
+						>
+							I confirm that I have read and accept the Privacy
+							Policy and Personal Data Processing Guidelines.
+						</Checkbox>
+						<br />
+						<br />
+						<Button
+							onClick={handleSubmit}
+							text={"Submit Request"}
+							style={{ margin: 0 }}
+							type="primary"
+							disabled={
+								!(
+									name &&
+									email &&
+									countryCode &&
+									description &&
+									phone &&
+									consent
+								)
+							}
+						>
+							Submit Request
+						</Button>
+					</form>
+				</div>
 			</div>
-		</div>
+		</Modal>
 	);
 };
 

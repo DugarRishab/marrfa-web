@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Homepage.css";
 
 import CustomButton from "../../components/button/CustomButton";
@@ -23,6 +23,7 @@ import {
 	TeamOutlined,
 	BarChartOutlined,
 } from "@ant-design/icons";
+import CallbackRequestForm from "../../components/CallbackRequestForm/CallbackRequestForm";
 // import 'antd/dist/antd.css';
 const ProjectList = [];
 const StoryList = [];
@@ -37,6 +38,7 @@ for (let s of storyData) {
 }
 const Homepage = () => {
 	const { innerWidth } = window;
+	const [openRequestBox, setOpenRequestBox] = useState(false);
 
 	return (
 		<div className="homepage">
@@ -46,14 +48,12 @@ const Homepage = () => {
 						className="banner-img"
 						src="/assets/banner/HomeBanner2.webp"
 						alt=""
-						
 					/>
 				) : (
 					<img
 						className="banner-img"
 						src="/assets/banner/HomeBanner2_mobile.webp"
 						alt=""
-						
 					/>
 				)}
 
@@ -140,6 +140,7 @@ const Homepage = () => {
 					<CustomButton
 						style={{ padding: "10px 30px" }}
 						text={"Enquire about Projects"}
+						onClick={() => setOpenRequestBox(true)}
 					/>
 				</div>
 				<img src="/assets/marrfa-clipart.png" />
@@ -161,6 +162,10 @@ const Homepage = () => {
 					</div>
 				)}
 			</section>
+			<CallbackRequestForm
+				open={openRequestBox}
+				onCancel={() => setOpenRequestBox(false)}
+			></CallbackRequestForm>
 		</div>
 	);
 };

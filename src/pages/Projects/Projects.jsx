@@ -15,9 +15,9 @@ const colnames = [
 	"Price",
 	"Yield",
 	"Area",
-	`Absolute Return`,
+	// `Absolute Return`,
 	"Marrfex",
-	"Date",
+	"Completion Date",
 ];
 for (let name of colnames) {
 	columns.push({
@@ -67,7 +67,7 @@ const Projects = () => {
 	useEffect(() => {
 		// if(searchParams.get('search'))
 		console.log(searchParams.search)
-		if(searchParams.search)
+		if(searchParams.size != 0)
 			getData(searchParams, setSearchResults);
 	}, [searchParams]);
 
