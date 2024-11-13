@@ -13,7 +13,9 @@ const members = [
 	/>,
 	<AvatarCard
 		name={"Mallika Boobna"}
-		designation={"Brand Marketing Strategist"}
+		designation={
+			"Brand Marketing strategist & Investment Country Director- Singapore"
+		}
 		dp={"/assets/people/malika.jpg"}
 		description={"5 years of building brands"}
 		key={2}
@@ -31,6 +33,20 @@ const members = [
 		dp={"/assets/people/artem.jpg"}
 		key={4}
 		description={"4 years of EU Real Estate Expereince"}
+	/>,
+	<AvatarCard
+		name={"Abdul Latif"}
+		designation={"Associate Director"}
+		dp={"/assets/people/abdul.jpg"}
+		key={4}
+		description={"18 years of real estate experience"}
+	/>,
+	<AvatarCard
+		name={"Nabil Peerally"}
+		designation={"Investment Country Director- Mauritius"}
+		dp={"/assets/people/nabil.jpg"}
+		key={4}
+		description={"5 years of experience"}
 	/>,
 ];
 
